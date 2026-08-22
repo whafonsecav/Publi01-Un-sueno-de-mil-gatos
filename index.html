@@ -1,0 +1,1529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un sueño de mil gatos · El Gatito — Publicidad 2</title>
+<meta name="description" content="Análisis de personaje de El Gatito en «Un sueño de mil gatos» (The Sandman). Publicidad 2, Politécnico Grancolombiano.">
+<meta name="author" content="Mariana Pinzón, Mariana Silva, William Fonseca">
+<meta name="theme-color" content="#07060d">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%2307060d'/%3E%3Cellipse cx='11' cy='15' rx='3.4' ry='4.4' fill='%23c3e05a'/%3E%3Cellipse cx='21' cy='15' rx='3.4' ry='4.4' fill='%23c3e05a'/%3E%3Cellipse cx='11' cy='15' rx='1.1' ry='3.2' fill='%2307060d'/%3E%3Cellipse cx='21' cy='15' rx='1.1' ry='3.2' fill='%2307060d'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@400;600;700&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   UN SUEÑO DE MIL GATOS · EL GATITO
+   Publicidad 2 — Politécnico Grancolombiano
+   6 láminas · 16:9
+
+   Dirección de arte derivada de la investigación del segmento:
+   Hisko Hulsing pintó los fondos en ÓLEO REAL SOBRE LIENZO y sobre
+   ellos rotoscopió gatos animados en 3D. De ahí el lenguaje visual:
+   grano de lienzo, luz de óleo, bordes pintados y noche azul con
+   ojos luminosos. La paleta sigue las secuencias del episodio.
+   ============================================================ */
+
+:root{
+  /* lienzo y noche */
+  --ink:#07060d;
+  --canvas:#0b0a14;
+  --night:#0e1730;
+  --indigo:#1a2952;
+  --violet:#3a2b60;
+  --plum:#5b2f5c;
+
+  /* el sueño */
+  --crimson:#8f2130;
+  --toxic:#6f9a3c;
+
+  /* la casa, el óleo cálido */
+  --amber:#c98a37;
+  --ochre:#e2a94e;
+  --gold:#f2cd72;
+  --gold-hi:#fdf0c4;
+
+  /* el amanecer */
+  --rose:#dd9484;
+
+  /* los ojos del gatito: el punto de luz de todo el deck */
+  --eye:#c3e05a;
+  --eye-hi:#eaf6a8;
+
+  --cream:#f6eeda;
+  --text:#e4dac3;
+  --dim:#a4977c;
+  --dim-2:#726853;
+
+  --line:rgba(242,205,114,.16);
+  --line-2:rgba(242,205,114,.30);
+  --line-3:rgba(242,205,114,.58);
+
+  --f-disp:'Cormorant Unicase', Georgia, serif;
+  --f-serif:'Spectral', Georgia, 'Times New Roman', serif;
+  --f-ui:'Jost', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --ease:cubic-bezier(.16,.84,.24,1);
+  --k:1;
+  --hudh:52px;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0; background:#000; color:var(--text); font-family:var(--f-ui);
+  overflow:hidden; -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility}
+
+/* ---------- ESCENARIO 16:9 ---------- */
+.viewport{position:fixed; inset:0 0 var(--hudh,52px) 0;
+  display:flex; align-items:center; justify-content:center;
+  background:radial-gradient(120% 90% at 50% 0%, #16142a 0%, #09080f 55%, #000 100%)}
+.stage{position:relative; width:1600px; height:900px; flex:0 0 auto;
+  transform:scale(var(--k)); transform-origin:center center; overflow:hidden;
+  background:
+    radial-gradient(90% 70% at 80% -10%, rgba(58,43,96,.55) 0%, transparent 60%),
+    radial-gradient(80% 60% at 10% 105%, rgba(26,41,82,.5) 0%, transparent 62%),
+    linear-gradient(168deg, #12101f 0%, var(--canvas) 48%, #050409 100%);
+  box-shadow:0 40px 120px -20px rgba(0,0,0,.92), 0 0 0 1px rgba(242,205,114,.09)}
+
+/* grano de lienzo: la trama del textil bajo el óleo */
+.stage::before{content:''; position:absolute; inset:0; z-index:59; pointer-events:none;
+  opacity:.30; mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='c'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.62 .95' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23c)'/%3E%3C/svg%3E")}
+.stage::after{content:''; position:absolute; inset:0; z-index:60; pointer-events:none;
+  background:radial-gradient(135% 118% at 50% 42%, transparent 46%, rgba(0,0,0,.42) 82%, rgba(0,0,0,.72) 100%)}
+
+/* ---------- LÁMINAS ---------- */
+.slide{position:absolute; inset:0; z-index:2; opacity:0; visibility:hidden;
+  transition:opacity .7s var(--ease), visibility .7s; display:flex; flex-direction:column}
+.slide.is-active{opacity:1; visibility:visible; z-index:5}
+
+/* motas de sueño: polvo luminoso que sube */
+.motes{position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden}
+.mote{position:absolute; border-radius:50%; background:var(--gold);
+  filter:blur(.4px); opacity:0; animation:drift linear infinite}
+@keyframes drift{
+  0%{opacity:0; transform:translateY(0) translateX(0) scale(.6)}
+  12%{opacity:.55}
+  70%{opacity:.4}
+  100%{opacity:0; transform:translateY(-320px) translateX(var(--dx,20px)) scale(1)}
+}
+
+/* ---------- MOTION ---------- */
+[data-anim]{opacity:0;
+  transition:opacity .9s var(--ease), transform .95s var(--ease), clip-path 1.05s var(--ease);
+  transition-delay:var(--d,0s)}
+[data-anim="up"]{transform:translateY(30px)}
+[data-anim="down"]{transform:translateY(-24px)}
+[data-anim="left"]{transform:translateX(38px)}
+[data-anim="right"]{transform:translateX(-38px)}
+[data-anim="scale"]{transform:scale(.9)}
+[data-anim="rise"]{transform:translateY(52px) scale(.985)}
+[data-anim="wipeup"]{clip-path:inset(100% 0 0 0)}
+[data-anim="grow"]{transform:scaleX(0); transform-origin:left center}
+[data-anim="growc"]{transform:scaleX(0); transform-origin:center}
+[data-anim="growy"]{transform:scaleY(0); transform-origin:top center}
+.is-active [data-anim]{opacity:1; transform:none; clip-path:inset(0 0 0 0)}
+.draw{stroke-dasharray:var(--len,400); stroke-dashoffset:var(--len,400);
+  transition:stroke-dashoffset 1.8s var(--ease); transition-delay:var(--d,0s)}
+.is-active .draw{stroke-dashoffset:0}
+
+/* ---------- TEXTO PINTADO ---------- */
+.oil,.eye-text{padding-top:.16em; margin-top:-.16em;
+  -webkit-background-clip:text; background-clip:text; color:transparent}
+.oil{background-image:linear-gradient(172deg,#fff8e2 0%,#f7dfa0 26%,var(--gold) 52%,#c08a2e 80%,#8d6320 100%)}
+.eye-text{background-image:linear-gradient(172deg,#f2fbc8 0%,var(--eye-hi) 30%,var(--eye) 62%,#7f9c2c 100%)}
+
+/* ---------- PANELES: BASTIDOR PINTADO ---------- */
+.panel{position:relative; overflow:hidden; border-radius:2px;
+  border:1px solid rgba(242,205,114,.16);
+  background:
+    radial-gradient(120% 92% at 86% -18%, rgba(58,43,96,.5) 0%, transparent 62%),
+    linear-gradient(162deg, rgba(26,41,82,.52) 0%, rgba(14,13,26,.9) 54%, rgba(7,6,13,.96) 100%);
+  box-shadow:0 28px 66px -34px rgba(0,0,0,.95), inset 0 1px 0 rgba(253,240,196,.07)}
+/* pincelada superior: el trazo que cierra el bastidor */
+.panel::before{content:''; position:absolute; top:0; left:0; right:0; height:2px;
+  background:linear-gradient(90deg,var(--gold),rgba(226,169,78,.5) 46%,transparent)}
+.panel .glow{position:absolute; right:-64px; top:-64px; width:190px; height:190px;
+  border-radius:50%; pointer-events:none;
+  background:radial-gradient(circle, rgba(242,205,114,.16), transparent 66%)}
+
+.panel.warm{border-color:rgba(226,169,78,.28);
+  background:
+    radial-gradient(120% 92% at 86% -18%, rgba(226,169,78,.24) 0%, transparent 60%),
+    linear-gradient(162deg, rgba(150,96,32,.44) 0%, rgba(38,26,16,.92) 52%, rgba(9,7,10,.97) 100%)}
+.panel.warm .glow{background:radial-gradient(circle, rgba(242,205,114,.22), transparent 66%)}
+.panel.dream{border-color:rgba(143,33,48,.34);
+  background:
+    radial-gradient(120% 92% at 86% -18%, rgba(143,33,48,.34) 0%, transparent 60%),
+    linear-gradient(162deg, rgba(91,47,92,.5) 0%, rgba(36,16,28,.92) 52%, rgba(8,6,11,.97) 100%)}
+.panel.dream::before{background:linear-gradient(90deg,var(--rose),rgba(143,33,48,.6) 46%,transparent)}
+.panel.dream .glow{background:radial-gradient(circle, rgba(221,148,132,.18), transparent 66%)}
+.panel.deep{border-color:rgba(242,205,114,.12);
+  background:linear-gradient(162deg, rgba(26,29,52,.7) 0%, rgba(6,6,11,.97) 100%)}
+.panel.deep::before{background:linear-gradient(90deg,rgba(163,180,214,.5),transparent 70%)}
+.panel.leaf{border-color:rgba(195,224,90,.26);
+  background:
+    radial-gradient(120% 92% at 86% -18%, rgba(195,224,90,.16) 0%, transparent 60%),
+    linear-gradient(162deg, rgba(63,107,69,.4) 0%, rgba(16,26,20,.92) 52%, rgba(6,8,8,.97) 100%)}
+.panel.leaf::before{background:linear-gradient(90deg,var(--eye),rgba(111,154,60,.5) 46%,transparent)}
+.panel.leaf .glow{background:radial-gradient(circle, rgba(195,224,90,.18), transparent 66%)}
+
+/* ---------- CHIPS Y ETIQUETAS ---------- */
+.chip{display:inline-flex; align-items:center; gap:10px; padding:8px 16px 7px;
+  font-family:var(--f-ui); font-size:11.5px; font-weight:600; letter-spacing:.22em;
+  text-transform:uppercase; color:#120e07; white-space:nowrap;
+  background:linear-gradient(146deg,var(--gold-hi),var(--gold) 44%,var(--amber));
+  box-shadow:0 6px 20px -8px rgba(242,205,114,.6)}
+.chip.leaf{color:#101403; background:linear-gradient(146deg,var(--eye-hi),var(--eye) 46%,#7f9c2c);
+  box-shadow:0 6px 20px -8px rgba(195,224,90,.6)}
+.chip.dream{color:#1b0a0c; background:linear-gradient(146deg,#f7cfc2,var(--rose) 46%,#8f2130);
+  box-shadow:0 6px 20px -8px rgba(221,148,132,.55)}
+.chip .dt{width:6px; height:6px; border-radius:50%; background:currentColor}
+.lb{font-family:var(--f-ui); font-size:11px; font-weight:500; letter-spacing:.3em;
+  text-transform:uppercase; color:var(--dim-2)}
+.lb.g{color:var(--gold)}
+.lb.e{color:var(--eye)}
+.paw{width:7px; height:7px; border-radius:50%; background:var(--gold); flex:0 0 auto}
+.ico{stroke:currentColor; fill:none; stroke-width:1.5; stroke-linecap:round;
+  stroke-linejoin:round; width:24px; height:24px; flex:0 0 auto}
+.ico.md{width:29px; height:29px; stroke-width:1.35}
+.ico.lg{width:42px; height:42px; stroke-width:1.15}
+
+/* ---------- EL GATITO ---------- */
+.kit{display:block; overflow:visible}
+/* transform-box:fill-box hace que el pivote sea el de cada forma y no el del
+   viewBox; sin esto el párpado y la cola giran desde un punto equivocado */
+.kit .lid{transform-box:fill-box; transform-origin:50% 0%; transform:scaleY(0);
+  animation:blink 6.2s ease-in-out infinite}
+.kit .lid.b{animation-delay:.08s}
+@keyframes blink{0%,92%{transform:scaleY(0)}95.5%{transform:scaleY(1)}100%{transform:scaleY(0)}}
+.kit .tail{transform-box:fill-box; transform-origin:8% 92%; animation:sway 5.4s ease-in-out infinite}
+@keyframes sway{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(5deg)}}
+.kit .ear-l{transform-box:fill-box; transform-origin:72% 94%; animation:flick 9s ease-in-out infinite}
+@keyframes flick{0%,88%,100%{transform:rotate(0)}91%{transform:rotate(-8deg)}94%{transform:rotate(3deg)}}
+.kit .glint{animation:twinkle 4.6s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.95}50%{opacity:.5}}
+
+/* ojos en la oscuridad: la congregación del cementerio */
+.eyes-bg{position:absolute; inset:0; z-index:1; pointer-events:none; overflow:hidden}
+.ep{position:absolute; display:flex; gap:var(--g,7px); opacity:0;
+  animation:peer 7s ease-in-out infinite}
+.ep i{width:var(--w,5px); height:var(--h,7px); border-radius:50%; display:block;
+  background:var(--eye); box-shadow:0 0 10px 2px rgba(195,224,90,.5)}
+@keyframes peer{0%,100%{opacity:0}18%{opacity:.75}42%{opacity:.5}52%{opacity:0}}
+
+/* ---------- CABECERA / PIE ---------- */
+.head{position:relative; z-index:4; padding:36px 82px 0;
+  display:flex; align-items:flex-start; justify-content:space-between; gap:42px}
+.head-l{display:flex; align-items:flex-start; gap:20px; min-width:0}
+.head-kit{width:62px; height:72px; flex:0 0 auto; margin-top:2px; opacity:.95}
+.head-tx{display:flex; flex-direction:column; gap:11px; min-width:0}
+.head-tag{display:flex; align-items:center; gap:14px}
+.head-tag .n{font-family:var(--f-ui); font-size:11px; font-weight:600; letter-spacing:.2em;
+  color:#120e07; background:linear-gradient(146deg,var(--gold),var(--amber));
+  padding:5px 11px 4px; line-height:1}
+.head h2{margin:0; font-family:var(--f-disp); font-weight:700; font-size:62px;
+  line-height:1.16; letter-spacing:.005em}
+.head-r{display:flex; align-items:center; gap:22px; flex:0 0 auto; padding-top:4px}
+.head-r .brandline{text-align:right; display:flex; flex-direction:column; gap:6px}
+.head-r .brandline span{font-size:9.5px; letter-spacing:.24em; text-transform:uppercase;
+  color:var(--dim-2); font-weight:500}
+.head-r .brandline span.hi{color:var(--gold); font-weight:600}
+.head-r .vbar{width:1px; height:44px; background:linear-gradient(180deg,transparent,var(--line-2),transparent)}
+.logo-poli{height:46px; width:auto; opacity:.9; flex:0 0 auto}
+
+.body{position:relative; z-index:3; flex:1; min-height:0; padding:0 82px; display:flex; flex-direction:column}
+.foot{position:relative; z-index:4; padding:0 82px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+  font-size:9.5px; letter-spacing:.24em; text-transform:uppercase; color:var(--dim-2); font-weight:500}
+.foot .fl{display:flex; align-items:center; gap:13px}
+.foot .fline{width:130px; height:1px; background:linear-gradient(90deg,var(--line-2),transparent)}
+
+/* ============================================================
+   L01 PORTADA · L06 GRACIAS
+   ============================================================ */
+#s1 .body,#s6 .body{align-items:center; justify-content:center}
+.cover{display:flex; flex-direction:column; align-items:center; text-align:center; width:100%}
+.cover-kit-wrap{position:relative; width:190px; height:221px; margin:0 auto 6px}
+.cover-kit{width:100%; height:100%}
+/* la imagen del personaje, si se añade, se funde con el fondo mediante una
+   máscara radial en vez de aparecer como un rectángulo pegado */
+.cover-kit-img{position:absolute; inset:-14% -10%; width:120%; height:128%;
+  object-fit:contain; object-position:center bottom;
+  -webkit-mask-image:radial-gradient(72% 78% at 50% 46%, #000 62%, transparent 100%);
+  mask-image:radial-gradient(72% 78% at 50% 46%, #000 62%, transparent 100%)}
+.thanks-kit{width:168px; height:200px; margin:0 auto 10px}
+.pre{margin:0 0 18px; display:flex; align-items:center; gap:18px; justify-content:center}
+.pre .ln{width:84px; height:1px; background:linear-gradient(90deg,transparent,var(--line-3))}
+.pre .ln.r{background:linear-gradient(90deg,var(--line-3),transparent)}
+.cover h1{margin:0; font-family:var(--f-disp); font-weight:700; font-size:104px;
+  line-height:1.02; letter-spacing:.005em; text-shadow:0 0 120px rgba(242,205,114,.2)}
+.thanks h1{margin:0; font-family:var(--f-disp); font-weight:700; font-size:132px;
+  line-height:1.02; letter-spacing:.06em; text-shadow:0 0 120px rgba(242,205,114,.2)}
+.titlerule{display:flex; align-items:center; gap:20px; justify-content:center;
+  margin:22px auto 18px; width:min(720px,100%)}
+.titlerule .l{flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--line-3))}
+.titlerule .r{flex:1; height:1px; background:linear-gradient(90deg,var(--line-3),transparent)}
+.who{font-family:var(--f-disp); font-weight:600; font-size:34px; letter-spacing:.2em; color:var(--cream)}
+.who small{display:block; font-family:var(--f-serif); font-style:italic; font-size:17px;
+  letter-spacing:.02em; color:var(--dim); margin-top:7px; text-transform:none}
+.thanks{display:flex; flex-direction:column; align-items:center; text-align:center; width:100%}
+.thanks .sub{margin:20px 0 0; font-family:var(--f-serif); font-style:italic; font-size:25px; color:var(--dim)}
+
+.credits{display:grid; grid-template-columns:repeat(3,1fr); width:100%; max-width:1180px;
+  margin:32px auto 0; overflow:hidden; border-radius:2px;
+  border:1px solid rgba(242,205,114,.18);
+  background:linear-gradient(162deg, rgba(26,41,82,.4) 0%, rgba(10,9,16,.88) 100%);
+  box-shadow:0 24px 60px -34px rgba(0,0,0,.9), inset 0 1px 0 rgba(253,240,196,.06)}
+.credits div{padding:18px 24px; text-align:center; display:flex; flex-direction:column; gap:8px;
+  border-left:1px solid rgba(242,205,114,.14)}
+.credits div:first-child{border-left:0}
+.credits .k{font-size:9px; letter-spacing:.28em; text-transform:uppercase; color:var(--dim-2); font-weight:600}
+.credits .v{font-family:var(--f-serif); font-size:22px; font-weight:500; color:var(--gold); line-height:1.16}
+.credits .v small{display:block; font-size:14.5px; color:var(--dim); font-style:italic; margin-top:3px}
+.team{margin:22px auto 0; display:flex; flex-direction:column; align-items:center; gap:11px}
+.team .k{font-size:9px; letter-spacing:.32em; text-transform:uppercase; color:var(--dim-2); font-weight:600}
+.team .names{display:flex; align-items:center; gap:20px; flex-wrap:wrap; justify-content:center}
+.team .names b{font-family:var(--f-serif); font-size:24px; font-weight:500; color:var(--cream)}
+.cover-logo{display:flex; align-items:center; gap:18px}
+.cover-logo img{height:58px; opacity:.94}
+.cover-logo .t{display:flex; flex-direction:column; gap:8px; padding-left:18px;
+  border-left:1px solid var(--line-2)}
+.cover-logo .t b{font-family:var(--f-disp); font-size:21px; font-weight:700;
+  letter-spacing:.09em; color:var(--cream); line-height:1}
+.cover-logo .t span{font-size:10px; letter-spacing:.19em; text-transform:uppercase;
+  color:var(--dim); font-weight:500; line-height:1}
+.cover-logo .t span i{font-style:normal; color:var(--dim-2)}
+
+/* ============================================================
+   L02 TRAMA
+   ============================================================ */
+#s2 .body{padding:0 0 16px}
+.tri{display:grid; grid-template-columns:repeat(3,1fr); gap:3px; height:266px;
+  background:rgba(242,205,114,.22)}
+.tri-cell{position:relative; overflow:hidden; background:var(--ink)}
+.tri-cell svg{position:absolute; inset:0; width:100%; height:100%; display:block; z-index:0}
+/* ranura de imagen: si el archivo existe tapa la escena pintada; si no existe,
+   el onerror la retira y queda visible el SVG de respaldo */
+.tri-cell img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+  display:block; z-index:1; transform:scale(1.04); transition:transform 2.4s var(--ease);
+  color:transparent; font-size:0}
+.is-active .tri-cell img{transform:scale(1)}
+.tri-cell::after{content:''; position:absolute; inset:auto 0 0 0; height:42%; z-index:2;
+  background:linear-gradient(180deg,transparent,rgba(7,6,13,.5) 60%,rgba(7,6,13,.94) 100%)}
+
+.tl{position:relative; height:34px; margin:0 82px}
+.tl .track{position:absolute; left:0; right:0; top:16px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--line-3) 7%,var(--line-3) 93%,transparent);
+  transform:scaleX(0); transform-origin:center; transition:transform 1.4s var(--ease); transition-delay:.5s}
+.is-active .tl .track{transform:scaleX(1)}
+.tl .nodes{position:absolute; inset:0; display:grid; grid-template-columns:repeat(3,1fr)}
+.tl .nd{display:flex; justify-content:center; align-items:flex-start; padding-top:8px}
+.tl .nd i{width:16px; height:16px; display:block; border-radius:50%; transform:scale(0);
+  background:radial-gradient(circle at 40% 35%,var(--gold-hi),var(--amber));
+  box-shadow:0 0 0 6px var(--canvas), 0 0 26px rgba(242,205,114,.6);
+  transition:transform .6s var(--ease)}
+.is-active .tl .nd i{transform:scale(1)}
+.tl .nd:nth-child(1) i{transition-delay:.95s}
+.tl .nd:nth-child(2) i{transition-delay:1.08s}
+.tl .nd:nth-child(3) i{transition-delay:1.21s}
+
+.acts{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:0 82px; flex:1; min-height:0}
+.acts .panel{padding:20px 24px 20px; display:flex; flex-direction:column}
+.act-hd{display:flex; align-items:baseline; gap:13px; margin-bottom:11px}
+.act-hd .n{font-family:var(--f-disp); font-weight:700; font-size:23px; line-height:1;
+  color:rgba(242,205,114,.42)}
+.act-hd h3{margin:0; font-family:var(--f-disp); font-weight:700; font-size:34px;
+  line-height:1; letter-spacing:.05em}
+.acts p{margin:0; font-family:var(--f-serif); font-size:18.5px; line-height:1.45; color:var(--text)}
+
+.tono{display:grid; grid-template-columns:auto 1px 1fr; gap:24px; align-items:center;
+  margin:14px 82px 0; padding:13px 24px}
+.tono .vr{align-self:stretch;
+  background:linear-gradient(180deg,transparent,rgba(242,205,114,.34),transparent)}
+.tono .glow{width:128px; height:128px; right:-50px; top:-50px}
+.tono-l{display:flex; flex-direction:column; gap:6px}
+.tono-l b{font-family:var(--f-disp); font-weight:700; font-size:27px; line-height:1.1;
+  letter-spacing:.05em; white-space:nowrap}
+.tono p{margin:0; font-family:var(--f-serif); font-size:17.5px; line-height:1.45; color:var(--text)}
+.tono p em{font-style:italic; color:var(--gold)}
+
+/* ============================================================
+   L03 PERSONAJE
+   ============================================================ */
+#s3 .body{padding-top:12px}
+.demo{display:grid; grid-template-columns:1fr 1fr 1fr 1.3fr; gap:20px; height:146px}
+.demo .panel{padding:19px 22px 17px; display:flex; flex-direction:column}
+.demo .v{margin-top:auto; font-family:var(--f-disp); font-weight:700; font-size:37px;
+  line-height:1.06; color:var(--gold-hi)}
+.demo .v.sm{font-size:26px; line-height:1.18}
+.demo .row{margin-top:auto; display:flex; align-items:baseline; gap:10px}
+.demo .row .v{margin-top:0; font-size:56px; line-height:.9; letter-spacing:-.01em}
+.demo .u{font-family:var(--f-disp); font-weight:700; font-size:17px; letter-spacing:.13em; color:var(--gold)}
+.demo .cap{font-family:var(--f-serif); font-style:italic; font-size:15.5px; color:var(--dim); margin-top:4px}
+.demo .lb{color:var(--dim)}
+.meter{display:flex; align-items:flex-end; gap:5px; height:28px; margin-top:9px}
+.meter i{width:30px; display:block; border:1px solid rgba(242,205,114,.34);
+  background:rgba(242,205,114,.06); transform:scaleY(0); transform-origin:bottom;
+  transition:transform .75s var(--ease)}
+.meter i:nth-child(1){height:40%; transition-delay:.5s; background:rgba(242,205,114,.2)}
+.meter i:nth-child(2){height:68%; transition-delay:.6s; background:rgba(242,205,114,.3)}
+.meter i:nth-child(3){height:100%; transition-delay:.7s;
+  background:linear-gradient(180deg,var(--gold),rgba(201,138,55,.35));
+  border-color:rgba(253,240,196,.7); box-shadow:0 0 24px -6px rgba(242,205,114,.75)}
+.is-active .meter i{transform:scaleY(1)}
+
+.cols{display:grid; grid-template-columns:1.3fr 1fr 1fr; gap:22px;
+  flex:1; min-height:0; margin-top:16px; padding-bottom:2px}
+.cols .panel{padding:20px 22px 18px; display:flex; flex-direction:column}
+.cols .chip{align-self:flex-start; margin-bottom:16px}
+.plist{display:flex; flex-direction:column; gap:11px; flex:1; justify-content:space-evenly}
+.pli{display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:start}
+.pli .dt{width:6px; height:6px; border-radius:50%; background:var(--gold); margin-top:10px}
+.pli p{margin:0; font-family:var(--f-serif); font-size:19.5px; line-height:1.38; color:var(--text)}
+.cols .panel.leaf .pli .dt{background:var(--eye)}
+.cols .panel.dream .pli .dt{background:var(--rose)}
+
+/* ============================================================
+   L04 ESCENARIO
+   ============================================================ */
+#s4 .body{padding-top:6px; padding-bottom:2px}
+.axis-hd{display:flex; align-items:center; justify-content:space-between; gap:22px}
+.axis-hd .g{display:flex; align-items:center; gap:12px}
+.axis-hd .ico{color:var(--gold); width:22px; height:22px}
+.rail{position:relative; height:86px; margin:0 104px}
+.rail .line{position:absolute; left:0; right:0; top:52px; height:2px; transform-origin:left;
+  background:linear-gradient(90deg, var(--indigo), var(--gold) 46%, var(--rose));
+  transform:scaleX(0); transition:transform 1.6s var(--ease); transition-delay:.32s}
+.is-active .rail .line{transform:scaleX(1)}
+.mk{position:absolute; top:0; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:7px; white-space:nowrap}
+.mk b{font-family:var(--f-disp); font-weight:700; font-size:25px; line-height:1.18;
+  opacity:0; transform:translateY(12px);
+  transition:opacity .65s var(--ease), transform .65s var(--ease); transition-delay:var(--d,0s)}
+.mk .nd{width:26px; height:26px; display:grid; place-items:center}
+.mk .nd i{width:13px; height:13px; display:block; border-radius:50%; transform:scale(0);
+  background:radial-gradient(circle at 40% 35%,var(--gold-hi),var(--amber));
+  box-shadow:0 0 0 6px var(--canvas), 0 0 24px rgba(242,205,114,.6);
+  transition:transform .55s var(--ease); transition-delay:calc(var(--d,0s) + .12s)}
+.mk.big .nd i{width:23px; height:23px; box-shadow:0 0 0 6px var(--canvas), 0 0 34px rgba(253,240,196,.85)}
+.mk em{font-style:normal; font-size:8.5px; letter-spacing:.17em; text-transform:uppercase;
+  color:var(--dim-2); font-weight:600; opacity:0; transform:translateY(-8px);
+  transition:opacity .6s var(--ease), transform .6s var(--ease); transition-delay:calc(var(--d,0s) + .24s)}
+.mk.big em{color:var(--gold)}
+.is-active .mk b,.is-active .mk em{opacity:1; transform:none}
+.is-active .mk .nd i{transform:scale(1)}
+
+.scns{display:grid; grid-template-columns:repeat(5,1fr); grid-auto-rows:minmax(0,1fr);
+  gap:15px; flex:1; min-height:0; margin-top:10px}
+.scn{padding:15px 16px 13px; display:flex; flex-direction:column}
+.scn .hd{display:flex; align-items:center; justify-content:space-between; gap:8px; margin-bottom:9px}
+.scn .hd .ico{color:var(--gold); width:25px; height:25px}
+.scn .yb{font-family:var(--f-ui); font-weight:600; font-size:9.5px; letter-spacing:.14em;
+  color:#120e07; line-height:1; padding:5px 8px 4px; text-transform:uppercase;
+  background:linear-gradient(146deg,var(--gold),var(--amber))}
+.scn .zn{font-size:8.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--gold);
+  font-weight:600; line-height:1.5; min-height:13px}
+.scn h4{margin:5px 0 0; font-family:var(--f-disp); font-weight:700; font-size:19px;
+  line-height:1.16; color:var(--gold-hi)}
+.scn .hr{width:26px; height:1px; margin:8px 0 8px;
+  background:linear-gradient(90deg,var(--gold),transparent)}
+.scn p{margin:0; font-family:var(--f-serif); font-size:15.4px; line-height:1.34; color:var(--text)}
+.scn.dream .hd .ico,.scn.dream .zn{color:var(--rose)}
+.scn.dream .yb{background:linear-gradient(146deg,var(--rose),#8f2130); color:#1b0a0c}
+.scn.dream h4{color:#f4d3c9}
+.scn.dream .hr{background:linear-gradient(90deg,var(--rose),transparent)}
+.scn.deep .hd .ico,.scn.deep .zn{color:#a3b4d6}
+.scn.deep .yb{background:linear-gradient(146deg,#a3b4d6,#4a5b84); color:#0a0d16}
+.scn.deep h4{color:#dbe4f5}
+.scn.deep .hr{background:linear-gradient(90deg,#a3b4d6,transparent)}
+.scn.leaf .hd .ico,.scn.leaf .zn{color:var(--eye)}
+.scn.leaf .yb{background:linear-gradient(146deg,var(--eye),#7f9c2c); color:#101403}
+.scn.leaf h4{color:var(--eye-hi)}
+.scn.leaf .hr{background:linear-gradient(90deg,var(--eye),transparent)}
+
+.esc-sum{display:grid; grid-template-columns:auto 1px 1fr; gap:24px; align-items:center;
+  margin-top:10px; padding:10px 20px}
+.esc-sum .vr{align-self:stretch;
+  background:linear-gradient(180deg,transparent,rgba(242,205,114,.32),transparent)}
+.sum-l{display:flex; flex-direction:column; gap:4px}
+.sum-l b{font-family:var(--f-disp); font-weight:700; font-size:24px; line-height:1.14}
+.sum-l .meta{font-size:8.5px; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--dim-2); font-weight:600}
+.sum-r{display:grid; grid-template-columns:1.6fr 1fr; gap:22px}
+.sum-city .cn{display:flex; align-items:baseline; gap:9px; margin-bottom:3px}
+.sum-city .cn span{font-size:9px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--gold); font-weight:600}
+.sum-city .cn em{font-style:normal; font-size:8px; letter-spacing:.12em; text-transform:uppercase;
+  color:#120e07; background:linear-gradient(146deg,var(--gold),var(--amber));
+  padding:3px 7px 2px; font-weight:600}
+.sum-city p{margin:0; font-family:var(--f-serif); font-size:15px; line-height:1.34; color:var(--text)}
+.sum-city p i{font-style:italic; color:var(--dim-2)}
+.sum-city.b .cn span{color:#a3b4d6}
+.sum-city.b .cn em{background:linear-gradient(146deg,#a3b4d6,#4a5b84); color:#0a0d16}
+
+/* ============================================================
+   L05 MOTIVACIÓN
+   ============================================================ */
+#s5 .body{padding-top:6px; padding-bottom:2px}
+.motiv{display:grid; grid-template-columns:1.3fr 1fr; gap:24px; flex:1; min-height:0}
+.mleft{display:grid; grid-template-rows:auto 1fr; gap:18px; min-height:0}
+.mleft .panel{padding:17px 22px 17px; display:flex; flex-direction:column}
+.mleft .chip{align-self:flex-start; margin-bottom:15px}
+.egrid{display:grid; grid-template-columns:repeat(3,1fr); gap:15px 18px; flex:1; align-content:space-evenly}
+.eit .nm{display:flex; align-items:center; gap:9px; margin-bottom:6px}
+.eit .nm .ico{width:21px; height:21px; color:var(--gold)}
+.eit h4{margin:0; font-family:var(--f-disp); font-weight:700; font-size:17.5px;
+  letter-spacing:.03em; line-height:1.14; color:var(--gold-hi)}
+.eit p{margin:0; font-family:var(--f-serif); font-size:16.5px; line-height:1.36; color:var(--text)}
+.panel.leaf .eit .nm .ico{color:var(--eye)}
+.panel.leaf .eit h4{color:var(--eye-hi)}
+
+.confl{display:flex; flex-direction:column; padding:17px 24px 20px}
+.confl .chip{align-self:flex-start; margin-bottom:15px}
+.ctype{display:flex; align-items:baseline; gap:14px; margin-bottom:4px}
+.ctype b{font-family:var(--f-disp); font-weight:700; font-size:40px; line-height:1.1; letter-spacing:.02em}
+.vs-list{display:flex; flex-direction:column; gap:10px; margin-top:14px}
+.vs{display:grid; grid-template-columns:1fr auto 1fr; align-items:stretch;
+  border:1px solid rgba(242,205,114,.2); border-radius:2px; overflow:hidden}
+.vs .a,.vs .b{display:flex; align-items:center; padding:11px 14px; min-width:0}
+.vs .a{background:linear-gradient(100deg, rgba(195,224,90,.24), rgba(111,154,60,.08));
+  justify-content:flex-end}
+.vs .b{background:linear-gradient(260deg, rgba(163,180,214,.22), rgba(74,91,132,.06))}
+.vs .a span{font-family:var(--f-disp); font-weight:700; font-size:21px; letter-spacing:.05em;
+  color:var(--eye-hi); line-height:1}
+.vs .b span{font-family:var(--f-disp); font-weight:700; font-size:21px; letter-spacing:.05em;
+  color:#dbe4f5; line-height:1}
+.vs .o{display:grid; place-items:center; width:44px; flex:0 0 auto;
+  background:rgba(7,6,13,.72); border-left:1px solid rgba(195,224,90,.24);
+  border-right:1px solid rgba(163,180,214,.24)}
+.vs .o em{font-family:var(--f-serif); font-style:italic; font-size:18px; color:var(--gold)}
+.cexp{flex:1; display:flex; flex-direction:column; justify-content:center;
+  margin-top:20px; padding-top:20px; border-top:1px solid rgba(242,205,114,.2)}
+.cexp .r{width:42px; height:2px; margin-bottom:16px;
+  background:linear-gradient(90deg,var(--gold),var(--amber))}
+.cexp blockquote{margin:0; font-family:var(--f-serif); font-weight:400;
+  font-size:28px; line-height:1.34; color:var(--gold-hi); text-wrap:balance}
+.cexp .q{font-family:var(--f-disp); font-weight:700; color:var(--gold); font-size:1.1em}
+
+/* ============================================================
+   HUD
+   ============================================================ */
+.hud{position:fixed; z-index:200; left:0; right:0; bottom:0; pointer-events:none;
+  font-family:var(--f-ui)}
+.hud-in{display:flex; align-items:center; justify-content:space-between; gap:20px;
+  padding:12px 24px 13px; pointer-events:auto;
+  background:linear-gradient(180deg, rgba(0,0,0,.5), rgba(0,0,0,.9))}
+.dots{display:flex; align-items:center; gap:7px}
+.dots button{width:28px; height:3px; border:0; padding:0; cursor:pointer;
+  background:rgba(246,238,218,.2); transition:background .3s, width .3s}
+.dots button:hover{background:rgba(242,205,114,.65)}
+.dots button[aria-current="true"]{background:linear-gradient(90deg,var(--gold),var(--amber)); width:44px}
+.nav{display:flex; align-items:center; gap:10px}
+.nav button{width:32px; height:32px; display:grid; place-items:center; cursor:pointer;
+  background:rgba(246,238,218,.06); border:1px solid rgba(242,205,114,.24); color:var(--gold);
+  transition:background .25s, border-color .25s, color .25s}
+.nav button:hover{background:rgba(242,205,114,.2); border-color:var(--line-3); color:var(--gold-hi)}
+.nav button:disabled{opacity:.3; cursor:default}
+.nav button svg{width:14px; height:14px}
+.counter{font-family:var(--f-disp); font-size:14px; font-weight:700; letter-spacing:.12em; color:var(--dim)}
+.counter b{color:var(--gold)}
+.hint{font-size:8.5px; letter-spacing:.2em; text-transform:uppercase; color:rgba(164,151,124,.5); font-weight:500}
+.progress{position:fixed; top:0; left:0; height:2px; z-index:210; width:0;
+  background:linear-gradient(90deg,var(--indigo),var(--gold));
+  box-shadow:0 0 14px rgba(242,205,114,.6); transition:width .5s var(--ease)}
+
+/* en pantalla completa el cursor se esconde tras un segundo quieto */
+body.hide-cursor, body.hide-cursor *{cursor:none !important}
+
+@media (max-width:760px){.hud-in{padding:9px 13px 10px}.hint{display:none}}
+@media print{
+  @page{size:1600px 900px; margin:0}
+  html,body{overflow:visible; background:var(--ink)}
+  .viewport{position:static; display:block; inset:auto}
+  .stage{transform:none!important; width:1600px; height:auto; box-shadow:none}
+  .slide{position:relative; inset:auto; width:1600px; height:900px;
+    opacity:1!important; visibility:visible!important; break-after:page; page-break-after:always}
+  [data-anim]{opacity:1!important; transform:none!important; clip-path:none!important}
+  .draw{stroke-dashoffset:0!important}
+  .tl .track,.tl .nd i,.meter i,.rail .line,.mk b,.mk em,.mk .nd i{transform:none!important; opacity:1!important}
+  .hud,.progress,.motes,.eyes-bg{display:none!important}
+}
+@media (prefers-reduced-motion:reduce){*{animation-duration:.001s!important; transition-duration:.001s!important}}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     DEFINICIONES SVG · el gatito, las escenas y los iconos
+     El gatito es una ILUSTRACIÓN ORIGINAL hecha para esta
+     presentación, siguiendo el diseño del episodio (atigrado,
+     ojos verde-amarillos, proporciones de cría). Se dibujó en
+     vectores para poder animarlo: parpadea, mueve la cola y
+     las orejas.
+     ============================================================ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="furBody" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#a08761"/><stop offset="46%" stop-color="#7d6547"/>
+      <stop offset="100%" stop-color="#4a3a29"/>
+    </linearGradient>
+    <linearGradient id="furHead" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0%" stop-color="#b4996f"/><stop offset="55%" stop-color="#8a7150"/>
+      <stop offset="100%" stop-color="#5b4832"/>
+    </linearGradient>
+    <linearGradient id="furChest" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e2cfa9"/><stop offset="100%" stop-color="#b09877"/>
+    </linearGradient>
+    <radialGradient id="irisG" cx="42%" cy="34%" r="70%">
+      <stop offset="0%" stop-color="#f4fbd0"/><stop offset="42%" stop-color="#d8ec74"/>
+      <stop offset="100%" stop-color="#8ead34"/>
+    </radialGradient>
+    <linearGradient id="earIn" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e0a49a"/><stop offset="100%" stop-color="#a86f6a"/>
+    </linearGradient>
+    <linearGradient id="gOil" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#fdf0c4"/><stop offset="45%" stop-color="#f2cd72"/>
+      <stop offset="100%" stop-color="#b0782a"/>
+    </linearGradient>
+    <radialGradient id="skyNight" cx="70%" cy="18%" r="95%">
+      <stop offset="0%" stop-color="#3a4b86"/><stop offset="46%" stop-color="#1a2952"/>
+      <stop offset="100%" stop-color="#080a18"/>
+    </radialGradient>
+    <radialGradient id="skyWarm" cx="26%" cy="26%" r="92%">
+      <stop offset="0%" stop-color="#e8b45e"/><stop offset="42%" stop-color="#9c6428"/>
+      <stop offset="100%" stop-color="#1d1208"/>
+    </radialGradient>
+    <radialGradient id="skyDawn" cx="34%" cy="76%" r="94%">
+      <stop offset="0%" stop-color="#f3c69c"/><stop offset="38%" stop-color="#c9748a"/>
+      <stop offset="100%" stop-color="#1a1230"/>
+    </radialGradient>
+    <radialGradient id="moonG" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fdf6dc"/><stop offset="52%" stop-color="rgba(240,230,190,.5)"/>
+      <stop offset="100%" stop-color="rgba(240,230,190,0)"/>
+    </radialGradient>
+    <!-- filtro de óleo: desplaza los bordes para que no sean vectoriales -->
+    <filter id="oilEdge" x="-12%" y="-12%" width="124%" height="124%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.028" numOctaves="3" seed="7" result="n"/>
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="7" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="9"/>
+    </filter>
+  </defs>
+
+  <!-- ===== EL GATITO (atigrado, sentado de frente) ===== -->
+  <symbol id="kitten" viewBox="0 0 220 256">
+    <!-- cola: se dibuja primero para que quede detrás del cuerpo -->
+    <g class="tail">
+      <path d="M156 238 C 194 244 210 214 202 190 C 197 176 186 171 178 175"
+            fill="none" stroke="#463724" stroke-width="18" stroke-linecap="round"/>
+      <path d="M156 238 C 194 244 210 214 202 190 C 197 176 186 171 178 175"
+            fill="none" stroke="#7d6547" stroke-width="11" stroke-linecap="round"/>
+      <g stroke="#3a2d1c" stroke-width="5" stroke-linecap="round" fill="none" opacity=".75">
+        <path d="M184 239 l3 -5"/><path d="M200 224 l5 -2"/><path d="M205 202 l5 0"/>
+      </g>
+    </g>
+
+    <!-- orejas (detrás de la cabeza) -->
+    <g class="ear-l">
+      <path d="M56 70 L 42 12 L 102 46 Z" fill="url(#furHead)"/>
+      <path d="M61 65 L 52 26 L 91 47 Z" fill="url(#earIn)"/>
+    </g>
+    <g>
+      <path d="M164 70 L 178 12 L 118 46 Z" fill="url(#furHead)"/>
+      <path d="M159 65 L 168 26 L 129 47 Z" fill="url(#earIn)"/>
+    </g>
+
+    <!-- cuerpo corto y redondo, de cría; arranca alto para que la cabeza
+         lo tape y no se vea el cuello partido -->
+    <path d="M54 250 C 48 198 76 136 110 136 C 144 136 172 198 166 250 Z" fill="url(#furBody)"/>
+    <path d="M90 250 C 86 204 100 168 110 168 C 120 168 134 204 130 250 Z"
+          fill="url(#furChest)" opacity=".9"/>
+    <!-- rayas del lomo, solo en los costados oscuros -->
+    <g stroke="#3f321f" stroke-width="6" stroke-linecap="round" fill="none" opacity=".55">
+      <path d="M64 194 C 73 200 78 202 84 203"/>
+      <path d="M60 220 C 70 226 76 228 83 229"/>
+      <path d="M58 242 C 68 247 75 249 82 250"/>
+      <path d="M156 194 C 147 200 142 202 136 203"/>
+      <path d="M160 220 C 150 226 144 228 137 229"/>
+      <path d="M162 242 C 152 247 145 249 138 250"/>
+    </g>
+    <!-- patas delanteras -->
+    <ellipse cx="90" cy="243" rx="18" ry="12" fill="#c9b28a"/>
+    <ellipse cx="130" cy="243" rx="18" ry="12" fill="#c9b28a"/>
+    <g stroke="#9c8663" stroke-width="2" fill="none" opacity=".75">
+      <path d="M84 243 v8 M90 242 v9 M96 243 v8"/>
+      <path d="M124 243 v8 M130 242 v9 M136 243 v8"/>
+    </g>
+
+    <!-- cabeza grande con mechones en las mejillas -->
+    <path d="M110 34 C 148 34 176 60 176 92 C 176 106 171 116 163 123
+             C 169 127 170 132 167 136 C 155 145 136 151 110 151
+             C 84 151 65 145 53 136 C 50 132 51 127 57 123
+             C 49 116 44 106 44 92 C 44 60 72 34 110 34 Z" fill="url(#furHead)"/>
+
+    <!-- la "M" atigrada de la frente -->
+    <g stroke="#3f321f" stroke-width="5.5" stroke-linecap="round" fill="none" opacity=".68">
+      <path d="M95 50 C 97 60 98 65 99 71"/>
+      <path d="M110 45 C 110 56 110 62 110 68"/>
+      <path d="M125 50 C 123 60 122 65 121 71"/>
+    </g>
+    <!-- rayas de mejilla -->
+    <g stroke="#3f321f" stroke-width="4.5" stroke-linecap="round" fill="none" opacity=".45">
+      <path d="M52 92 C 60 94 64 95 68 95"/>
+      <path d="M56 110 C 63 111 67 112 71 112"/>
+      <path d="M168 92 C 160 94 156 95 152 95"/>
+      <path d="M164 110 C 157 111 153 112 149 112"/>
+    </g>
+
+    <!-- ojos -->
+    <g>
+      <ellipse cx="88" cy="98" rx="17" ry="19" fill="#2b2417"/>
+      <ellipse cx="88" cy="98" rx="15.4" ry="17.4" fill="url(#irisG)"/>
+      <ellipse cx="88" cy="98" rx="4.6" ry="13.6" fill="#101208"/>
+      <circle class="glint" cx="82.5" cy="90" r="3.8" fill="#ffffff" opacity=".95"/>
+      <ellipse class="lid" cx="88" cy="98" rx="17.2" ry="19.2" fill="url(#furHead)"/>
+    </g>
+    <g>
+      <ellipse cx="132" cy="98" rx="17" ry="19" fill="#2b2417"/>
+      <ellipse cx="132" cy="98" rx="15.4" ry="17.4" fill="url(#irisG)"/>
+      <ellipse cx="132" cy="98" rx="4.6" ry="13.6" fill="#101208"/>
+      <circle class="glint" cx="126.5" cy="90" r="3.8" fill="#ffffff" opacity=".95"/>
+      <ellipse class="lid b" cx="132" cy="98" rx="17.2" ry="19.2" fill="url(#furHead)"/>
+    </g>
+
+    <!-- hocico -->
+    <ellipse cx="110" cy="124" rx="24" ry="15" fill="#dcc7a4" opacity=".5"/>
+    <path d="M110 115 L 118 122 L 110 129 L 102 122 Z" fill="#d98a86"/>
+    <path d="M110 129 v6 M110 135 C 104 141 98 139 96 134 M110 135 C 116 141 122 139 124 134"
+          stroke="#6b5537" stroke-width="2.8" fill="none" stroke-linecap="round"/>
+    <!-- bigotes cortos y curvos -->
+    <g stroke="#efe4cb" stroke-width="1.8" fill="none" opacity=".6" stroke-linecap="round">
+      <path d="M88 122 C 72 118 60 116 44 114"/>
+      <path d="M88 128 C 72 129 60 131 44 135"/>
+      <path d="M132 122 C 148 118 160 116 176 114"/>
+      <path d="M132 128 C 148 129 160 131 176 135"/>
+    </g>
+  </symbol>
+
+  <!-- ===== EL GATITO ENROSCADO Y DORMIDO (para el amanecer) ===== -->
+  <symbol id="kitten-sleep" viewBox="0 0 300 180">
+    <!-- cola que envuelve el frente -->
+    <path d="M258 136 C 278 150 260 170 226 167 C 182 163 134 162 108 158"
+          fill="none" stroke="#463724" stroke-width="16" stroke-linecap="round"/>
+    <path d="M258 136 C 278 150 260 170 226 167 C 182 163 134 162 108 158"
+          fill="none" stroke="#7d6547" stroke-width="9.5" stroke-linecap="round"/>
+    <!-- cuerpo enroscado -->
+    <path d="M74 130 C 66 94 96 68 142 66 C 196 64 246 80 262 110
+             C 272 130 258 150 224 153 C 176 157 104 156 84 148
+             C 74 144 72 138 74 130 Z" fill="url(#furBody)"/>
+    <!-- vientre claro -->
+    <ellipse cx="158" cy="138" rx="74" ry="15" fill="url(#furChest)" opacity=".75"/>
+    <!-- rayas del lomo, en la parte alta y oscura -->
+    <g stroke="#3f321f" stroke-width="6" stroke-linecap="round" fill="none" opacity=".5">
+      <path d="M150 72 C 156 84 158 90 158 98"/>
+      <path d="M178 74 C 182 86 184 92 183 100"/>
+      <path d="M206 80 C 208 92 209 98 207 106"/>
+      <path d="M232 92 C 232 102 231 108 228 114"/>
+    </g>
+    <!-- orejas, sin cruzarse -->
+    <path d="M58 88 L 50 56 L 84 78 Z" fill="url(#furHead)"/>
+    <path d="M61 84 L 55 62 L 79 77 Z" fill="url(#earIn)"/>
+    <path d="M112 82 L 122 54 L 92 76 Z" fill="url(#furHead)"/>
+    <path d="M109 79 L 117 59 L 96 75 Z" fill="url(#earIn)"/>
+    <!-- cabeza apoyada -->
+    <ellipse cx="88" cy="112" rx="40" ry="36" fill="url(#furHead)"/>
+    <!-- la "M" de la frente -->
+    <g stroke="#3f321f" stroke-width="4.5" stroke-linecap="round" fill="none" opacity=".5">
+      <path d="M78 82 C 79 90 79 94 79 98"/>
+      <path d="M92 80 C 92 88 92 92 92 96"/>
+    </g>
+    <!-- ojos cerrados -->
+    <g stroke="#3f321f" stroke-width="3.2" fill="none" stroke-linecap="round">
+      <path d="M64 112 C 70 119 78 119 84 112"/>
+      <path d="M96 108 C 101 114 108 114 113 108"/>
+    </g>
+    <!-- hocico -->
+    <ellipse cx="78" cy="128" rx="18" ry="11" fill="#dcc7a4" opacity=".45"/>
+    <path d="M76 122 L 82 128 L 76 133 L 70 128 Z" fill="#d98a86"/>
+    <path d="M76 133 v4 M76 137 C 72 141 68 140 67 137" stroke="#6b5537"
+          stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <g stroke="#efe4cb" stroke-width="1.6" fill="none" opacity=".55" stroke-linecap="round">
+      <path d="M62 128 C 48 125 40 124 28 123"/>
+      <path d="M62 134 C 48 135 40 137 28 141"/>
+    </g>
+  </symbol>
+
+  <!-- ===== ICONOS ===== -->
+  <symbol id="i-female" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5.2"/><path d="M12 13.2V21M8.6 18h6.8"/></symbol>
+  <symbol id="i-paw" viewBox="0 0 24 24"><ellipse cx="12" cy="15.6" rx="5.4" ry="4.4"/><circle cx="5.6" cy="10.4" r="2.3"/><circle cx="10" cy="6.6" r="2.3"/><circle cx="14.6" cy="6.6" r="2.3"/><circle cx="18.6" cy="10.6" r="2.3"/></symbol>
+  <symbol id="i-cat" viewBox="0 0 24 24"><path d="M4.4 20.4V10.6L7 4.6l3.4 3.6h3.2L17 4.6l2.6 6v9.8z"/><path d="M9.4 12.6h.01M14.6 12.6h.01" stroke-width="2.2"/><path d="M12 15.4v1.6"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M3.4 10.6 12 3.4l8.6 7.2V20a1 1 0 0 1-1 1h-5v-6.4H10.4V21h-5a1 1 0 0 1-1-1z"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.4 14.4A8.6 8.6 0 0 1 9.6 3.6a8.6 8.6 0 1 0 10.8 10.8z"/></symbol>
+  <symbol id="i-window" viewBox="0 0 24 24"><rect x="4" y="3.4" width="16" height="17.2" rx="1.4"/><path d="M12 3.4v17.2M4 12h16"/></symbol>
+  <symbol id="i-grave" viewBox="0 0 24 24"><path d="M6.4 21V9a5.6 5.6 0 0 1 11.2 0v12z"/><path d="M12 11v6M9.4 13.4h5.2M3 21h18"/></symbol>
+  <symbol id="i-road" viewBox="0 0 24 24"><path d="M8.6 3 5 21M15.4 3 19 21M12 4.6v2.8M12 10.6v2.8M12 16.6v2.8"/></symbol>
+  <symbol id="i-sunrise" viewBox="0 0 24 24"><path d="M12 3.4v3.2M5.4 9.4 7.6 11.6M18.6 9.4 16.4 11.6M2.6 18h4M17.4 18h4M2.6 21.4h18.8"/><path d="M7.4 18a4.6 4.6 0 0 1 9.2 0"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6.8V12l3.6 2.4"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21.4S4.8 14.9 4.8 9.9a7.2 7.2 0 0 1 14.4 0c0 5-7.2 11.5-7.2 11.5z"/><circle cx="12" cy="9.8" r="2.6"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.2 12S6 5.6 12 5.6 21.8 12 21.8 12 18 18.4 12 18.4 2.2 12 2.2 12z"/><ellipse cx="12" cy="12" rx="2.2" ry="3.4"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><circle cx="10.6" cy="10.6" r="6.6"/><path d="M15.6 15.6 21 21"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20.4s-8.2-4.9-8.2-10.3A4.7 4.7 0 0 1 12 7a4.7 4.7 0 0 1 8.2 3.1c0 5.4-8.2 10.3-8.2 10.3z"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="m12 3 2.8 5.9 6.4.8-4.7 4.4 1.2 6.3L12 17.4 6.3 20.4l1.2-6.3-4.7-4.4 6.4-.8z"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24"><path d="M12 2.6v5M12 16.4v5M2.6 12h5M16.4 12h5M6 6l3 3M15 15l3 3M18 6l-3 3M9 15l-3 3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 21.4c4-1.8 6.6-5.4 6.6-9.8V5.4L12 2.8 5.4 5.4v6.2c0 4.4 2.6 8 6.6 9.8z"/><path d="m9.2 12 2 2 3.6-3.8"/></symbol>
+  <symbol id="i-crown" viewBox="0 0 24 24"><path d="M3 8.6l3.6 3.2L12 4.6l5.4 7.2L21 8.6 19.4 19.4H4.6z"/></symbol>
+  <symbol id="i-group" viewBox="0 0 24 24"><circle cx="8" cy="9" r="3.2"/><circle cx="16.6" cy="10.4" r="2.6"/><path d="M2.6 20c0-3 2.4-5.4 5.4-5.4s5.4 2.4 5.4 5.4M15 14.8c2.6 0 4.6 2 4.6 4.6"/></symbol>
+  <symbol id="i-tear" viewBox="0 0 24 24"><path d="M12 3.4c3.6 4.6 6.4 8 6.4 11.2A6.4 6.4 0 0 1 12 21a6.4 6.4 0 0 1-6.4-6.4c0-3.2 2.8-6.6 6.4-11.2z"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24"><path d="M5.4 21V3.6M5.4 4.6h13l-2.6 4.4 2.6 4.4h-13"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v18M6.5 21h11M4 7.5h16M4 7.5 1.6 14a3.2 3.2 0 0 0 4.8 0zM20 7.5 17.6 14a3.2 3.2 0 0 0 4.8 0z"/><path d="M12 5.4 8 7M12 5.4 16 7"/></symbol>
+  <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+</svg>
+
+<div class="progress" id="bar"></div>
+
+<div class="viewport">
+<div class="stage" id="stage">
+
+  <!-- ===================== L01 · PORTADA ===================== -->
+  <section class="slide" id="s1" aria-label="Lámina 01 — Portada">
+    <div class="motes" data-motes="16"></div>
+    <div class="eyes-bg">
+      <span class="ep" style="left:6%;top:22%;--w:6px;--h:8px;--g:9px;animation-delay:1.2s"><i></i><i></i></span>
+      <span class="ep" style="left:88%;top:34%;--w:5px;--h:7px;animation-delay:3.4s"><i></i><i></i></span>
+      <span class="ep" style="left:13%;top:70%;--w:4px;--h:6px;--g:6px;animation-delay:5.1s"><i></i><i></i></span>
+      <span class="ep" style="left:82%;top:76%;--w:5px;--h:7px;animation-delay:2.2s"><i></i><i></i></span>
+    </div>
+    <div class="head">
+      <div class="cover-logo" data-anim="down" style="--d:.1s">
+        <img src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+        <div class="t"><b>Publicidad 2</b><span><i>Docente ·</i> Rudiger Stuart González Preciado</span></div>
+      </div>
+      <div class="head-r" data-anim="down" style="--d:.18s">
+        <div class="brandline">
+          <span class="hi">Lámina 01 — Portada</span>
+          <span>Presencial · Viernes nocturno</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="cover">
+        <!-- El gatito ilustrado. Si se coloca assets/img/01-gatito.png,
+             esa imagen lo reemplaza; si no existe, el onerror la retira. -->
+        <div class="cover-kit-wrap" data-anim="scale" style="--d:.22s">
+          <svg class="kit cover-kit" viewBox="0 0 220 256" aria-label="El Gatito">
+            <use href="#kitten"/>
+          </svg>
+          <img class="cover-kit-img" src="assets/img/01-gatito.png"
+               alt="El Gatito" onerror="this.remove()">
+        </div>
+
+        <p class="pre" data-anim="up" style="--d:.34s">
+          <span class="ln"></span><span class="lb g">Análisis de personaje</span><span class="ln r"></span>
+        </p>
+
+        <h1 class="oil" data-anim="rise" style="--d:.42s">Un sueño de mil gatos</h1>
+
+        <div class="titlerule" data-anim="growc" style="--d:.72s" aria-hidden="true">
+          <span class="l"></span><span class="paw"></span><span class="r"></span>
+        </div>
+
+        <div data-anim="up" style="--d:.8s">
+          <span class="who">EL GATITO<small>The Sandman · episodio 11 · el segmento animado</small></span>
+        </div>
+
+        <div class="credits" data-anim="up" style="--d:.92s">
+          <div><span class="k">Institución</span>
+            <span class="v">Politécnico Grancolombiano<small>Institución Universitaria</small></span></div>
+          <div><span class="k">Asignatura</span>
+            <span class="v">Publicidad 2<small>Tercer semestre</small></span></div>
+          <div><span class="k">Modalidad</span>
+            <span class="v">Presencial<small>Viernes nocturno</small></span></div>
+        </div>
+
+        <div class="team" data-anim="up" style="--d:1.04s">
+          <span class="k">Integrantes</span>
+          <div class="names">
+            <b>Mariana Pinzón</b><span class="paw"></span>
+            <b>Mariana Silva</b><span class="paw"></span>
+            <b>William Fonseca</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span></span><span></span></div>
+  </section>
+
+  <!-- ===================== L02 · TRAMA ===================== -->
+  <section class="slide" id="s2" aria-label="Lámina 02 — Trama">
+    <div class="motes" data-motes="10"></div>
+    <div class="head">
+      <div class="head-l">
+        <svg class="kit head-kit" data-anim="scale" style="--d:.05s" viewBox="0 0 220 256" aria-hidden="true"><use href="#kitten"/></svg>
+        <div class="head-tx">
+          <div class="head-tag" data-anim="right" style="--d:.06s">
+            <span class="n">LÁMINA 02</span><span class="lb g">El Gatito</span>
+          </div>
+          <h2 class="oil" data-anim="right" style="--d:.14s">Trama</h2>
+        </div>
+      </div>
+      <div class="head-r" data-anim="left" style="--d:.14s">
+        <div class="brandline"><span class="hi">Publicidad 2</span><span>Presencial · Viernes nocturno</span></div>
+        <span class="vbar"></span>
+        <img class="logo-poli" src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="tri">
+        <!-- INTRO · la casa, óleo cálido -->
+        <figure class="tri-cell" data-anim="wipeup" style="--d:.24s;margin:0">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-label="La casa">
+            <rect width="400" height="300" fill="url(#skyWarm)"/>
+            <g filter="url(#oilEdge)" opacity=".9">
+              <rect x="248" y="42" width="118" height="112" rx="3" fill="#16203c"/>
+              <path d="M248 98h118M307 42v112" stroke="#e8b45e" stroke-width="4" opacity=".7"/>
+              <circle cx="336" cy="70" r="11" fill="#fdf6dc" opacity=".9"/>
+            </g>
+            <ellipse cx="150" cy="250" rx="150" ry="46" fill="#e8b45e" opacity=".22" filter="url(#softGlow)"/>
+            <path d="M0 236 C 120 226 280 232 400 224 L400 300 L0 300 Z" fill="#2a1a0c" opacity=".92"/>
+            <g filter="url(#oilEdge)">
+              <ellipse cx="86" cy="228" rx="30" ry="11" fill="#8a5a22"/>
+              <path d="M60 228 C 62 214 110 214 112 228 Z" fill="#c98a37"/>
+            </g>
+            <g transform="translate(150 96) scale(.62)">
+              <use href="#kitten" width="220" height="256"/>
+            </g>
+          </svg>
+          <img src="assets/img/02-01-intro.png" alt="El Gatito en casa, antes de salir" onerror="this.remove()">
+          <figcaption></figcaption>
+        </figure>
+
+        <!-- NUDO · el cementerio, noche azul y ojos -->
+        <figure class="tri-cell" data-anim="wipeup" style="--d:.36s;margin:0">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-label="El cementerio">
+            <rect width="400" height="300" fill="url(#skyNight)"/>
+            <circle cx="308" cy="56" r="46" fill="url(#moonG)"/>
+            <circle cx="308" cy="56" r="20" fill="#fdf6dc" opacity=".95"/>
+            <g fill="#f6eeda" opacity=".55">
+              <circle cx="52" cy="40" r="1.4"/><circle cx="120" cy="26" r="1.1"/><circle cx="186" cy="52" r="1.3"/>
+              <circle cx="366" cy="112" r="1.1"/><circle cx="88" cy="96" r="1"/><circle cx="246" cy="30" r="1.2"/>
+            </g>
+            <g filter="url(#oilEdge)" fill="#0b1024" opacity=".95">
+              <path d="M22 300V212a17 17 0 0 1 34 0v88z"/>
+              <path d="M78 300v-72a13 13 0 0 1 26 0v72z"/>
+              <path d="M132 300v-96a20 20 0 0 1 40 0v96z"/>
+              <path d="M212 300v-66a12 12 0 0 1 24 0v66z"/>
+              <path d="M266 300v-84a16 16 0 0 1 32 0v84z"/>
+              <path d="M330 300v-58a11 11 0 0 1 22 0v58z"/>
+            </g>
+            <path d="M0 268 C 110 258 290 264 400 254 L400 300 L0 300 Z" fill="#070a16"/>
+            <!-- la Profeta sobre la tumba -->
+            <g transform="translate(140 150) scale(.42)" opacity=".95">
+              <use href="#kitten" width="220" height="256"/>
+            </g>
+            <!-- la congregación: ojos en la oscuridad -->
+            <g fill="#c3e05a">
+              <ellipse cx="40" cy="276" rx="3" ry="4"/><ellipse cx="50" cy="276" rx="3" ry="4"/>
+              <ellipse cx="96" cy="284" rx="2.6" ry="3.6"/><ellipse cx="105" cy="284" rx="2.6" ry="3.6"/>
+              <ellipse cx="196" cy="280" rx="3" ry="4"/><ellipse cx="206" cy="280" rx="3" ry="4"/>
+              <ellipse cx="290" cy="286" rx="2.6" ry="3.6"/><ellipse cx="299" cy="286" rx="2.6" ry="3.6"/>
+              <ellipse cx="352" cy="274" rx="2.8" ry="3.8"/><ellipse cx="361" cy="274" rx="2.8" ry="3.8"/>
+            </g>
+            <!-- el gatito, pequeño y de frente -->
+            <g transform="translate(258 196) scale(.34)">
+              <use href="#kitten" width="220" height="256"/>
+            </g>
+          </svg>
+          <img src="assets/img/02-02-nudo.png" alt="El Gatito escuchando a la Profeta en el cementerio" onerror="this.remove()">
+        </figure>
+
+        <!-- DESENLACE · el amanecer y el sueño -->
+        <figure class="tri-cell" data-anim="wipeup" style="--d:.48s;margin:0">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-label="El amanecer">
+            <rect width="400" height="300" fill="url(#skyDawn)"/>
+            <g filter="url(#oilEdge)" opacity=".85">
+              <rect x="30" y="30" width="130" height="120" rx="3" fill="#f3c69c" opacity=".3"/>
+              <path d="M30 90h130M95 30v120" stroke="#f3c69c" stroke-width="4" opacity=".7"/>
+            </g>
+            <ellipse cx="210" cy="258" rx="170" ry="48" fill="#f3c69c" opacity=".2" filter="url(#softGlow)"/>
+            <path d="M0 244 C 130 234 270 240 400 232 L400 300 L0 300 Z" fill="#231634" opacity=".94"/>
+            <!-- motas de sueño subiendo -->
+            <g fill="#f2cd72" opacity=".8">
+              <circle cx="252" cy="150" r="2.6"/><circle cx="276" cy="120" r="2"/><circle cx="238" cy="106" r="1.6"/>
+              <circle cx="296" cy="86" r="2.2"/><circle cx="262" cy="66" r="1.4"/><circle cx="312" cy="140" r="1.7"/>
+            </g>
+            <g transform="translate(96 178) scale(.86)">
+              <use href="#kitten-sleep" width="260" height="160"/>
+            </g>
+          </svg>
+          <img src="assets/img/02-03-desenlace.png" alt="El Gatito dormido, soñando al amanecer" onerror="this.remove()">
+        </figure>
+      </div>
+
+      <div class="tl" aria-hidden="true">
+        <span class="track"></span>
+        <div class="nodes"><span class="nd"><i></i></span><span class="nd"><i></i></span><span class="nd"><i></i></span></div>
+      </div>
+
+      <div class="acts">
+        <article class="panel warm" data-anim="up" style="--d:.68s">
+          <span class="glow"></span>
+          <div class="act-hd"><span class="n">01</span><h3 class="oil">INTRO</h3></div>
+          <p>Una gatita atigrada vive cómoda con sus dueños, que la acuestan cada noche. Otro gato la llama desde la ventana y la invita a una aventura: hay una reunión que nadie quiere perderse. Ella deja la casa y lo sigue en la oscuridad.</p>
+        </article>
+        <article class="panel" data-anim="up" style="--d:.78s">
+          <span class="glow"></span>
+          <div class="act-hd"><span class="n">02</span><h3 class="oil">NUDO</h3></div>
+          <p>En un cementerio, cientos de gatos escuchan a la Profeta, una siamesa cuyas crías fueron ahogadas por su dueño. Cuenta que viajó al Sueño y supo la verdad: los gatos fueron gigantes hasta que mil humanos soñaron un mundo al revés. Si mil gatos sueñan juntos, el mundo volverá.</p>
+        </article>
+        <article class="panel dream" data-anim="up" style="--d:.88s">
+          <span class="glow"></span>
+          <div class="act-hd"><span class="n">03</span><h3 class="oil">DESENLACE</h3></div>
+          <p>Los gatos adultos se van sin creerle: nadie logrará que mil gatos hagan algo al mismo tiempo. La gatita, en cambio, cree. Vuelve a casa, se acomoda y cierra los ojos para soñar. Al amanecer sus dueños la ven dormida, sin saber lo que sueña.</p>
+        </article>
+      </div>
+
+      <article class="tono panel leaf" data-anim="up" style="--d:1.02s">
+        <span class="glow"></span>
+        <div class="tono-l">
+          <span class="lb">Tono del relato</span>
+          <b class="eye-text">ESPERANZADOR</b>
+        </div>
+        <span class="vr" aria-hidden="true"></span>
+        <p>Todo en la historia dice que el cambio es imposible: los adultos se burlan y nadie promete que funcione. Pero el relato no cierra con los escépticos, cierra con <em>la más pequeña creyendo</em>. Nos deja el gesto, no el resultado.</p>
+      </article>
+    </div>
+
+    <div class="foot">
+      <span class="fl"><span class="fline"></span>Trama · Intro · Nudo · Desenlace</span>
+      <span>Lámina 02</span>
+    </div>
+  </section>
+
+  <!-- ===================== L03 · PERSONAJE ===================== -->
+  <section class="slide" id="s3" aria-label="Lámina 03 — Personaje">
+    <div class="motes" data-motes="8"></div>
+    <div class="head">
+      <div class="head-l">
+        <svg class="kit head-kit" data-anim="scale" style="--d:.05s" viewBox="0 0 220 256" aria-hidden="true"><use href="#kitten"/></svg>
+        <div class="head-tx">
+          <div class="head-tag" data-anim="right" style="--d:.06s">
+            <span class="n">LÁMINA 03</span><span class="lb g">El Gatito</span>
+          </div>
+          <h2 class="oil" data-anim="right" style="--d:.14s">Personaje</h2>
+        </div>
+      </div>
+      <div class="head-r" data-anim="left" style="--d:.14s">
+        <div class="brandline"><span class="hi">Publicidad 2</span><span>Presencial · Viernes nocturno</span></div>
+        <span class="vbar"></span>
+        <img class="logo-poli" src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="demo">
+        <article class="panel deep" data-anim="up" style="--d:.2s">
+          <span class="lb">Sexo</span>
+          <span class="v">Femenino</span>
+        </article>
+        <article class="panel warm" data-anim="up" style="--d:.27s">
+          <span class="glow"></span>
+          <span class="lb">Edad</span>
+          <span class="row"><span class="v oil">3–4</span><span class="u">MESES</span></span>
+          <span class="cap">Cría, recién destetada</span>
+        </article>
+        <article class="panel deep" data-anim="up" style="--d:.34s">
+          <span class="lb">Condición</span>
+          <span class="v sm">Gata de casa</span>
+          <span class="meter" aria-label="Condición: doméstica"><i></i><i></i><i></i></span>
+        </article>
+        <article class="panel deep" data-anim="up" style="--d:.41s">
+          <span class="lb">Raza</span>
+          <span class="v sm">Atigrada doméstica<br>de pelo corto</span>
+        </article>
+      </div>
+
+      <div class="cols">
+        <article class="panel" data-anim="up" style="--d:.5s">
+          <span class="glow"></span>
+          <span class="chip"><span class="dt"></span>Actitudes / Opiniones</span>
+          <div class="plist">
+            <div class="pli"><span class="dt"></span><p>Curiosa: sale de casa de noche siguiendo a un gato que no conoce.</p></div>
+            <div class="pli"><span class="dt"></span><p>Confiada: no cuestiona el camino ni a quien la guía.</p></div>
+            <div class="pli"><span class="dt"></span><p>Receptiva: escucha el sermón completo, sin burlarse como los adultos.</p></div>
+            <div class="pli"><span class="dt"></span><p>Empática: le afecta la pérdida de las crías de la Profeta.</p></div>
+            <div class="pli"><span class="dt"></span><p>Toma la palabra ajena como verdad, no como locura.</p></div>
+            <div class="pli"><span class="dt"></span><p>Inconforme en silencio: vive cómoda y aun así el mensaje le hace sentido.</p></div>
+          </div>
+        </article>
+
+        <article class="panel leaf" data-anim="up" style="--d:.58s">
+          <span class="glow"></span>
+          <span class="chip leaf"><span class="dt"></span>Intereses</span>
+          <div class="plist">
+            <div class="pli"><span class="dt"></span><p>Descubrir qué hay más allá de su casa y de sus dueños.</p></div>
+            <div class="pli"><span class="dt"></span><p>Pertenecer a la comunidad de gatos que se reúne de noche.</p></div>
+            <div class="pli"><span class="dt"></span><p>La promesa de un mundo donde ningún gato sufra.</p></div>
+          </div>
+        </article>
+
+        <article class="panel dream" data-anim="up" style="--d:.66s">
+          <span class="glow"></span>
+          <span class="chip dream"><span class="dt"></span>Intenciones</span>
+          <div class="plist">
+            <div class="pli"><span class="dt"></span><p>Llegar a la reunión del cementerio sin que sus dueños lo noten.</p></div>
+            <div class="pli"><span class="dt"></span><p>Entender si lo que dice la Profeta puede ser verdad.</p></div>
+            <div class="pli"><span class="dt"></span><p>Soñar el mundo como es de verdad, para sumarse a los mil soñadores.</p></div>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="fl"><span class="fline"></span>Personaje · Demográficos · Actitudes · Intereses · Intenciones</span>
+      <span>Lámina 03</span>
+    </div>
+  </section>
+
+  <!-- ===================== L04 · ESCENARIO ===================== -->
+  <section class="slide" id="s4" aria-label="Lámina 04 — Escenario">
+    <div class="motes" data-motes="9"></div>
+    <div class="head">
+      <div class="head-l">
+        <svg class="kit head-kit" data-anim="scale" style="--d:.05s" viewBox="0 0 220 256" aria-hidden="true"><use href="#kitten"/></svg>
+        <div class="head-tx">
+          <div class="head-tag" data-anim="right" style="--d:.06s">
+            <span class="n">LÁMINA 04</span><span class="lb g">El Gatito</span>
+          </div>
+          <h2 class="oil" data-anim="right" style="--d:.14s">Escenario</h2>
+        </div>
+      </div>
+      <div class="head-r" data-anim="left" style="--d:.14s">
+        <div class="brandline"><span class="hi">Publicidad 2</span><span>Presencial · Viernes nocturno</span></div>
+        <span class="vbar"></span>
+        <img class="logo-poli" src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="axis-hd" data-anim="up" style="--d:.16s">
+        <span class="g"><svg class="ico"><use href="#i-clock"/></svg><span class="lb">Cuándo</span></span>
+        <span class="chip"><span class="dt"></span>Una sola noche · del anochecer al amanecer · 5 escenarios</span>
+      </div>
+
+      <div class="rail">
+        <span class="line" aria-hidden="true"></span>
+        <span class="mk" style="left:0%;--d:.55s">
+          <b class="oil">Anochecer</b><span class="nd"><i></i></span><em>1 escenario</em></span>
+        <span class="mk" style="left:26%;--d:.72s">
+          <b class="oil">Noche</b><span class="nd"><i></i></span><em>2 escenarios</em></span>
+        <span class="mk big" style="left:66%;--d:.89s">
+          <b class="oil">Medianoche</b><span class="nd"><i></i></span><em>1 escenario · el sermón</em></span>
+        <span class="mk" style="left:100%;--d:1.06s">
+          <b class="oil">Amanecer</b><span class="nd"><i></i></span><em>1 escenario</em></span>
+      </div>
+
+      <div class="scns">
+        <article class="scn panel warm" data-anim="rise" style="--d:.3s">
+          <span class="glow"></span>
+          <div class="hd"><svg class="ico"><use href="#i-home"/></svg><span class="yb">Anochecer</span></div>
+          <span class="zn">Inglaterra · casa de sus dueños</span>
+          <h4>La cocina</h4>
+          <span class="hr"></span>
+          <p>Don y Laura Lynn la acomodan para dormir. Es una gata de casa: alimentada, cuidada y sin nada que temer.</p>
+        </article>
+
+        <article class="scn panel deep" data-anim="rise" style="--d:.37s">
+          <span class="glow"></span>
+          <div class="hd"><svg class="ico"><use href="#i-window"/></svg><span class="yb">Noche</span></div>
+          <span class="zn">Inglaterra · casa de sus dueños</span>
+          <h4>La ventana</h4>
+          <span class="hr"></span>
+          <p>Otro gato la llama desde afuera y la invita a una aventura. Ella cruza el umbral y sale de su mundo seguro.</p>
+        </article>
+
+        <article class="scn panel deep" data-anim="rise" style="--d:.44s">
+          <span class="glow"></span>
+          <div class="hd"><svg class="ico"><use href="#i-road"/></svg><span class="yb">Noche</span></div>
+          <span class="zn">Inglaterra · suburbios</span>
+          <h4>El camino nocturno</h4>
+          <span class="hr"></span>
+          <p>En el trayecto se les suman más gatos curiosos. Todos van al mismo lugar, guiados por el rumor de la reunión.</p>
+        </article>
+
+        <article class="scn panel leaf" data-anim="rise" style="--d:.51s">
+          <span class="glow"></span>
+          <div class="hd"><svg class="ico"><use href="#i-grave"/></svg><span class="yb">Medianoche</span></div>
+          <span class="zn">Inglaterra · cementerio humano</span>
+          <h4>La tumba de la Profeta</h4>
+          <span class="hr"></span>
+          <p>Cientos de gatos escuchan el sermón. Aquí oye el ahogamiento de las crías y la revelación del Gato de los Sueños.</p>
+        </article>
+
+        <article class="scn panel dream" data-anim="rise" style="--d:.58s">
+          <span class="glow"></span>
+          <div class="hd"><svg class="ico"><use href="#i-sunrise"/></svg><span class="yb">Amanecer</span></div>
+          <span class="zn">Inglaterra · casa de sus dueños</span>
+          <h4>Su cama</h4>
+          <span class="hr"></span>
+          <p>Vuelve a casa y se duerme creyendo. Sus dueños la ven soñar por la mañana, sin saber qué está soñando.</p>
+        </article>
+      </div>
+
+      <div class="esc-sum panel deep" data-anim="up" style="--d:.8s">
+        <div class="sum-l">
+          <span class="lb">Dónde</span>
+          <b class="oil">Resumen</b>
+          <span class="meta">2 lugares únicos</span>
+        </div>
+        <span class="vr" aria-hidden="true"></span>
+        <div class="sum-r">
+          <div class="sum-city">
+            <span class="cn"><span>La casa de sus dueños</span><em>3 escenas</em></span>
+            <p>La cocina · La ventana · Su cama <i>— sale y vuelve al mismo lugar, pero ya no es la misma gata</i></p>
+          </div>
+          <div class="sum-city b">
+            <span class="cn"><span>El cementerio</span><em>1 escena</em></span>
+            <p>La tumba de la Profeta</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="fl"><span class="fline"></span>Escenario · Cuándo y dónde</span>
+      <span>Lámina 04</span>
+    </div>
+  </section>
+
+  <!-- ===================== L05 · MOTIVACIÓN ===================== -->
+  <section class="slide" id="s5" aria-label="Lámina 05 — Motivación">
+    <div class="motes" data-motes="12"></div>
+    <div class="eyes-bg">
+      <span class="ep" style="left:5%;top:78%;--w:5px;--h:7px;animation-delay:2.6s"><i></i><i></i></span>
+      <span class="ep" style="left:92%;top:24%;--w:4px;--h:6px;animation-delay:4.8s"><i></i><i></i></span>
+    </div>
+    <div class="head">
+      <div class="head-l">
+        <svg class="kit head-kit" data-anim="scale" style="--d:.05s" viewBox="0 0 220 256" aria-hidden="true"><use href="#kitten"/></svg>
+        <div class="head-tx">
+          <div class="head-tag" data-anim="right" style="--d:.06s">
+            <span class="n">LÁMINA 05</span><span class="lb g">El Gatito</span>
+          </div>
+          <h2 class="oil" data-anim="right" style="--d:.14s">Motivación</h2>
+        </div>
+      </div>
+      <div class="head-r" data-anim="left" style="--d:.14s">
+        <div class="brandline"><span class="hi">Publicidad 2</span><span>Presencial · Viernes nocturno</span></div>
+        <span class="vbar"></span>
+        <img class="logo-poli" src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="motiv">
+        <div class="mleft">
+          <article class="panel warm" data-anim="up" style="--d:.2s">
+            <span class="glow"></span>
+            <span class="chip"><span class="dt"></span>Emociones</span>
+            <div class="egrid">
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>CURIOSIDAD</h4></span>
+                <p>Cuando otro gato la llama desde la ventana y le propone salir.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-tear"/></svg><h4>MIEDO</h4></span>
+                <p>Al oír cómo el dueño de la Profeta ahogó a sus crías.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-spark"/></svg><h4>ASOMBRO</h4></span>
+                <p>Ante la revelación de que los gatos fueron gigantes y los humanos, diminutos.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel leaf" data-anim="up" style="--d:.3s">
+            <span class="glow"></span>
+            <span class="chip leaf"><span class="dt"></span>Sentimientos</span>
+            <div class="egrid">
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-heart"/></svg><h4>COMPASIÓN</h4></span>
+                <p>Hacia la Profeta y lo que perdió.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-star"/></svg><h4>ADMIRACIÓN</h4></span>
+                <p>Hacia quien se atreve a predicar sola.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-group"/></svg><h4>PERTENENCIA</h4></span>
+                <p>Al reunirse con cientos de gatos como ella.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-eye"/></svg><h4>ESPERANZA</h4></span>
+                <p>Cree que el mundo puede volver a cambiar.</p>
+              </div>
+              <div class="eit">
+                <span class="nm"><svg class="ico"><use href="#i-flag"/></svg><h4>DETERMINACIÓN</h4></span>
+                <p>Vuelve a casa decidida a soñar, aunque nadie más lo haga.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <article class="panel confl" data-anim="up" style="--d:.4s">
+          <span class="glow"></span>
+          <span class="chip"><span class="dt"></span>Conflicto / Situación</span>
+
+          <div class="ctype">
+            <span class="lb">Tipo</span>
+            <b class="oil">IDEOLÓGICO</b>
+          </div>
+
+          <span class="lb" style="margin-top:16px">Se obtiene al comparar</span>
+          <div class="vs-list">
+            <div class="vs" data-anim="left" style="--d:.56s">
+              <span class="a"><span>SOÑAR</span></span>
+              <span class="o"><em>o</em></span>
+              <span class="b"><span>CONFORMARSE</span></span>
+            </div>
+            <div class="vs" data-anim="left" style="--d:.64s">
+              <span class="a"><span>FE</span></span>
+              <span class="o"><em>o</em></span>
+              <span class="b"><span>BURLA</span></span>
+            </div>
+            <div class="vs" data-anim="left" style="--d:.72s">
+              <span class="a"><span>CAMBIO</span></span>
+              <span class="o"><em>o</em></span>
+              <span class="b"><span>COMODIDAD</span></span>
+            </div>
+          </div>
+
+          <div class="cexp">
+            <span class="r" aria-hidden="true"></span>
+            <blockquote><span class="q">&ldquo;</span>El conflicto del Gatito es elegir entre la comodidad que ya tiene y un mundo que solo existe si se atreve a soñarlo.<span class="q">&rdquo;</span></blockquote>
+          </div>
+        </article>
+      </div>
+    </div>
+
+    <div class="foot">
+      <span class="fl"><span class="fline"></span>Motivación · Emociones · Sentimientos · Conflicto</span>
+      <span>Lámina 05</span>
+    </div>
+  </section>
+
+  <!-- ===================== L06 · GRACIAS ===================== -->
+  <section class="slide" id="s6" aria-label="Lámina 06 — Gracias">
+    <div class="motes" data-motes="18"></div>
+    <div class="eyes-bg">
+      <span class="ep" style="left:8%;top:30%;--w:6px;--h:8px;--g:9px;animation-delay:.8s"><i></i><i></i></span>
+      <span class="ep" style="left:86%;top:26%;--w:5px;--h:7px;animation-delay:2.9s"><i></i><i></i></span>
+      <span class="ep" style="left:16%;top:74%;--w:4px;--h:6px;animation-delay:4.4s"><i></i><i></i></span>
+      <span class="ep" style="left:80%;top:70%;--w:5px;--h:7px;animation-delay:6.1s"><i></i><i></i></span>
+    </div>
+    <div class="head">
+      <div class="cover-logo" data-anim="down" style="--d:.1s">
+        <img src="assets/logo/politecnico-w.png" alt="Politécnico Grancolombiano">
+        <div class="t"><b>Publicidad 2</b><span><i>Docente ·</i> Rudiger Stuart González Preciado</span></div>
+      </div>
+      <div class="head-r" data-anim="down" style="--d:.18s">
+        <div class="brandline">
+          <span class="hi">Lámina 06 — Cierre</span>
+          <span>Presencial · Viernes nocturno</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="body">
+      <div class="thanks">
+        <svg class="kit thanks-kit" data-anim="scale" style="--d:.22s" viewBox="0 0 260 160" aria-hidden="true">
+          <use href="#kitten-sleep"/>
+        </svg>
+        <h1 class="oil" data-anim="rise" style="--d:.32s">Gracias</h1>
+        <div class="titlerule" data-anim="growc" style="--d:.6s" aria-hidden="true">
+          <span class="l"></span><span class="paw"></span><span class="r"></span>
+        </div>
+        <p class="sub" data-anim="up" style="--d:.68s">Un sueño de mil gatos · El Gatito</p>
+
+        <div class="credits" data-anim="up" style="--d:.78s">
+          <div><span class="k">Institución</span>
+            <span class="v">Politécnico Grancolombiano<small>Institución Universitaria</small></span></div>
+          <div><span class="k">Asignatura</span>
+            <span class="v">Publicidad 2<small>Tercer semestre</small></span></div>
+          <div><span class="k">Modalidad</span>
+            <span class="v">Presencial<small>Viernes nocturno</small></span></div>
+        </div>
+
+        <div class="team" data-anim="up" style="--d:.9s">
+          <span class="k">Integrantes</span>
+          <div class="names">
+            <b>Mariana Pinzón</b><span class="paw"></span>
+            <b>Mariana Silva</b><span class="paw"></span>
+            <b>William Fonseca</b>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span></span><span></span></div>
+  </section>
+
+</div><!-- /stage -->
+</div><!-- /viewport -->
+
+<div class="hud">
+  <div class="hud-in">
+    <div class="dots" id="dots" role="tablist" aria-label="Ir a lámina"></div>
+    <span class="hint">← →  navegar · F pantalla completa · P imprimir</span>
+    <div class="nav">
+      <span class="counter"><b id="cur">01</b> / <span id="tot">06</span></span>
+      <button id="prev" aria-label="Lámina anterior"><svg class="ico"><use href="#i-arrow-l"/></svg></button>
+      <button id="next" aria-label="Lámina siguiente"><svg class="ico"><use href="#i-arrow-r"/></svg></button>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  'use strict';
+
+  var stage  = document.getElementById('stage');
+  var slides = Array.prototype.slice.call(stage.querySelectorAll('.slide'));
+  var dotsEl = document.getElementById('dots');
+  var barEl  = document.getElementById('bar');
+  var curEl  = document.getElementById('cur');
+  var totEl  = document.getElementById('tot');
+  var prevB  = document.getElementById('prev');
+  var nextB  = document.getElementById('next');
+  var i = 0;
+  var pad = function(n){ return (n < 10 ? '0' : '') + n; };
+
+  /* Escala el escenario 1600x900 dejando libre la franja de la barra de
+     control, de modo que el pie de lámina nunca quede debajo de ella. */
+  var root  = document.documentElement;
+  var hudIn = document.querySelector('.hud-in');
+  function fit(){
+    /* Se acota el alto del HUD: si se mide antes de que asiente el layout
+       puede devolver un valor absurdo y arruinar la escala del escenario. */
+    var hudH = Math.ceil(hudIn.getBoundingClientRect().height) || 52;
+    hudH = Math.min(Math.max(hudH, 34), 96);
+    root.style.setProperty('--hudh', hudH + 'px');
+    var k = Math.min(window.innerWidth / 1600, (window.innerHeight - hudH) / 900);
+    root.style.setProperty('--k', String(Math.max(k, 0.1)));
+  }
+  window.addEventListener('resize', fit, {passive:true});
+  window.addEventListener('load', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  fit();
+
+  /* Motas de sueño: polvo de óleo luminoso que sube por la lámina. */
+  Array.prototype.forEach.call(document.querySelectorAll('.motes'), function(box){
+    var n = parseInt(box.getAttribute('data-motes'), 10) || 10;
+    var html = '';
+    for (var m = 0; m < n; m++){
+      var size = (1.6 + Math.random() * 3).toFixed(1);
+      html += '<span class="mote" style="'
+            + 'left:' + (Math.random() * 100).toFixed(1) + '%;'
+            + 'top:' + (55 + Math.random() * 48).toFixed(1) + '%;'
+            + 'width:' + size + 'px;height:' + size + 'px;'
+            + '--dx:' + (Math.random() * 70 - 35).toFixed(0) + 'px;'
+            + 'animation-duration:' + (11 + Math.random() * 13).toFixed(1) + 's;'
+            + 'animation-delay:-' + (Math.random() * 16).toFixed(1) + 's"></span>';
+    }
+    box.innerHTML = html;
+  });
+
+  /* En pantalla completa el cursor desaparece si no se mueve durante 1 s.
+     Se cubre tanto la API de pantalla completa como F11, que no la dispara. */
+  var curT = 0;
+  function isFull(){
+    return !!(document.fullscreenElement || document.webkitFullscreenElement) ||
+           (window.innerHeight >= screen.height - 2 && window.innerWidth >= screen.width - 2);
+  }
+  function cursorWake(){
+    document.body.classList.remove('hide-cursor');
+    clearTimeout(curT);
+    if (isFull()) curT = setTimeout(function(){
+      document.body.classList.add('hide-cursor');
+    }, 1000);
+  }
+  ['mousemove','mousedown','wheel','touchstart'].forEach(function(ev){
+    window.addEventListener(ev, cursorWake, {passive:true});
+  });
+  document.addEventListener('fullscreenchange', cursorWake);
+  document.addEventListener('webkitfullscreenchange', cursorWake);
+  window.addEventListener('resize', cursorWake, {passive:true});
+  cursorWake();
+
+  slides.forEach(function(s, n){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.setAttribute('role','tab');
+    b.setAttribute('aria-label','Lámina ' + pad(n + 1));
+    b.addEventListener('click', function(){ go(n); });
+    dotsEl.appendChild(b);
+  });
+  totEl.textContent = pad(slides.length);
+
+  function go(n){
+    n = Math.max(0, Math.min(slides.length - 1, n));
+    if (n === i && slides[i].classList.contains('is-active')) return;
+    slides.forEach(function(s){ s.classList.remove('is-active'); });
+    void slides[n].offsetWidth;
+    slides[n].classList.add('is-active');
+    i = n;
+    curEl.textContent = pad(i + 1);
+    barEl.style.width = ((i + 1) / slides.length * 100) + '%';
+    Array.prototype.forEach.call(dotsEl.children, function(b, x){
+      b.setAttribute('aria-current', x === i ? 'true' : 'false');
+    });
+    prevB.disabled = (i === 0);
+    nextB.disabled = (i === slides.length - 1);
+    if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
+  }
+
+  prevB.addEventListener('click', function(){ go(i - 1); });
+  nextB.addEventListener('click', function(){ go(i + 1); });
+
+  document.addEventListener('keydown', function(e){
+    var k = e.key;
+    if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter'){ e.preventDefault(); go(i + 1); }
+    else if (k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); go(i - 1); }
+    else if (k === 'Home'){ e.preventDefault(); go(0); }
+    else if (k === 'End'){ e.preventDefault(); go(slides.length - 1); }
+    else if (k === 'f' || k === 'F'){
+      e.preventDefault();
+      if (document.fullscreenElement) document.exitFullscreen();
+      else if (document.documentElement.requestFullscreen) document.documentElement.requestFullscreen();
+    }
+    else if (k === 'p' || k === 'P'){ e.preventDefault(); window.print(); }
+  });
+
+  var lock = 0;
+  window.addEventListener('wheel', function(e){
+    var t = Date.now();
+    if (t - lock < 700 || Math.abs(e.deltaY) < 24) return;
+    lock = t;
+    go(i + (e.deltaY > 0 ? 1 : -1));
+  }, {passive:true});
+
+  var x0 = null, y0 = null;
+  window.addEventListener('touchstart', function(e){
+    x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+  }, {passive:true});
+  window.addEventListener('touchend', function(e){
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+    if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1));
+    x0 = y0 = null;
+  }, {passive:true});
+
+  var start = parseInt((location.hash || '').replace('#',''), 10);
+  go(isNaN(start) ? 0 : start - 1);
+})();
+</script>
+</body>
+</html>
