@@ -304,12 +304,12 @@ body.hide-cursor{cursor:none}
    L02 · LA TRAMA
    ============================================================== */
 .trama{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:132px}
-.act{position:relative; padding:50px 26px 24px; min-height:296px; overflow:visible}
+.act{position:relative; padding:48px 24px 22px; min-height:282px; overflow:visible}
 .act .n{position:absolute; top:-1px; left:28px; font-family:var(--f-ui); font-size:10px;
   font-weight:600; letter-spacing:.3em; color:var(--vellum); background:var(--umber);
   padding:5px 11px 4px}
 .act .hr{display:block; width:44px; height:1px; background:var(--line-3); margin:2px 0 16px}
-.act p{font-family:var(--f-serif); font-size:15px; line-height:1.6;
+.act p{font-family:var(--f-serif); font-size:14px; line-height:1.56;
   color:rgba(47,39,31,.9); margin:0}
 
 /* la gatica, encaramada en el canto de la lámina */
@@ -324,25 +324,27 @@ body.hide-cursor{cursor:none}
 .cat-lie {right:14px; width:242px; margin-bottom:-7px}
 
 /* el tono del relato */
-.tono{margin-top:18px; display:grid; grid-template-columns:250px 1px 1fr; align-items:center;
-  gap:26px; padding:15px 26px; min-height:196px}
+.tono{margin-top:16px; display:grid; grid-template-columns:262px 1px 1fr; align-items:center;
+  gap:26px; padding:15px 26px; min-height:214px}
 .tono .vr{width:1px; height:100%; background:var(--line-2)}
 .tono-l{display:flex; flex-direction:column; gap:11px; min-width:0}
-.tono-l b{font-family:var(--f-disp); font-weight:700; font-size:31px; line-height:1.02;
+.tono-l b{font-family:var(--f-disp); font-weight:700; font-size:28px; line-height:1.02;
   letter-spacing:.02em; color:var(--amber)}
 .tono-r{display:flex; flex-direction:column; gap:11px; min-width:0}
 /* seis tramos de la misma noche: en todos ella es la que sigue creyendo */
 .tramos{display:grid; grid-template-columns:repeat(6,1fr); gap:12px}
-.tramo{display:flex; flex-direction:column; gap:5px; padding-left:11px;
+.tramo{display:flex; flex-direction:column; gap:4px; padding-left:10px;
   border-left:1px solid var(--line-2)}
 .tramo span{font-family:var(--f-ui); font-size:9.5px; font-weight:600; letter-spacing:.15em;
   text-transform:uppercase; color:var(--amber)}
-.tramo p{font-family:var(--f-serif); font-size:13px; line-height:1.44;
-  color:rgba(47,39,31,.88); margin:0}
+.tramo p{font-family:var(--f-serif); font-weight:300; font-size:12.5px; line-height:1.4;
+  color:rgba(62,52,44,.9); margin:0}
 .tono .cierra{font-family:var(--f-serif); font-size:14.5px; line-height:1.55;
   color:rgba(47,39,31,.9); margin:0; padding-top:12px; border-top:1px solid var(--line)}
-.tono .cita{display:block; font-style:italic; font-size:16px; line-height:1.5;
-  color:var(--umber); margin-bottom:8px}
+.tono-l .cita{display:block; font-family:var(--f-serif); font-style:italic; font-size:13.5px;
+  line-height:1.5; color:var(--umber); margin-top:4px}
+.tramo b{display:block; font-family:var(--f-serif); font-weight:600; font-size:13px;
+  line-height:1.3; color:var(--ink)}
 
 /* ==============================================================
    L03 · PERSONAJE
@@ -816,41 +818,42 @@ body.gira-no .gira{display:none !important}
           <span class="cat cat-walk" data-cat><img src="assets/img/gatica-camina.png" decoding="sync" fetchpriority="high" alt="La gatica caminando"></span>
           <span class="n">INTRO</span>
           <span class="hr"></span>
-          <p>En una casa viven dos humanos y una gatica atigrada de pocos meses. La cocina es enorme y ella se ve diminuta ahí. Cuando la alzan para acostarla se retrae, y ya en la cama ronronea. Una noche un gato callejero se asoma por la ventana de la cocina y la invita a una reunión. Los agujeros de abajo están cerrados, pero sale por una ventana del piso alto y salta a un árbol. Camina un trecho oscuro entre el bosque y entra al cementerio.</p>
+          <p>Una gatica de pocos meses duerme en una cocina donde todo le queda grande, hasta sus dueños. Su amo le da las buenas noches. Cuando la alzan se encoge un poco, aunque después ronronea bajito ante las caricias suaves. Se apagan las luces y un gato aparece en la ventana. Le recuerda que esa noche no es cualquier noche, aunque él tampoco espera mucho y solo promete que será entretenida. Ella cree que no puede salir, que todos los agujeros —así los llama— están cerrados. Arriba hay uno abierto. Salta al árbol, casi cae, y sigue camino con él.</p>
         </article>
 
         <article class="plate act" data-r style="--d:.34s">
           <span class="cat cat-sit" data-cat><img src="assets/img/gatica-sentada.png" decoding="sync" fetchpriority="high" alt="La gatica sentada, escuchando"></span>
           <span class="n">NUDO</span>
           <span class="hr"></span>
-          <p>Entre las lápidas habla una gata siamesa, la Profeta. Cuenta que vivía con humanos acomodados, se cruzó con un callejero y su dueño ahogó a las crías. Le rezó al rey de los gatos y los sueños, y viajó hasta él por un camino peligroso. Él le mostró que antes los gatos eran enormes, los humanos pequeños y los cazaban por diversión, hasta que mil humanos soñaron a la vez y todo se invirtió. Si mil gatos sueñan igual, el mundo vuelve. La gatica escucha absorta.</p>
+          <p>Entre los árboles salta una gata siamesa que se postra sobre una lápida. Es la Profeta. Vivía con humanos ricos, tuvo crías de otro gato y su dueño las ahogó. Rota, le rezó al rey de los gatos y los sueños, y viajó hasta él. Él le mostró que antes los gatos eran enormes, los humanos pequeños, y que los cazaban por gusto, hasta que mil humanos soñaron lo mismo a la vez y el mundo se dio vuelta. Si mil gatos sueñan igual, vuelve. La gatica escucha quieta. Ese dolor lo entiende.</p>
         </article>
 
         <article class="plate act" data-r style="--d:.46s">
           <span class="cat cat-lie" data-cat><img src="assets/img/gatica-acostada.png" decoding="sync" fetchpriority="high" alt="La gatica acostada, soñando"></span>
           <span class="n">DESENLACE</span>
           <span class="hr"></span>
-          <p>El camino de vuelta es distinto: empedrado, más iluminado, y ya está saliendo el sol. Se fue de noche sin saber qué iba a oír y vuelve de día con una verdad. Ella pregunta si el mensaje se va a cumplir. El gato adulto se ríe: dice que nadie, ni profeta ni rey ni dios, va a convencer a mil gatos de hacer algo al mismo tiempo. Ella no discute. Entra por donde salió, se acomoda en su cama y se duerme a soñar.</p>
+          <p>De vuelta, el camino es otro. Ya no hay barro, ni árboles negros, ni oscuridad entera, sino piedra bajo las patas y una luz delgada que anuncia el sol. Su compañero le dice con ironía que nadie, ni un profeta ni un rey ni un dios, va a convencer a mil gatos de hacer algo al mismo tiempo. Ella no discute. Ella decide creer. Llega a su cama antes de que sus dueños despierten y se duerme soñando. Nunca fue del todo de esa casa, y algo en ella lo supo desde la cocina.</p>
         </article>
       </div>
 
       <article class="plate tono" data-r style="--d:.64s">
         <div class="tono-l">
           <span class="lb">El tono del relato</span>
-          <b>CONVICCIÓN TRANQUILA</b>
+          <b>ÍNTIMO Y CALLADO</b>
+          <span class="cita">&ldquo;Lo cuento bajito, como se cuentan las cosas que uno lleva guardadas desde siempre.&rdquo;</span>
           <span class="lb">Contado desde ella</span>
         </div>
         <span class="vr" aria-hidden="true"></span>
         <div class="tono-r">
           <div class="tramos">
-            <div class="tramo"><span>En la cocina</span><p>Chiquita en una cocina enorme: se retrae, ronronea y aguanta callada.</p></div>
-            <div class="tramo"><span>La invitación</span><p>El gato adulto la invita sin creerse nada. Ella sí se lo toma en serio.</p></div>
-            <div class="tramo"><span>El salto</span><p>Salta desde la ventana de arriba, casi se cae y no se devuelve.</p></div>
-            <div class="tramo"><span>El camino</span><p>No mira el bosque ni los árboles. Va derecho: ya sabe a quién va a oír.</p></div>
-            <div class="tramo"><span>El sermón</span><p>Escucha absorta la historia completa y le cree de una.</p></div>
-            <div class="tramo"><span>En su cama</span><p>Le dicen que nunca va a pasar. No discute: entra, se acomoda y sueña.</p></div>
+            <div class="tramo"><span>En la cocina</span><b>Ella diminuta, los humanos enormes</b><p>Lo cuenta desde abajo, sin queja, como quien ya se acostumbró a ocupar poco.</p></div>
+            <div class="tramo"><span>La despedida</span><b>Se retrae cuando la quieren acariciar</b><p>No hay reproche en cómo lo cuenta; ese silencio es justo lo que lo vuelve íntimo.</p></div>
+            <div class="tramo"><span>El camino</span><b>Camina tranquila entre los otros gatos</b><p>Aquí baja la guardia y el relato se afloja: sigue hablando bajo, pero sin encogerse.</p></div>
+            <div class="tramo"><span>El cementerio</span><b>Escucha a la Profeta sin moverse</b><p>El relato se queda quieto escuchando, como quien reconoce en otro algo que ya sentía.</p></div>
+            <div class="tramo"><span>El gato irónico</span><b>No le discute, decide creer</b><p>No alza la voz ni se defiende: se lo guarda, y el tono se vuelve más callado.</p></div>
+            <div class="tramo"><span>El regreso</span><b>El camino de vuelta se ve distinto</b><p>Nada se celebra ni se anuncia: la luz entra despacio y ella no dice una palabra.</p></div>
           </div>
-          <p class="cierra"><span class="cita">&ldquo;Le creí. Los demás se rieron. Yo me acosté esa misma noche a hacer mi parte.&rdquo;</span>Para ella la noche no es una aventura. Sale porque la invitan, va derecho y escucha algo enorme que le encaja. Le cree de una. Nadie más le cree: el que la invita va por si acaso y al final se ríe. Ella no discute ni reclama. Entra por donde salió y se pone a soñar eso mismo. Creer sin ruido y empezar a hacerlo la misma noche: eso es convicción tranquila.</p>
+          <p class="cierra">El relato no levanta la voz en ningún momento. Ella cuenta lo suyo bajito, como se cuenta algo que se lleva guardado hace rato. En la casa se hace pequeña y calla; con los gatos se suelta, pero sigue hablando bajo. Ni siquiera al final celebra nada: escucha, entiende y se duerme. Ese modo callado y cercano es el tono.</p>
         </div>
       </article>
     </div>
@@ -901,7 +904,7 @@ body.gira-no .gira{display:none !important}
           </div>
           <div class="ess">
             <span class="lb">Interés e intención</span>
-            <p>El interés se queda en las ganas. La intención ya es un plan que ella ejecuta esa misma noche.</p>
+            <p>Querer un mundo donde sea grande no le cuesta nada: eso es interés. Subir, cruzar la noche y soñar, eso ya es intención.</p>
           </div>
         </article>
 
@@ -927,24 +930,24 @@ body.gira-no .gira{display:none !important}
           <article class="plate band a3" data-r style="--d:.40s">
             <div class="spine"><span class="vt">Intereses</span><span class="num">02</span></div>
             <div class="items">
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-window"/></svg><h4>Salir</h4></span>
-                <p>Le atrae lo de afuera: cuando el gato callejero la invita por la ventana, quiere ir a esa reunión.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>La historia</h4></span>
-                <p>Le da curiosidad lo que va a decir la Profeta. Escucha absorta, con sorpresa, alegría y tristeza.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-bed"/></svg><h4>Descansar</h4></span>
-                <p>Quiere volver a su cama y dormir tranquila, sin que sus dueños noten nada raro.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-group"/></svg><h4>Los suyos</h4></span>
+                <p>Le atrae estar entre gatos: con ellos anda suelta y contenta, sin encogerse como se encoge cuando la alzan en la casa.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>El porqué</h4></span>
+                <p>Le pica saber por qué ella es tan chiquita y los humanos tan grandes, y le gusta que antes fuera al revés.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-heart"/></svg><h4>La otra</h4></span>
+                <p>Le importa el dolor de una gata a la que le ahogaron las crías; algo que ella no ha vivido se le queda dentro.</p></div>
             </div>
           </article>
 
           <article class="plate band a3" data-r style="--d:.50s">
             <div class="spine"><span class="vt">Intenciones</span><span class="num">03</span></div>
             <div class="items">
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-road"/></svg><h4>Escaparse</h4></span>
-                <p>Busca la salida: sube al piso alto, salta por la ventana al árbol y camina hasta el cementerio.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-sunrise"/></svg><h4>Volver a tiempo</h4></span>
-                <p>Se devuelve antes del amanecer, entra por la misma ventana y se acuesta como si nada.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-road"/></svg><h4>Comprobar</h4></span>
+                <p>No se conforma con el recado: sube al piso de arriba, salta al árbol aunque casi cae y camina hasta oírlo ella misma.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-seed"/></svg><h4>Creer</h4></span>
+                <p>El que la acompaña se burla del plan; ella no discute ni pide pruebas, se queda con lo oído y sigue caminando.</p></div>
               <div class="it"><span class="nm"><svg class="ico"><use href="#i-moon"/></svg><h4>Soñar</h4></span>
-                <p>Decide poner su sueño: quiere ser uno de los mil gatos que sueñan lo mismo y cambiar todo.</p></div>
+                <p>Vuelve a su cama antes de que despierten sus dueños, se acuesta y sueña lo mismo, para poner su parte de los mil.</p></div>
             </div>
           </article>
         </div>
@@ -1157,9 +1160,9 @@ body.gira-no .gira{display:none !important}
             </article>
             <article class="plate emo" data-r style="--d:0.86s">
               <span class="ord">05</span>
-              <span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>Insistencia</h4></span>
-              <span class="cu">De vuelta, ante la burla del adulto</span>
-              <p>Le responden con un chiste y ella insiste. Quiere una respuesta de verdad.</p>
+              <span class="nm"><svg class="ico"><use href="#i-group"/></svg><h4>Pertenencia</h4></span>
+              <span class="cu">En el camino de regreso, antes del amanecer</span>
+              <p>Ya no se siente rara ni sola: entiende que hace parte de algo más grande.</p>
             </article>
           </div>
         </div>
@@ -1196,28 +1199,28 @@ body.gira-no .gira{display:none !important}
         </div>
 
         <div class="lluvia" id="lluvia">
-            <span class="fr"><span class="fr-in"><b>Ese lugar no lo eligió</b><i>En la cocina enorme se ve diminuta; se retrae cuando la alzan y ronronea por nervios.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>Su encierro era una suposición</b><i>Decía que no podía salir, pero solo había mirado los agujeros del primer piso.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>Sola no habría salido</b><i>Un gato callejero le avisó de la ventana alta y la sostuvo cuando casi se cae.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>No iba de paseo</b><i>Camina derecho por el bosque oscuro, sin asombrarse: sabe a dónde va.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>Ahí tampoco mandaba ella</b><i>Entre las tumbas es la más pequeña; el gato adulto espanta al otro, no ella.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>El mundo ya cambió antes</b><i>Escucha absorta: mil humanos soñaron a la vez y la realidad quedó invertida.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>Cambió ella, no el camino</b><i>El mismo trayecto de vuelta lo ve empedrado, iluminado y con el sol saliendo.</i></span></span>
-            <span class="fr"><span class="fr-in"><b>Soñar fue su decisión</b><i>El gato adulto se ríe del mensaje; ella no discute, vuelve y se duerme soñando.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>En su casa se siente chiquita</b><i>Duerme sola en una cocina enorme, al lado de humanos que se ven gigantes.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>El cariño le llega como susto</b><i>Cuando la alzan o la quieren acariciar se retrae; el temor se le nota.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Ronronea para calmarse ella sola</b><i>Tras las buenas noches responde con ronroneos a unas caricias que no pidió.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Creía que no había salida</b><i>Cree que todos los agujeros están cerrados; hay uno arriba y salta al árbol.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Afuera el cuerpo se le suelta</b><i>Va por el barro oscuro tranquila y contenta, muy distinta a como estaba en casa.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Ese dolor le suena conocido</b><i>La Profeta cuenta que su dueño le ahogó las crías; la gatica escucha absorta.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Decide creer aunque se burlen</b><i>El compañero dice que mil gatos nunca harán algo a la vez; ella no discute.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Ya no se siente tan chiquita</b><i>Vuelve por el mismo camino, ahora empedrado y con luz, y se duerme a soñar.</i></span></span>
           <div class="union" id="union">
             <span class="halo" aria-hidden="true"></span>
             <div>
               <span class="lb">Todo apunta a:</span>
-              <b>Ella no puede cambiar el mundo, pero sí poner su sueño</b>
+              <b>Nunca se ha sentido parte de su propia casa</b>
             </div>
           </div>
         </div>
 
-        <article class="plate ink cierre" id="cierreConf" data-r style="--d:23.4s">
-            <blockquote><span class="q">&ldquo;</span>Escuchó que el mundo cambia solo si mil gatos sueñan lo mismo la misma noche; ella es una sola gatica diminuta y lo único que puede poner es su sueño.<span class="q">&rdquo;</span></blockquote>
+        <article class="plate ink cierre" id="cierreConf" data-r style="--d:31.8s">
+            <blockquote><span class="q">&ldquo;</span>En su casa vive encogida y solo con los gatos se siente entera; en el cementerio entiende que esa incomodidad no empezó con ella.<span class="q">&rdquo;</span></blockquote>
             <div class="tipo">
-              <span class="et">Conflicto social y existencial</span>
-              <p>Social, porque el mensaje solo sirve si mil gatos sueñan a la vez y nadie los junta: en el camino de vuelta el gato adulto se ríe y dice que eso nunca va a pasar. Existencial, porque es diminuta —casi se cae del árbol y otro la sostiene, y en el cementerio no manda— y vuelve a la misma cocina a poner su sueño sin saber si cuenta.</p>
+              <span class="et">Conflicto existencial y social</span>
+              <p>Existencial, porque duerme sola en una cocina enorme, se retrae cuando la alzan y ronronea para calmarse: nadie le pega, lo que le pesa es sentirse chiquita ahí adentro. Social, porque con sus humanos se encoge y depende de todo lo que ellos deciden, mientras que con los gatos camina suelta; y la Profeta se lo confirma contando lo que su dueño le hizo.</p>
             </div>
         </article>
       </div>
@@ -1391,7 +1394,7 @@ function delayOf(el){
   return parseFloat(getComputedStyle(el).getPropertyValue('--d')) || 0;
 }
 
-function animate(slide){
+function animate(slide, atras){
   if (!GS) return;
   if (tl) tl.kill();
   tl = GS.timeline();
@@ -1442,6 +1445,10 @@ function animate(slide){
      duration:1.15, ease:'power3.out', clearProps:'opacity,transform,translate,rotate,scale,filter,left,top'}, .9);
 
   if (slide.querySelector('.lluvia')) lluvia(slide);
+
+  /* Viniendo de una lámina posterior no tiene sentido volver a esperar la
+     entrada: se muestra ya compuesta y desde ahí se puede seguir hacia atrás. */
+  if (atras) tl.progress(1);
 }
 
 /* ==============================================================
@@ -1461,13 +1468,17 @@ function lluvia(slide){
   if (!frs.length) return;
   box.classList.add('on');
 
+  var CADA = 4.0, ENTRA = 1.4, INICIO = 0.6;
+  var paradas = [];
+
   frs.forEach(function(el, i){
     var p = SLOTS[i % SLOTS.length];
     tl.set(el, {left:p[0] + '%', top:p[1] + '%'}, 0);
-    /* aparecen de a una, con casi tres segundos entre cada una, y ya no
-       se van nunca. Un clic en la lámina salta al final. */
-    tl.fromTo(el, {opacity:0}, {opacity:1, duration:1.4, ease:'power2.out'},
-              0.6 + i * 2.8);
+    /* aparecen de a una cada cuatro segundos y ya no se van nunca. Con las
+       flechas se puede ir parada por parada, adelante y atrás. */
+    var t = INICIO + i * CADA;
+    tl.fromTo(el, {opacity:0}, {opacity:1, duration:ENTRA, ease:'power2.out'}, t);
+    paradas.push(t + ENTRA);
 
     /* flotan siempre, cada una a su ritmo, para que nunca vayan a la par.
        El vaivén va en el envoltorio interno: así el fundido de la frase y
@@ -1482,18 +1493,64 @@ function lluvia(slide){
   });
 
   /* cuando ya están todas, bajan de intensidad y sale la idea del centro */
-  var tUnion = 0.6 + (frs.length - 1) * 2.8 + 1.4 + 0.4;
+  var tUnion = INICIO + (frs.length - 1) * CADA + ENTRA + 0.4;
   tl.to(frs, {opacity:.62, duration:1.4, ease:'power2.out'}, tUnion);
   var un = slide.querySelector('.union');
   if (un) tl.fromTo(un, {opacity:0, scale:.95},
     {opacity:1, scale:1, duration:1.1, ease:'power3.out'}, tUnion + 0.2);
+  paradas.push(tUnion + 1.3);
+  paradas.push(tUnion + 2.6);
+
+  /* Ninguna parada puede quedar más allá del final de la línea de tiempo:
+     si eso pasa, la flecha se queda intentando llegar a un punto que no
+     existe y nunca salta a la lámina siguiente. */
+  var fin = tl.duration() - 0.08;
+  slide._paradas = paradas
+    .map(function(t){ return Math.min(t, fin); })
+    .filter(function(t, k, a){ return k === 0 || t > a[k - 1] + 0.05; });
+}
+
+/* ==============================================================
+   NAVEGACIÓN DENTRO DE UNA LÁMINA
+   La lluvia dura más de medio minuto. Con las flechas se salta de
+   una frase a la siguiente sin esperar, y también se puede volver
+   atrás para rehacer el razonamiento delante del salón. Si nadie
+   toca nada, sigue sola a su ritmo.
+   ============================================================== */
+function paradasActuales(){
+  var s = slides[i];
+  return (s && s._paradas && s.classList.contains('is-active')) ? s._paradas : null;
+}
+
+function avanzar(){
+  var p = paradasActuales();
+  if (p && tl){
+    var t = tl.time(), k;
+    for (k = 0; k < p.length; k++){
+      if (p[k] > t + 0.08){ tl.time(p[k]); tl.play(); return; }
+    }
+  }
+  go(i + 1);
+}
+
+function retroceder(){
+  var p = paradasActuales();
+  if (p && tl && tl.time() > p[0] + 0.08){
+    var t = tl.time(), k;
+    for (k = p.length - 1; k >= 0; k--){
+      if (p[k] < t - 0.08){ tl.time(p[k]); tl.play(); return; }
+    }
+    tl.time(p[0]); tl.play();
+    return;
+  }
+  go(i - 1);
 }
 
 /* ---------- cambio de lámina ---------- */
 function go(n){
   n = Math.max(0, Math.min(slides.length - 1, n));
   if (n === i && slides[i].classList.contains('is-active')) return;
-  var from = slides[i], to = slides[n];
+  var from = slides[i], to = slides[n], atras = n < i;
 
   /* Ninguna lámina puede quedarse encendida si su tween se interrumpe a
      mitad, así que se apaga también con onInterrupt, y de paso se barre
@@ -1519,7 +1576,7 @@ function go(n){
   to.classList.add('is-active');
   if (GS){
     GS.fromTo(to, {opacity:0}, {opacity:1, duration:.42, ease:'power2.out'});
-    animate(to);
+    animate(to, atras);
   }
 
   i = n;
@@ -1527,8 +1584,8 @@ function go(n){
   Array.prototype.forEach.call(dotsEl.children, function(b, x){
     b.setAttribute('aria-current', x === i ? 'true' : 'false');
   });
-  prevB.disabled = (i === 0);
-  nextB.disabled = (i === slides.length - 1);
+  prevB.disabled = (i === 0 && !to._paradas);
+  nextB.disabled = (i === slides.length - 1 && !to._paradas);
   if (history.replaceState) history.replaceState(null, '', '#' + (i + 1));
 }
 
@@ -1541,15 +1598,15 @@ slides.forEach(function(s, n){
   dotsEl.appendChild(b);
 });
 totEl.textContent = pad(slides.length);
-prevB.addEventListener('click', function(){ go(i - 1); });
-nextB.addEventListener('click', function(){ go(i + 1); });
+prevB.addEventListener('click', retroceder);
+nextB.addEventListener('click', avanzar);
 
 /* ---------- teclado, rueda y gesto táctil ---------- */
 document.addEventListener('keydown', function(e){
   if (e.target && /^(INPUT|TEXTAREA)$/.test(e.target.tagName)) return;
   var k = e.key;
-  if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter'){ e.preventDefault(); go(i + 1); }
-  else if (k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); go(i - 1); }
+  if (k === 'ArrowRight' || k === 'PageDown' || k === ' ' || k === 'Enter'){ e.preventDefault(); avanzar(); }
+  else if (k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); retroceder(); }
   else if (k === 'Home'){ e.preventDefault(); go(0); }
   else if (k === 'End'){ e.preventDefault(); go(slides.length - 1); }
   else if (k === 'f' || k === 'F'){ e.preventDefault(); alternarPantalla(); }
@@ -1561,7 +1618,7 @@ window.addEventListener('wheel', function(e){
   var t = Date.now();
   if (t - lock < 780 || Math.abs(e.deltaY) < 24) return;
   lock = t;
-  go(i + (e.deltaY > 0 ? 1 : -1));
+  if (e.deltaY > 0) avanzar(); else retroceder();
 }, {passive:true});
 
 var x0 = null, y0 = null;
@@ -1571,7 +1628,7 @@ window.addEventListener('touchstart', function(e){
 window.addEventListener('touchend', function(e){
   if (x0 === null) return;
   var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
-  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1));
+  if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)){ if (dx < 0) avanzar(); else retroceder(); }
   x0 = y0 = null;
 }, {passive:true});
 

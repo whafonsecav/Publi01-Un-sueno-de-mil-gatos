@@ -28,6 +28,8 @@ GSAP va incluido en `assets/js/` y lo único que se descarga de fuera son las ti
 | --- | --- |
 | Lámina siguiente | `→` · `Espacio` · `PageDown` · rueda abajo · swipe izquierda |
 | Lámina anterior | `←` · `PageUp` · rueda arriba · swipe derecha |
+| Avanzar dentro de la lluvia (lámina 06) | `→` — cada pulsación saca la frase siguiente |
+| Retroceder dentro de la lluvia | `←` — cada pulsación quita la última |
 | Primera / última | `Inicio` / `Fin` |
 | Pantalla completa | `F` o el botón ⛶ de la barra |
 | Imprimir o exportar a PDF | `P` |
@@ -108,14 +110,22 @@ apareciendo de a uno cada ~3 segundos y se quedan flotando alrededor, dejando li
 centro; ahí aterriza la idea a la que apuntan todos, y de ella sale el conflicto.
 **Un clic en la lámina salta al final**, por si hay que ir de afán.
 
-**El tono no es «esperanzador».** La esperanza mira al resultado, y a la gatica le dicen en
-la cara que mil gatos nunca harán nada al mismo tiempo — y se duerme igual de tranquila a
-soñarlo. Lo que hace no depende de que se cumpla. El tono es **convicción tranquila**: cree
-sin ruido y empieza a hacerlo esa misma noche.
+**El tono es «íntimo y callado».** Se descartó «esperanzador» (mira al resultado, y a ella
+le dicen en la cara que nunca va a pasar) y también «convicción tranquila» (suena a decisión
+en voz alta, y ella nunca afirma nada). El relato no levanta la voz en ningún momento: en la
+casa se hace pequeña y calla, con los gatos se suelta pero sigue hablando bajo, y ni siquiera
+al final celebra nada.
 
-**Intereses e intenciones no son lo mismo** y la lámina 03 los separa: el interés se queda
-en las ganas (salir, oír la historia, descansar); la intención es un plan que ella ejecuta
-esa noche (escaparse, volver a tiempo, soñar).
+**El conflicto no vive solo en el nudo.** Viene desde la cocina —se ve diminuta, se retrae
+cuando la alzan, ronronea para calmarse— y estalla en el cementerio, cuando oye a la Profeta
+y reconoce ese dolor. Todo apunta a lo mismo: **nunca se ha sentido parte de su propia casa**.
+Es existencial porque lo que le pesa es sentirse chiquita ahí adentro, y social porque con
+sus humanos se encoge mientras que con los gatos camina suelta.
+
+**Intereses e intenciones no son lo mismo** y la lámina 03 los separa. El interés es
+atracción o curiosidad y puede quedarse en las ganas: los suyos (estar entre gatos), el porqué
+(saber por qué ella es chiquita y ellos enormes) y la otra (le importa el dolor de la Profeta).
+La intención es voluntad con plan que ella ejecuta esa noche: comprobar, creer y soñar.
 
 Un dato que cambió la lectura: **el ronroneo no es señal fiable de bienestar**. Las fuentes
 veterinarias coinciden en que el gato también ronronea por autoconsuelo cuando está
@@ -136,6 +146,19 @@ puro se encarga de las mismas entradas.
 
 El fondo no se queda quieto: deriva y respira de forma continua en un ciclo de 44 s, y
 además responde con un paralaje suave al movimiento del ratón.
+
+---
+
+## El PDF de portada
+
+La plataforma de la universidad no acepta enlaces sueltos, así que en la raíz del proyecto
+—fuera de este repositorio— queda **`Portada - Un sueno de mil gatos - William Fonseca.pdf`**:
+una sola hoja en 16:9 con la portada exacta de la web (mismo lienzo, misma paleta, mismas
+tipografías y la misma información) y, debajo del nombre, un **botón que abre la presentación**.
+La URL también va escrita y enlazada debajo, por si el botón no se puede pulsar.
+
+Se regenera con `herramientas/generar-portada-pdf.py`, que necesita las tipografías en
+`.fuentes/` (se descargan del repositorio oficial de Google Fonts).
 
 ---
 
