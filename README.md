@@ -63,7 +63,7 @@ el nivel.
 | 01 | Portada | Título, datos de la asignatura y autor |
 | 02 | La trama | Intro, nudo y desenlace + el tono del relato, contado desde la gatica |
 | 03 | Personajes | Ficha del personaje, actitudes, intereses e intenciones |
-| 04 | Escenario | Los cinco lugares del recorrido y las tres etapas de la noche |
+| 04 | Escenario | Los seis lugares del recorrido, lo que representa cada uno, y las tres etapas de la noche |
 | 05 | Emociones y sentimientos | Unas y otros en el orden en que le aparecen esa noche |
 | 06 | El conflicto | Los hallazgos flotando, la idea a la que apuntan todos, y el conflicto con su tipo |
 | 07 | Cierre | Gracias |
@@ -102,9 +102,20 @@ desaturado para que no rompa el conjunto.
 
 ### Método de análisis
 
-La lámina 06 no narra el capítulo, lo analiza. Los ocho hallazgos van apareciendo despacio
-y se quedan flotando alrededor, dejando libre el centro; ahí aterriza la idea a la que
-apuntan todos, y de ella sale el conflicto.
+La lámina 06 no narra el capítulo, lo analiza. Cada hallazgo es una **conclusión**, no lo que
+pasó: la frase dice qué significó ese momento y la nota debajo cuenta de dónde sale. Van
+apareciendo de a uno cada ~3 segundos y se quedan flotando alrededor, dejando libre el
+centro; ahí aterriza la idea a la que apuntan todos, y de ella sale el conflicto.
+**Un clic en la lámina salta al final**, por si hay que ir de afán.
+
+**El tono no es «esperanzador».** La esperanza mira al resultado, y a la gatica le dicen en
+la cara que mil gatos nunca harán nada al mismo tiempo — y se duerme igual de tranquila a
+soñarlo. Lo que hace no depende de que se cumpla. El tono es **convicción tranquila**: cree
+sin ruido y empieza a hacerlo esa misma noche.
+
+**Intereses e intenciones no son lo mismo** y la lámina 03 los separa: el interés se queda
+en las ganas (salir, oír la historia, descansar); la intención es un plan que ella ejecuta
+esa noche (escaparse, volver a tiempo, soñar).
 
 Un dato que cambió la lectura: **el ronroneo no es señal fiable de bienestar**. Las fuentes
 veterinarias coinciden en que el gato también ronronea por autoconsuelo cuando está
