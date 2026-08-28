@@ -1,23 +1,26 @@
-# Un sueño de mil gatos · El Gatito
+# Un sueño de mil gatos · La gatica
 
 Presentación HTML en formato **16:9** para el ejercicio de análisis de personaje de
 **«Un sueño de mil gatos»**, el segmento animado del episodio 11 de *The Sandman*
-(Netflix, 2022). Personaje analizado: **El Gatito** (*The Tabby Kitten*).
+(Netflix, 2022). Personaje analizado: **la gatica atigrada** (*The Tabby Kitten*,
+voz de Rosie Day).
 
 **Politécnico Grancolombiano** — Institución Universitaria
 **Asignatura:** Publicidad 2 · Tercer semestre
 **Modalidad:** Presencial · Viernes nocturno
 **Docente:** Rudiger Stuart González Preciado
 
-**Integrantes:** Mariana Pinzón · Mariana Silva · William Fonseca
+**Autor:** William Fonseca
 
 ---
 
 ## Ver la presentación
 
-> **https://whafonsecav.github.io/Publi02-Un_Sueno_de_Mil_Gatos/**
+> **https://whafonsecav.github.io/Publi01-Un-sueno-de-mil-gatos/**
 
-O abrir `index.html` en cualquier navegador moderno.
+O abrir `index.html` en cualquier navegador moderno. No necesita servidor ni conexión:
+GSAP va incluido en `assets/js/` y lo único que se descarga de fuera son las tipografías
+(si no cargan, el navegador usa las de respaldo y todo sigue funcionando).
 
 ### Controles
 
@@ -29,79 +32,89 @@ O abrir `index.html` en cualquier navegador moderno.
 | Pantalla completa | `F` |
 | Imprimir o exportar a PDF | `P` |
 
-La barra de control está siempre visible en una franja propia debajo de la lámina, así
-que nunca tapa el pie. En pantalla completa el puntero se oculta tras un segundo sin
-moverse y reaparece al primer movimiento.
+La barra de control ocupa una franja propia debajo de la lámina, así que nunca tapa el
+pie. En pantalla completa el puntero se oculta tras un segundo sin moverse.
 
 Para exportar a PDF: `P` → *Guardar como PDF* → horizontal, márgenes *Ninguno* y
 activar *Gráficos de fondo*.
 
+### Música
+
+La música arranca sola **en cuanto se toca la página** por primera vez (los navegadores
+no permiten sonido antes de un gesto del usuario) y entra al **15 %**. El control de
+volumen está en la barra inferior: la huella silencia y reactiva, y el deslizador ajusta
+el nivel.
+
 ---
 
-## Estructura (6 láminas)
+## Las siete láminas
 
 | # | Lámina | Contenido |
 | --- | --- | --- |
-| 01 | **Portada** | Título, personaje, institución, asignatura, modalidad, docente e integrantes |
-| 02 | **Trama** | Intro · Nudo · Desenlace, con tres escenas pintadas, y el tono desde el que se cuenta la historia |
-| 03 | **Personaje** | Demográficos + Actitudes/Opiniones + Intereses + Intenciones |
-| 04 | **Escenario** | Eje de una sola noche (anochecer → amanecer), los 5 escenarios y el resumen de lugares |
-| 05 | **Motivación** | Emociones · Sentimientos · Conflicto/Situación |
-| 06 | **Gracias** | Cierre |
+| 01 | Portada | Título, datos de la asignatura y autor |
+| 02 | La trama | Intro, nudo y desenlace + el tono del relato, contado desde la gatica |
+| 03 | Personajes | Ficha del personaje, actitudes, intereses e intenciones |
+| 04 | Escenario | Los cinco lugares del recorrido y las tres etapas de la noche |
+| 05 | Emociones y sentimientos | Unas y otros en el orden en que le aparecen esa noche |
+| 06 | El conflicto | Lluvia de ideas sobre doce momentos, los tres patrones que emergen, el conflicto y su categoría |
+| 07 | Cierre | Gracias |
+
+> El punto de «Motivaciones, conflicto y situación» ocupa **dos** láminas (05 y 06). En una
+> sola no cabía el análisis momento a momento con un cuerpo de letra legible desde el fondo
+> del salón. Si el ejercicio exige seis láminas exactas, se fusionan reduciendo la lluvia de
+> ideas a los hallazgos sin su lectura.
 
 ---
 
 ## Dirección de arte
 
-El diseño se derivó de **cómo está hecho el episodio**, no de una plantilla. La
-investigación (ver `docs/`) confirmó que el director **Hisko Hulsing** pintó los
-fondos en **óleo real sobre lienzo** en Submarine (Ámsterdam) y sobre ellos
-**rotoscopió** a mano gatos animados en 3D por Untold Studios (Londres), con una
-regla de oro: *«tenían que ser gatos reales: sin comportamiento antropomórfico»*.
+Hisko Hulsing pintó los fondos del segmento en **óleo real sobre lienzo** y encima
+rotoscopió a los gatos animados en 3D. De ahí la idea de toda la pieza: la presentación
+no se dibuja sobre una diapositiva, se dibuja **dentro del lienzo pintado**. El fondo
+entregado (`assets/img/Fondo.png`) es ese lienzo, y el contenido son láminas de papel
+puestas encima, como las planchas de un cuaderno de campo.
 
-De ahí salen las decisiones visuales:
+La paleta se muestreó directamente del archivo de fondo — del `#2f271f` de los árboles
+al `#f2ece1` de la luna — y el único acento es el ámbar de los ojos de la gatica,
+desaturado para que no rompa el conjunto.
 
-- **Grano de lienzo** sobre toda la lámina, en modo `overlay`, como la trama del textil bajo el óleo.
-- **Bordes desplazados** con un filtro SVG (`feTurbulence` + `feDisplacementMap`) para que las formas pintadas no se vean vectoriales.
-- **Paleta por secuencia**, igual que el episodio: ámbar y ocre para la casa, azules profundos y violeta para la noche y el cementerio, carmesí y rosa para lo onírico, y oro sobre negro para lo divino.
-- **Ojos luminosos verde-amarillos** como punto de luz recurrente, incluidos los pares de ojos que parpadean en la oscuridad de fondo.
-- **Motas de sueño** que suben lentamente por cada lámina.
+### Archivos gráficos
 
-| Color | Hex | Uso |
-| --- | --- | --- |
-| Negro de lienzo | `#07060d` | Fondo |
-| Noche / índigo | `#0e1730` · `#1a2952` | La noche, el camino |
-| Violeta | `#3a2b60` | El cementerio |
-| Carmesí | `#8f2130` | El viaje onírico |
-| Ámbar / ocre | `#c98a37` · `#e2a94e` | La casa, el óleo cálido |
-| Oro | `#f2cd72` | Acento principal, lo divino |
-| Rosa amanecer | `#dd9484` | El cierre |
-| Verde de los ojos | `#c3e05a` | El gatito, la esperanza |
+| Archivo | Qué es |
+| --- | --- |
+| `assets/img/Fondo.png` | El lienzo pintado. Fondo global de toda la presentación |
+| `assets/img/Intro.png` · `Nudo.png` · `Desenlace.png` | Las tres gaticas originales, tal como se entregaron |
+| `assets/img/gatica-camina.png` · `gatica-sentada.png` · `gatica-acostada.png` | Las mismas, recortadas al contenido y reescaladas — son las que usa la lámina 02 |
+| `assets/img/Huella.png` | Huella dibujada siguiendo la geometría de las que ya están pintadas en el fondo |
+| `assets/img/Rasguno.png` | Zarpazo, en el mismo lenguaje pictórico |
 
-**Tipografías:** Cormorant Unicase (titulares), Spectral (texto), Jost (etiquetas).
+> Si se reemplaza alguna de las tres imágenes de la gatica, hay que **volver a generar
+> su versión recortada**: la presentación usa `gatica-*.png`, no los originales.
+
+### Método de análisis
+
+La lámina 06 no narra el capítulo, lo analiza. Cada uno de los doce momentos produce un
+**hallazgo** de dos o tres palabras y una **lectura** de lo que ese momento revela; los doce
+hallazgos se agrupan en **tres patrones** —marcados con un punto de color que se repite en
+ambas bandas para poder seguirlos con la vista— y del cruce de los tres sale el conflicto y
+su categoría.
+
+### Animación
+
+`assets/js/gsap.min.js` (GSAP 3.12.5, incluido en el repositorio). Cada elemento lleva
+su propio retardo en la variable CSS `--d`, así que el ritmo de entrada se compone en el
+marcado y no queda enterrado en el JavaScript. **Si GSAP no cargara**, un respaldo en CSS
+puro se encarga de las mismas entradas.
+
+El fondo no se queda quieto: deriva y respira de forma continua en un ciclo de 44 s, y
+además responde con un paralaje suave al movimiento del ratón.
 
 ---
 
-## Sobre la imagen del personaje
+## Nota de rigor
 
-El gatito es una **ilustración vectorial original** hecha para esta presentación,
-siguiendo el diseño del episodio: atigrado de pelo corto, ojos grandes verde-amarillos
-con pupila vertical, la «M» tabby en la frente y proporciones de cría.
-
-Se dibujó desde cero por dos razones: los fotogramas del episodio son material con
-derechos y este repositorio es público, y una ilustración propia **se puede animar**.
-El gatito parpadea, mueve la cola y las orejas, y aparece en las seis láminas.
-
----
-
-## Estructura de archivos
-
-```
-index.html         Presentación completa (CSS + JS + ilustraciones e iconos SVG en línea)
-assets/logo/       Logo del Politécnico Grancolombiano
-assets/music/      Carpeta lista por si se añade música de fondo
-docs/              La investigación verificada que sustenta el contenido
-```
-
-Sin dependencias externas más allá de Google Fonts: el gatito, las tres escenas
-pintadas y todos los iconos son SVG escritos a mano en el propio archivo.
+El episodio **no declara país, ciudad ni año**, y el cómic #18 tampoco: no hay topónimo
+en pantalla, los dueños no dicen nada que ubique la casa, y la producción nunca anunció
+una ambientación — Londres figura solo como sede de rodaje y de los estudios, que no es
+lo mismo. Por eso la presentación **no nombra ningún lugar geográfico**: hacerlo sería
+presentar como dato de la obra lo que es una inferencia del espectador.

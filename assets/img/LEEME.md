@@ -1,36 +1,67 @@
-# Ranuras de imagen
+# Las imágenes de la presentación
 
-Basta con **dejar el archivo en esta carpeta con el nombre exacto** y la presentación
-lo toma sola. No hay que tocar el HTML.
+## Lo que hay aquí
 
-Mientras un archivo no exista, en su lugar se ve la **escena pintada en SVG** que ya
-trae la presentación como respaldo. En cuanto aparezca la imagen, la tapa.
+| Archivo | Dónde sale | Notas |
+| --- | --- | --- |
+| `Fondo.png` | Fondo global de las seis láminas | El lienzo pintado. De aquí sale toda la paleta |
+| `Intro.png` | *(original)* | La gatica caminando |
+| `Nudo.png` | *(original)* | La gatica sentada |
+| `Desenlace.png` | *(original)* | La gatica acostada |
+| `gatica-camina.png` | Lámina 02 · Intro | `Intro.png` recortada al contenido |
+| `gatica-sentada.png` | Lámina 02 · Nudo | `Nudo.png` recortada al contenido |
+| `gatica-acostada.png` | Lámina 02 · Desenlace | `Desenlace.png` recortada al contenido |
+| `Huella.png` | Portada, cierre, rastro de la lámina 04, barra de control | Generada |
+| `Rasguno.png` | Portada y cierre | Generada |
 
-| Archivo | Dónde sale | Proporción | Tamaño sugerido | Qué debería mostrar |
-| --- | --- | --- | --- | --- |
-| `02-01-intro.png` | Lámina 02 · Intro | **2:1** horizontal | 1200 × 600 px | El Gatito en la casa de sus dueños, luz cálida de interior, antes de salir |
-| `02-02-nudo.png` | Lámina 02 · Nudo | **2:1** horizontal | 1200 × 600 px | El cementerio de noche: el Gatito escuchando a la Profeta entre otros gatos |
-| `02-03-desenlace.png` | Lámina 02 · Desenlace | **2:1** horizontal | 1200 × 600 px | El Gatito dormido al amanecer, soñando |
-| `01-gatito.png` | Lámina 01 · Portada | vertical | 800 × 950 px | El Gatito de cuerpo entero, **fondo transparente (PNG)** |
+**La presentación usa las versiones `gatica-*.png`, no los originales.** Los tres
+archivos originales se conservan intactos como respaldo.
 
-## Notas
+---
 
-- **Formato:** `.png` (o `.jpg` si se renombra la extensión en las tres primeras; la
-  portada conviene que sea PNG con transparencia).
-- Las tres imágenes de la lámina 02 se recortan con `object-fit: cover`, así que lo
-  importante debe quedar **centrado**: la parte inferior la cubre un degradado oscuro
-  donde va el título del acto.
-- La imagen de portada se funde con el fondo mediante una máscara redonda, por eso
-  funciona mejor con **fondo transparente** o muy oscuro.
-- Si una imagen se ve mal recortada, avísame y ajusto el `object-position` de esa celda.
+## Si se reemplaza alguna gatica
 
-## Estilo recomendado para generarlas
+Los originales traen mucho espacio transparente alrededor, y las posiciones sobre las
+tarjetas dependen de que la imagen esté recortada justo al contenido. Después de
+reemplazar cualquiera de los tres, hay que volver a generar su versión recortada:
 
-Para que peguen con el episodio y con el diseño de la presentación:
+```bash
+python -c "
+from PIL import Image
+def recortar(src, dst, largo):
+    im = Image.open(src).convert('RGBA')
+    im = im.crop(im.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
+    s = largo / float(max(im.size))
+    im.resize((round(im.width*s), round(im.height*s)), Image.LANCZOS).save(dst)
+recortar('Intro.png',     'gatica-camina.png',   1000)
+recortar('Nudo.png',      'gatica-sentada.png',  1000)
+recortar('Desenlace.png', 'gatica-acostada.png', 1200)
+"
+```
 
-> Pintura al óleo sobre lienzo, pincelada visible, estilo del corto animado
-> *A Dream of a Thousand Cats* de Hisko Hulsing. Gato atigrado de pelo corto,
-> ojos grandes verde-amarillos con pupila vertical. Iluminación nocturna con
-> contraste fuerte. **Interior:** ámbar y ocre cálidos. **Cementerio:** azules
-> profundos, índigo y violeta, luna. **Amanecer:** rosa pálido y oro suave.
-> Nada de rasgos faciales humanizados: gato realista.
+Si una gatica queda mal encajada sobre su tarjeta, se ajusta en el CSS de `index.html`,
+en las reglas `.cat-walk`, `.cat-sit` y `.cat-lie`: `width` cambia el tamaño y
+`margin-bottom` cuánto se hunde en el canto de la lámina.
+
+---
+
+## Si se reemplaza el fondo
+
+`Fondo.png` es horizontal y se recorta con `object-fit: cover` sobre un lienzo de
+1600 × 900, así que conviene que sea **16:9** o parecido. Al cambiarlo, revisar que la
+paleta de `:root` en `index.html` siga pegando: los tokens `--ink`, `--umber`, `--sepia`,
+`--taupe`, `--stone`, `--sand`, `--linen`, `--vellum` y `--moon` se muestrearon de la
+imagen actual.
+
+---
+
+## Sobre la huella y el rasguño
+
+Se dibujaron para este trabajo, siguiendo la geometría de las huellas que ya están
+pintadas en `Fondo.png` (una almohadilla ancha y trilobulada más cuatro dedos en arco) y
+con el mismo tratamiento: relleno sepia plano, borde suave y ligeramente irregular, y un
+grano de lienzo apenas perceptible.
+
+En la presentación se usan siempre con opacidad baja, para que se lean como parte de la
+pintura y no como una calcomanía encima. La huella hace además de viñeta en la barra de
+control y de tirador del deslizador de volumen.
