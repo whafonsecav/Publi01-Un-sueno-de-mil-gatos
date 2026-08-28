@@ -119,7 +119,7 @@ humanos son gigantes, se encoge cuando la alzan— y estalla en el cementerio. T
 mismo: **«Ella se siente pequeña en un mundo de gigantes»**. Es un conflicto **existencial**:
 lo que está en juego es cómo se ve a sí misma, y eso le cambia según con quién esté. Con los
 humanos se hace chiquita; con los gatos, en un mundo mucho más ancho que su cocina, hasta la
-postura le cambia y se siente grande. No le cambió el tamaño, le cambió el lugar.
+postura le cambia y se siente grande.
 
 **Intereses e intenciones no son lo mismo** y la lámina 03 los separa. El interés es
 atracción o curiosidad y puede quedarse en las ganas: los suyos (estar entre gatos), el porqué
