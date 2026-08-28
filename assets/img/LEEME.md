@@ -8,9 +8,9 @@
 | `Intro.png` | *(original)* | La gatica caminando |
 | `Nudo.png` | *(original)* | La gatica sentada |
 | `Desenlace.png` | *(original)* | La gatica acostada |
-| `gatica-camina.png` | Lámina 02 · Intro | `Intro.png` recortada al contenido |
-| `gatica-sentada.png` | Lámina 02 · Nudo | `Nudo.png` recortada al contenido |
-| `gatica-acostada.png` | Lámina 02 · Desenlace | `Desenlace.png` recortada al contenido |
+| `gatica-camina.png` | Lámina 02 · Intro | `Intro.png` recortada y reescalada a 800 px |
+| `gatica-sentada.png` | Lámina 02 · Nudo | `Nudo.png` recortada y reescalada a 800 px |
+| `gatica-acostada.png` | Lámina 02 · Desenlace | `Desenlace.png` recortada y reescalada a 900 px |
 | `Huella.png` | Portada, cierre, rastro de la lámina 04, barra de control | Generada |
 | `Rasguno.png` | Portada y cierre | Generada |
 
@@ -23,7 +23,9 @@ archivos originales se conservan intactos como respaldo.
 
 Los originales traen mucho espacio transparente alrededor, y las posiciones sobre las
 tarjetas dependen de que la imagen esté recortada justo al contenido. Después de
-reemplazar cualquiera de los tres, hay que volver a generar su versión recortada:
+reemplazar cualquiera de los tres, hay que volver a generar su versión recortada. El
+tamaño importa: en pantalla se muestran entre 138 y 242 px de ancho, así que servirlas
+a 1000 px o más solo hace que tarden en cargar.
 
 ```bash
 python -c "
@@ -32,10 +34,10 @@ def recortar(src, dst, largo):
     im = Image.open(src).convert('RGBA')
     im = im.crop(im.split()[3].point(lambda v: 255 if v > 10 else 0).getbbox())
     s = largo / float(max(im.size))
-    im.resize((round(im.width*s), round(im.height*s)), Image.LANCZOS).save(dst)
-recortar('Intro.png',     'gatica-camina.png',   1000)
-recortar('Nudo.png',      'gatica-sentada.png',  1000)
-recortar('Desenlace.png', 'gatica-acostada.png', 1200)
+    im.resize((round(im.width*s), round(im.height*s)), Image.LANCZOS).save(dst, optimize=True)
+recortar('Intro.png',     'gatica-camina.png',   800)
+recortar('Nudo.png',      'gatica-sentada.png',  800)
+recortar('Desenlace.png', 'gatica-acostada.png', 900)
 "
 ```
 
