@@ -29,11 +29,20 @@ GSAP va incluido en `assets/js/` y lo único que se descarga de fuera son las ti
 | Lámina siguiente | `→` · `Espacio` · `PageDown` · rueda abajo · swipe izquierda |
 | Lámina anterior | `←` · `PageUp` · rueda arriba · swipe derecha |
 | Primera / última | `Inicio` / `Fin` |
-| Pantalla completa | `F` |
+| Pantalla completa | `F` o el botón ⛶ de la barra |
 | Imprimir o exportar a PDF | `P` |
 
 La barra de control ocupa una franja propia debajo de la lámina, así que nunca tapa el
 pie. En pantalla completa el puntero se oculta tras un segundo sin moverse.
+
+### En celular y tablet
+
+La lámina es 16:9, así que en vertical quedaría en una franja diminuta: en esa posición
+aparece un aviso para girar el dispositivo, con un botón de pantalla completa que además
+intenta fijar la orientación horizontal (Android lo permite; iOS no, ahí toca girar a mano).
+En pantallas pequeñas se apagan la deriva del fondo, el grano y los desenfoques de la barra:
+son los efectos caros de componer y sin ellos el cambio de lámina va suave. El sistema
+operativo también manda — si está activado "reducir movimiento", se apagan igual.
 
 Para exportar a PDF: `P` → *Guardar como PDF* → horizontal, márgenes *Ninguno* y
 activar *Gráficos de fondo*.
@@ -56,7 +65,7 @@ el nivel.
 | 03 | Personajes | Ficha del personaje, actitudes, intereses e intenciones |
 | 04 | Escenario | Los cinco lugares del recorrido y las tres etapas de la noche |
 | 05 | Emociones y sentimientos | Unas y otros en el orden en que le aparecen esa noche |
-| 06 | El conflicto | Lluvia de ideas sobre doce momentos, los tres patrones que emergen, el conflicto y su categoría |
+| 06 | El conflicto | Los hallazgos flotando, la idea a la que apuntan todos, y el conflicto con su tipo |
 | 07 | Cierre | Gracias |
 
 > El punto de «Motivaciones, conflicto y situación» ocupa **dos** láminas (05 y 06). En una
@@ -93,11 +102,19 @@ desaturado para que no rompa el conjunto.
 
 ### Método de análisis
 
-La lámina 06 no narra el capítulo, lo analiza. Cada uno de los doce momentos produce un
-**hallazgo** de dos o tres palabras y una **lectura** de lo que ese momento revela; los doce
-hallazgos se agrupan en **tres patrones** —marcados con un punto de color que se repite en
-ambas bandas para poder seguirlos con la vista— y del cruce de los tres sale el conflicto y
-su categoría.
+La lámina 06 no narra el capítulo, lo analiza. Los ocho hallazgos van apareciendo despacio
+y se quedan flotando alrededor, dejando libre el centro; ahí aterriza la idea a la que
+apuntan todos, y de ella sale el conflicto.
+
+Un dato que cambió la lectura: **el ronroneo no es señal fiable de bienestar**. Las fuentes
+veterinarias coinciden en que el gato también ronronea por autoconsuelo cuando está
+estresado, dolorido o en una situación que no controla. Por eso el momento en que la gatica
+se encoge y luego ronronea no se lee como "está a gusto" sino como "se calma sola".
+
+Sobre los diálogos: no se pudo acceder a ninguna transcripción completa del episodio, así
+que las frases del gato adulto se parafrasean y no van entre comillas. La única cita
+verificada es su remate escéptico sobre convencer a mil gatos de hacer algo a la vez, que
+viene igual del cómic #18.
 
 ### Animación
 

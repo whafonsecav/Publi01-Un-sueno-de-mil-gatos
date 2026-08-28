@@ -135,7 +135,7 @@ body.hide-cursor{cursor:none}
 /* ---------- MOTION: respaldo en CSS si GSAP no carga ---------- */
 [data-r]{opacity:0}
 .no-gsap [data-r]{opacity:0; transform:translateY(26px);
-  transition:opacity .85s var(--ease), transform .9s var(--ease);
+  transition:opacity .7s var(--ease), transform .75s var(--ease);
   transition-delay:var(--d,0s)}
 .no-gsap .is-active [data-r]{opacity:1; transform:none}
 .no-gsap .slide{transition:opacity .6s var(--ease), visibility .6s}
@@ -304,13 +304,11 @@ body.hide-cursor{cursor:none}
    L02 · LA TRAMA
    ============================================================== */
 .trama{display:grid; grid-template-columns:repeat(3,1fr); gap:28px; margin-top:132px}
-.act{position:relative; padding:52px 28px 26px; min-height:318px; overflow:visible}
+.act{position:relative; padding:50px 28px 26px; min-height:318px; overflow:visible}
 .act .n{position:absolute; top:-1px; left:28px; font-family:var(--f-ui); font-size:10px;
   font-weight:600; letter-spacing:.3em; color:var(--vellum); background:var(--umber);
   padding:5px 11px 4px}
-.act h3{font-family:var(--f-disp); font-weight:700; font-size:29px; letter-spacing:.06em;
-  margin:0 0 4px; color:var(--ink)}
-.act .hr{display:block; width:44px; height:1px; background:var(--line-3); margin:0 0 15px}
+.act .hr{display:block; width:44px; height:1px; background:var(--line-3); margin:2px 0 16px}
 .act p{font-family:var(--f-serif); font-size:16px; line-height:1.66;
   color:rgba(47,39,31,.9); margin:0}
 
@@ -408,18 +406,16 @@ body.hide-cursor{cursor:none}
   color:var(--sepia); margin-top:4px}
 
 .donde{display:flex; flex-direction:column; min-height:0}
-.mapa{position:relative; display:grid; grid-template-columns:repeat(6,1fr);
-  gap:20px; flex:1 1 auto; min-height:0}
-.lugar{grid-column:span 2; padding:20px 22px; position:relative; z-index:2;
+.mapa{position:relative; display:grid; grid-template-columns:repeat(3,1fr);
+  grid-template-rows:repeat(2,1fr); gap:18px; flex:1 1 auto; min-height:0}
+.lugar{padding:18px 20px; position:relative; z-index:2;
   display:flex; flex-direction:column; justify-content:center}
-.lugar.r2a{grid-column:2 / span 2}
-.lugar.r2b{grid-column:4 / span 2}
 .lugar .top{display:flex; align-items:center; justify-content:space-between; margin-bottom:10px}
-.lugar h4{font-family:var(--f-disp); font-weight:700; font-size:27px; line-height:1;
+.lugar h4{font-family:var(--f-disp); font-weight:700; font-size:24px; line-height:1.06;
   margin:0 0 3px; color:var(--ink); letter-spacing:.02em}
 .lugar .hr{display:block; width:34px; height:1px; background:var(--line-3); margin:0 0 12px}
-.lugar p{font-family:var(--f-serif); font-size:15px; line-height:1.6;
-  color:rgba(47,39,31,.86); margin:0}
+.lugar p{font-family:var(--f-serif); font-size:14px; line-height:1.55;
+  color:rgba(47,39,31,.87); margin:0}
 
 /* el rastro: la ruta que ella recorre, marcada con huellas */
 .trail{position:absolute; inset:0; pointer-events:none; z-index:0}
@@ -454,8 +450,8 @@ body.hide-cursor{cursor:none}
 .orden .tx{font-family:var(--f-ui); font-size:10.5px; font-weight:600; letter-spacing:.24em;
   text-transform:uppercase; color:var(--taupe); white-space:nowrap}
 .crono{display:grid; gap:15px; flex:1 1 auto; min-height:0}
-.crono.e5{grid-template-columns:repeat(5,1fr)}
-.crono.s6{grid-template-columns:repeat(6,1fr)}
+.crono.e5{grid-template-columns:repeat(4,1fr)}
+.crono.s6{grid-template-columns:repeat(5,1fr)}
 .emo{position:relative; padding:22px 20px 20px; display:flex; flex-direction:column}
 .emo .ord{position:absolute; top:-1px; left:20px; font-family:var(--f-ui); font-size:10px;
   font-weight:600; letter-spacing:.18em; color:var(--vellum); background:var(--umber);
@@ -470,62 +466,52 @@ body.hide-cursor{cursor:none}
 
 /* ==============================================================
    L06 · EL CONFLICTO
-   La lluvia de ideas es literal: los hallazgos aparecen, flotan un
-   momento y se van, y vuelven en otro sitio, hasta que se posan y
-   aparece el que los une. Un clic en la lámina salta al final.
+   Las frases no son tarjetas ni se van: aparecen despacio, se quedan
+   flotando muy suave y se reparten en un anillo que deja el centro
+   libre. Ahí aterriza la idea a la que apuntan todas.
+   Un clic en la lámina salta al final.
    ============================================================== */
 .cfl6{display:flex; flex-direction:column; flex:1 1 auto; min-height:0; gap:14px}
 
 .lluvia{position:relative; flex:1 1 auto; min-height:0;
-  display:flex; flex-wrap:wrap; align-content:center; justify-content:center; gap:13px}
+  display:flex; flex-wrap:wrap; align-content:center; justify-content:center; gap:26px}
 .lluvia.on{display:block}
-.fr{font-family:var(--f-disp); font-weight:700; letter-spacing:.02em; color:var(--ink);
-  line-height:1.08; white-space:nowrap; padding:10px 17px 9px; border-radius:2px;
-  border:1px solid var(--line-2);
-  background:linear-gradient(150deg, rgba(244,238,229,.93), rgba(230,220,206,.87));
-  box-shadow:0 16px 32px -20px rgba(40,32,25,.62)}
-.fr.l{font-size:27px}
-.fr.m{font-size:22px}
-.fr.s{font-size:19px}
+.fr{width:250px; text-align:center}
 .lluvia.on .fr{position:absolute; opacity:0; margin:0;
-  transform:translate(-50%,-50%); will-change:transform, opacity}
+  transform:translate(-50%,-50%); will-change:opacity}
+.fr b{display:block; font-family:var(--f-disp); font-weight:700; font-size:21px;
+  line-height:1.1; letter-spacing:.02em; color:var(--ink);
+  text-shadow:0 1px 0 rgba(250,245,238,.75), 0 8px 20px rgba(58,47,37,.16)}
+.fr i{display:block; margin-top:5px; font-family:var(--f-serif); font-style:normal;
+  font-size:12.5px; line-height:1.4; color:var(--umber);
+  text-shadow:0 1px 0 rgba(250,245,238,.7)}
+.fr-in{display:block; will-change:transform}
 
-/* el hallazgo que los une, en el centro y sobre un halo de papel */
+/* la idea que las une, en el hueco del centro */
 .union{position:absolute; inset:0; z-index:6; display:flex; flex-direction:column;
-  align-items:center; justify-content:center; text-align:center; padding:0 7%;
+  align-items:center; justify-content:center; text-align:center; padding:0 19%;
   opacity:0; pointer-events:none}
-.union .halo{position:absolute; left:50%; top:50%; width:76%; height:150%;
+.union .halo{position:absolute; left:50%; top:50%; width:66%; height:118%;
   transform:translate(-50%,-50%); z-index:-1;
-  background:radial-gradient(56% 46% at 50% 50%, rgba(242,236,226,.96) 0%,
-             rgba(242,236,226,.74) 52%, rgba(242,236,226,0) 100%)}
-.union .lb{display:block; margin-bottom:14px}
-.union b{display:block; font-family:var(--f-disp); font-weight:700; font-size:48px;
-  line-height:1.05; color:var(--ink); letter-spacing:.02em;
-  text-shadow:0 2px 0 rgba(252,248,242,.65), 0 20px 40px rgba(58,47,37,.26)}
+  background:radial-gradient(52% 44% at 50% 50%, rgba(242,236,226,.97) 0%,
+             rgba(242,236,226,.78) 54%, rgba(242,236,226,0) 100%)}
+.union .lb{display:block; margin-bottom:12px}
+.union b{display:block; font-family:var(--f-disp); font-weight:700; font-size:42px;
+  line-height:1.06; color:var(--ink); letter-spacing:.02em;
+  text-shadow:0 2px 0 rgba(252,248,242,.7), 0 20px 40px rgba(58,47,37,.24)}
 
-/* el cierre: cómo se arma el conflicto, la frase y la categoría */
-.cierre{display:grid; grid-template-columns:1fr 262px; gap:26px; align-items:center;
-  padding:15px 26px}
-.arco{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin:4px 0 11px;
-  padding-bottom:11px; border-bottom:1px solid rgba(226,216,202,.18)}
-.arco > div{display:flex; flex-direction:column; gap:4px}
-.arco .st{font-family:var(--f-ui); font-size:9.5px; font-weight:600; letter-spacing:.18em;
-  text-transform:uppercase; color:var(--amber-hi)}
-.arco p{font-family:var(--f-serif); font-size:13px; line-height:1.44;
-  color:rgba(228,219,207,.82); margin:0}
-.cierre blockquote{margin:0; font-family:var(--f-serif); font-style:italic; font-size:17px;
-  line-height:1.48; color:var(--vellum)}
-.cierre blockquote .q{font-family:var(--f-disp); font-style:normal; font-size:24px;
-  color:var(--amber-hi); line-height:0; vertical-align:-.05em}
-.cierre .cat-box{display:flex; flex-direction:column; gap:10px; padding-left:26px;
-  border-left:1px solid rgba(226,216,202,.22)}
-.cats{display:flex; flex-wrap:wrap; gap:5px}
-.cats span{font-family:var(--f-ui); font-size:9.5px; letter-spacing:.16em; text-transform:uppercase;
-  padding:5px 9px 4px; border:1px solid rgba(226,216,202,.24); color:rgba(226,216,202,.5)}
-.cats span.on{background:linear-gradient(150deg,var(--amber-hi),var(--amber)); color:#241a0c;
-  border-color:transparent; font-weight:600}
-.cierre .cat-box p{font-family:var(--f-serif); font-size:12.5px; line-height:1.48;
-  color:rgba(228,219,207,.78); margin:0}
+/* el conflicto: grande, entre comillas, y su tipo debajo */
+.cierre{display:flex; flex-direction:column; gap:13px; padding:20px 40px; text-align:center}
+.cierre blockquote{margin:0; font-family:var(--f-serif); font-style:italic; font-size:23px;
+  line-height:1.44; color:var(--vellum)}
+.cierre blockquote .q{font-family:var(--f-disp); font-style:normal; font-size:30px;
+  color:var(--amber-hi); line-height:0; vertical-align:-.06em}
+.cierre .tipo{padding-top:12px; border-top:1px solid rgba(226,216,202,.18);
+  display:flex; align-items:baseline; justify-content:center; gap:11px; flex-wrap:wrap}
+.cierre .tipo .et{font-family:var(--f-ui); font-size:11px; font-weight:600;
+  letter-spacing:.2em; text-transform:uppercase; color:var(--amber-hi); white-space:nowrap}
+.cierre .tipo p{margin:0; font-family:var(--f-serif); font-size:14px; line-height:1.5;
+  color:rgba(230,221,209,.86); max-width:1020px}
 
 /* ==============================================================
    BARRA DE CONTROL
@@ -581,7 +567,8 @@ body.hide-cursor{cursor:none}
 .audio.off .snd i{transform:translateY(-50%) rotate(-38deg) scaleX(1)}
 
 .vol{display:flex; flex-direction:column; gap:5px}
-.vol .lb{font-size:8.5px; letter-spacing:.26em; color:rgba(226,216,202,.44)}
+.vol .lb{font-size:8.5px; letter-spacing:.26em; color:rgba(226,216,202,.44);
+  white-space:nowrap}
 .vol .lb b{color:var(--moon); font-weight:600; font-variant-numeric:tabular-nums}
 input[type=range].slider{-webkit-appearance:none; appearance:none; width:132px; height:14px;
   background:none; cursor:pointer; margin:0; display:block}
@@ -603,12 +590,80 @@ input[type=range].slider:hover::-webkit-slider-thumb{transform:scale(1.16)}
 input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); outline-offset:5px}
 
 /* ==============================================================
+   AVISO DE GIRO
+   ============================================================== */
+.gira{position:fixed; inset:0; z-index:120; display:none;
+  flex-direction:column; align-items:center; justify-content:center; gap:18px;
+  padding:34px; text-align:center; background:#221b15}
+.gira .ico{width:56px; height:56px; stroke:var(--amber-hi); stroke-width:1.1}
+.gira p{margin:0; display:flex; flex-direction:column; gap:8px}
+.gira p b{font-family:var(--f-disp); font-weight:700; font-size:30px; color:var(--moon);
+  letter-spacing:.02em}
+.gira p span{font-family:var(--f-serif); font-size:15px; color:rgba(226,216,202,.72);
+  max-width:32ch; line-height:1.5}
+.gira button{font-family:var(--f-ui); font-size:12px; font-weight:600; letter-spacing:.2em;
+  text-transform:uppercase; padding:13px 22px; cursor:pointer; border:0;
+  color:#241a0c; background:linear-gradient(150deg,var(--amber-hi),var(--amber))}
+.gira button.ln{background:none; color:rgba(226,216,202,.6); font-weight:400;
+  letter-spacing:.14em; text-transform:none; padding:4px; text-decoration:underline}
+body.gira-no .gira{display:none !important}
+@media (max-width:900px) and (orientation:portrait){ .gira{display:flex} }
+
+/* ==============================================================
+   MODO LIGERO
+   El óleo de fondo, el grano en mezcla y los desenfoques de la barra
+   son caros de componer. En pantallas pequeñas y cuando el sistema
+   pide menos movimiento, se apagan: la lámina se ve igual y el
+   cambio entre láminas deja de ir a tirones.
+   ============================================================== */
+@media (max-width:900px), (prefers-reduced-motion:reduce){
+  .canvas-img{animation:none}
+  .viewport::before{animation:none}
+  .stage::before{display:none}
+  .plate::before{display:none}
+  .motes{display:none}
+  .hud, .audio{-webkit-backdrop-filter:none; backdrop-filter:none}
+  .hud{background:rgba(28,22,17,.97)}
+}
+@media (prefers-reduced-motion:reduce){
+  .fr-in{animation:none !important}
+}
+
+/* ==============================================================
+   BARRA DE CONTROL EN PANTALLAS ANGOSTAS
+   ============================================================== */
+/* La ayuda de teclado sobra donde no hay teclado, y es lo primero que
+   estorba cuando la barra se queda sin ancho. */
+@media (max-width:1100px){
+  .hint{display:none}
+  .vol .lb{display:none}
+  .hud-in{padding:9px 14px; gap:14px}
+  .audio{padding:0 13px; gap:11px}
+  input[type=range].slider{width:92px}
+}
+@media (max-width:820px){
+  .hud-in{padding:7px 10px; gap:10px}
+  .audio{padding:0 10px; gap:9px}
+  input[type=range].slider{width:74px}
+  .dots{gap:6px}
+  .dots button{width:17px; height:17px}
+  .nav{gap:7px}
+  .nav button{width:29px; height:29px}
+  .snd{width:26px; height:26px}
+}
+@media (max-width:560px){
+  .dots{display:none}
+  .counter{font-size:10px; letter-spacing:.14em}
+  input[type=range].slider{width:60px}
+}
+
+/* ==============================================================
    IMPRESIÓN
    ============================================================== */
 @media print{
   @page{size:1600px 900px; margin:0}
   body{overflow:visible; background:#fff}
-  .hud,.audio,.motes{display:none !important}
+  .hud,.audio,.motes,.gira{display:none !important}
   .viewport{position:static; inset:auto; display:block; overflow:visible}
   .viewport::before,.viewport::after{display:none}
   .stage{transform:none; page-break-after:always; break-after:page; box-shadow:none}
@@ -671,6 +726,9 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
   <symbol id="i-shrink" viewBox="0 0 24 24"><path d="M9.4 4.2v5.2H4.2M14.6 4.2v5.2h5.2M9.4 19.8v-5.2H4.2M14.6 19.8v-5.2h5.2"/></symbol>
   <symbol id="i-guard" viewBox="0 0 24 24"><path d="M12 3.2 20 6v5.5c0 4.6-3.2 7.7-8 9.3-4.8-1.6-8-4.7-8-9.3V6z"/><path d="M12 8.6v4.2M12 15.6v.9"/></symbol>
   <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6.2 20.8V3.4M6.2 4.6h11.4l-2.6 4 2.6 4H6.2"/></symbol>
+  <symbol id="i-full" viewBox="0 0 24 24"><path d="M3.6 9V3.6H9M15 3.6h5.4V9M20.4 15v5.4H15M9 20.4H3.6V15"/></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M9 3.6V9H3.6M15 9V3.6M20.4 9H15M15 20.4V15h5.4M9 15v5.4M3.6 15H9"/></symbol>
+  <symbol id="i-girar" viewBox="0 0 24 24"><path d="M8.2 2.8h7.6a1.8 1.8 0 0 1 1.8 1.8v14.8a1.8 1.8 0 0 1-1.8 1.8H8.2a1.8 1.8 0 0 1-1.8-1.8V4.6a1.8 1.8 0 0 1 1.8-1.8z"/><path d="M10.6 18.4h2.8"/><path d="M2.6 12.6a9.4 9.4 0 0 0 2.2 5M21.4 11.4a9.4 9.4 0 0 0-2.2-5"/></symbol>
   <symbol id="i-arrow-l" viewBox="0 0 24 24"><path d="M15 4.8 8 12l7 7.2"/></symbol>
   <symbol id="i-arrow-r" viewBox="0 0 24 24"><path d="M9 4.8 16 12l-7 7.2"/></symbol>
 </defs></svg>
@@ -749,22 +807,22 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
         <article class="plate act" data-r style="--d:.22s">
           <span class="cat cat-walk" data-cat><img src="assets/img/gatica-camina.png" decoding="sync" fetchpriority="high" alt="La gatica caminando"></span>
           <span class="n">INTRO</span>
-          <h3>El llamado</h3><span class="hr"></span>
-          <p>Sus dueños la dejan lista para dormir: la alimentan, la acomodan y deciden por ella a qué hora termina el día. Es una gatica de casa y su mundo entero cabe en unas pocas habitaciones. Entonces otro gato la llama desde afuera y le propone algo que nadie le había propuesto nunca: salir.</p>
+          <span class="hr"></span>
+          <p>Es una gatica atigrada que vive en una casa donde todo lo deciden otros: cuándo come, dónde duerme y cuándo la tocan. En esa cocina enorme se ve diminuta y no se halla del todo. Una noche un gato callejero se asoma por la ventana y la invita a una reunión. Ella cree que no puede salir; él le muestra que sí. Sale, y va al cementerio sabiendo a quién va a oír.</p>
         </article>
 
         <article class="plate act" data-r style="--d:.34s">
           <span class="cat cat-sit" data-cat><img src="assets/img/gatica-sentada.png" decoding="sync" fetchpriority="high" alt="La gatica sentada, escuchando"></span>
           <span class="n">NUDO</span>
-          <h3>El sermón</h3><span class="hr"></span>
-          <p>Entre lápidas, cientos de gatos escuchan a la Profeta. Cuenta que su dueño ahogó a sus crías, que rezó al rey de los gatos y de los sueños, y que allí supo la verdad: los gatos fueron gigantes hasta que mil humanos soñaron el mundo al revés. Si mil gatos sueñan juntos, el mundo vuelve.</p>
+          <span class="hr"></span>
+          <p>Entre lápidas, muchos gatos oyen a una siamesa. Cuenta lo que le pasó y lo que entendió: hubo un tiempo en que los gatos eran enormes y los humanos, pequeños. Hasta que los humanos soñaron otro mundo, todos a la vez, y el mundo cambió desde el principio. Dice que va a repetir su llamado hasta que mil gatos sueñen lo mismo.</p>
         </article>
 
         <article class="plate act" data-r style="--d:.46s">
           <span class="cat cat-lie" data-cat><img src="assets/img/gatica-acostada.png" decoding="sync" fetchpriority="high" alt="La gatica acostada, soñando"></span>
           <span class="n">DESENLACE</span>
-          <h3>La creyente</h3><span class="hr"></span>
-          <p>Los adultos se van sin creer: nadie logrará que mil gatos hagan algo al mismo tiempo, le sentencian de vuelta a casa. Ella no discute. Regresa por el mismo camino, se acomoda y cierra los ojos. Al amanecer sus dueños la ven moverse en sueños y solo alcanzan a ver una cría tierna.</p>
+          <span class="hr"></span>
+          <p>El camino de vuelta se ve distinto: más iluminado, más ordenado, y ya está amaneciendo. La apuran para que llegue antes de que sea de día. Ella pregunta si el mensaje se va a cumplir y el gato adulto se ríe: nadie junta a mil gatos para lo mismo. Ella no discute. Entra, se acomoda en su cama y se duerme.</p>
         </article>
       </div>
 
@@ -777,14 +835,14 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
         <span class="vr" aria-hidden="true"></span>
         <div class="tono-r">
           <div class="tramos">
-            <div class="tramo"><span>En la casa</span><p>Ya estaba despierta, esperando algo.</p></div>
-            <div class="tramo"><span>En la ventana</span><p>Salta aunque no sabe a dónde va.</p></div>
-            <div class="tramo"><span>En el camino</span><p>Es la única que va feliz.</p></div>
-            <div class="tramo"><span>En el sermón</span><p>Le cree a la primera y sin dudar.</p></div>
-            <div class="tramo"><span>De vuelta</span><p>La burla del grande no le quita nada.</p></div>
-            <div class="tramo"><span>Al dormir</span><p>Se acuesta decidida a soñar.</p></div>
+            <div class="tramo"><span>En la cocina</span><p>Se siente rara ahí, y esa molestia la mantiene despierta.</p></div>
+            <div class="tramo"><span>En la ventana</span><p>Descubre que su premisa era falsa: sí había salida.</p></div>
+            <div class="tramo"><span>En el camino</span><p>Va por la noche a su ritmo, hacia algo que eligió ella.</p></div>
+            <div class="tramo"><span>En el cementerio</span><p>Se entera de que el mundo ya cambió una vez.</p></div>
+            <div class="tramo"><span>De vuelta</span><p>Le responden con burla y aun así insiste en preguntar.</p></div>
+            <div class="tramo"><span>En su cama</span><p>Vuelve al mismo sitio sabiendo algo que antes no sabía.</p></div>
           </div>
-          <p class="cierra">No es esperanzador solo por el final: lo es en cada tramo de la noche. En todos ella es la que todavía cree que el mundo se puede arreglar, y la única que sale de allí con algo que hacer.</p>
+          <p class="cierra">Es esperanzador porque ella gana algo esa noche. Aprende que lo que creía cerrado solo estaba sin revisar, y que el mundo ya cambió una vez porque alguien se atrevió a soñarlo distinto. Vuelve a la misma cocina, pero ahora sabe que esas paredes fueron una decisión, y que las decisiones se pueden revisar.</p>
         </div>
       </article>
     </div>
@@ -839,30 +897,30 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
           <article class="plate band a6" data-r style="--d:.30s">
             <div class="spine"><span class="vt">Actitudes</span><span class="num">01</span></div>
             <div class="items">
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>Curiosa</h4></span>
-                <p>Sale de casa de noche siguiendo a un gato al que acaba de conocer.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-road"/></svg><h4>Confiada</h4></span>
-                <p>No cuestiona el camino ni a quien la guía; va porque la invitaron.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>Receptiva</h4></span>
-                <p>Escucha el sermón entero, sin burlarse ni interrumpir como los adultos.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-heart"/></svg><h4>Empática</h4></span>
-                <p>Le duele la pérdida de las crías de la Profeta aunque no le ocurrió a ella.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-star"/></svg><h4>Crédula</h4></span>
-                <p>Toma la palabra ajena como verdad, no como locura de una desconocida.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-spark"/></svg><h4>Inconforme</h4></span>
-                <p>Vive cómoda y aun así el mensaje le hace sentido: algo le faltaba.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-home"/></svg><h4>Incómoda</h4></span>
+                <p>En esa cocina enorme se ve diminuta y rara. No se halla en su propia casa.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-shrink"/></svg><h4>Retraída</h4></span>
+                <p>Se encoge cuando el humano la alza para acostarla. Después ronronea quieta: así se calma sola.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>Razonadora</h4></span>
+                <p>No dice que no quiere salir. Dice por qué cree que no puede: abajo todo está cerrado.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-flag"/></svg><h4>Resuelta</h4></span>
+                <p>Siendo una cría, salta de madrugada desde un piso alto a un árbol. Casi no alcanza.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-road"/></svg><h4>Enfocada</h4></span>
+                <p>En el camino no se asombra con nada ni mira alrededor. Va a un punto concreto.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>Insistente</h4></span>
+                <p>De vuelta pregunta si el mensaje se va a cumplir, aunque le contesten con burla.</p></div>
             </div>
           </article>
 
           <article class="plate band a3" data-r style="--d:.40s">
             <div class="spine"><span class="vt">Intereses</span><span class="num">02</span></div>
             <div class="items">
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-window"/></svg><h4>Descubrir</h4></span>
-                <p>Qué hay más allá de su ventana, de su casa y de sus dueños.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-group"/></svg><h4>Pertenecer</h4></span>
-                <p>Ser parte de la comunidad de gatos que se reúne de noche.</p></div>
-              <div class="it"><span class="nm"><svg class="ico"><use href="#i-seed"/></svg><h4>La promesa</h4></span>
-                <p>Un mundo donde ningún gato dependa de la voluntad de otro.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>Explicación</h4></span>
+                <p>Lleva rato sintiéndose rara en su propia casa y quiere que alguien le explique por qué.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>El mensaje</h4></span>
+                <p>Sabe a quién va a oír. Va por algo puntual: saber si el mundo pudo ser distinto.</p></div>
+              <div class="it"><span class="nm"><svg class="ico"><use href="#i-star"/></svg><h4>Decidir</h4></span>
+                <p>En su casa otros deciden cuándo come, dónde duerme y cuándo la tocan. Esa noche decide ella.</p></div>
             </div>
           </article>
 
@@ -872,9 +930,9 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
               <div class="it"><span class="nm"><svg class="ico"><use href="#i-road"/></svg><h4>Llegar</h4></span>
                 <p>Alcanzar la reunión sin que sus dueños noten que salió.</p></div>
               <div class="it"><span class="nm"><svg class="ico"><use href="#i-eye"/></svg><h4>Entender</h4></span>
-                <p>Averiguar si lo que dice la Profeta puede de verdad ser cierto.</p></div>
+                <p>Saber si lo que dice la Profeta puede de verdad pasar.</p></div>
               <div class="it"><span class="nm"><svg class="ico"><use href="#i-moon"/></svg><h4>Soñar</h4></span>
-                <p>Sumarse a los mil soñadores y devolverle al mundo su forma real.</p></div>
+                <p>Ser una de los mil que sueñan, para que el mundo vuelva a cambiar.</p></div>
             </div>
           </article>
         </div>
@@ -910,7 +968,7 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
           <div class="sec-hd" data-r style="--d:.18s">
             <span class="sec-n">A</span>
             <div class="sec-t"><b>El dónde</b>
-              <em>Cinco lugares — sale y regresa exactamente al mismo sitio</em></div>
+              <em>Seis lugares — sale y regresa exactamente al mismo sitio</em></div>
           </div>
 
           <div class="mapa">
@@ -924,34 +982,40 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
               <span class="paw" style="left:18%; top:46%; width:19px; height:19px; transform:rotate(-70deg)"></span>
             </div>
 
-            <article class="plate lugar" data-r style="--d:.26s">
+            <article class="plate lugar" data-r style="--d:0.26s">
               <div class="top"><svg class="ico lg"><use href="#i-bowl"/></svg><span class="num">01</span></div>
               <h4>La cocina</h4><span class="hr"></span>
-              <p>El lugar donde sus dueños la dejan lista para la noche. Territorio tibio y conocido: allí su día termina cuando ellos deciden apagar la luz.</p>
+              <p>Ahí están su cama y su plato. El techo queda lejísimos y ella se ve diminuta. Por esa ventana se asoma el gato.</p>
             </article>
 
-            <article class="plate lugar" data-r style="--d:.33s">
+            <article class="plate lugar" data-r style="--d:0.32s">
               <div class="top"><svg class="ico lg"><use href="#i-window"/></svg><span class="num">02</span></div>
-              <h4>La ventana</h4><span class="hr"></span>
-              <p>El umbral. Otro gato la llama desde los árboles aledaños y ella salta hacia afuera por primera vez, sin saber bien a dónde va.</p>
+              <h4>La ventana alta y el árbol</h4><span class="hr"></span>
+              <p>El agujero que sí estaba abierto. Salta desde el piso de arriba a una rama y baja al jardín.</p>
             </article>
 
-            <article class="plate lugar" data-r style="--d:.40s">
+            <article class="plate lugar" data-r style="--d:0.38s">
               <div class="top"><svg class="ico lg"><use href="#i-road"/></svg><span class="num">03</span></div>
               <h4>El camino nocturno</h4><span class="hr"></span>
-              <p>Jardines y sombras. En el trayecto se le van sumando más gatos; ninguno le explica nada y ella tampoco pregunta.</p>
+              <p>Oscuro y largo. No mira alrededor ni se asombra con nada: camina derecho, porque ya sabe a dónde va.</p>
             </article>
 
-            <article class="plate lugar r2a" data-r style="--d:.47s">
+            <article class="plate lugar" data-r style="--d:0.44s">
               <div class="top"><svg class="ico lg"><use href="#i-grave"/></svg><span class="num">04</span></div>
               <h4>El cementerio</h4><span class="hr"></span>
-              <p>Entre lápidas se congregan cientos de gatos para oír a la Profeta. Aquí escucha lo que ya no va a poder desoír.</p>
+              <p>Muchos gatos entre lápidas oyendo a la Profeta. Ahí se entera de que el mundo fue distinto y de cómo cambió.</p>
             </article>
 
-            <article class="plate lugar r2b" data-r style="--d:.54s">
-              <div class="top"><svg class="ico lg"><use href="#i-bed"/></svg><span class="num">05</span></div>
+            <article class="plate lugar" data-r style="--d:0.50s">
+              <div class="top"><svg class="ico lg"><use href="#i-sunrise"/></svg><span class="num">05</span></div>
+              <h4>El camino de vuelta</h4><span class="hr"></span>
+              <p>Se ve distinto al de ida: más iluminado y más ordenado. Ya está amaneciendo y la apuran para llegar.</p>
+            </article>
+
+            <article class="plate lugar" data-r style="--d:0.56s">
+              <div class="top"><svg class="ico lg"><use href="#i-bed"/></svg><span class="num">06</span></div>
               <h4>Su cama</h4><span class="hr"></span>
-              <p>Vuelve exactamente al lugar del que salió, pero ya no vuelve la misma gatica. Aquí cierra los ojos y decide soñar.</p>
+              <p>Vuelve a la misma cocina, se acomoda y se duerme. El mismo sitio de siempre, pero ahora sabe algo más.</p>
             </article>
           </div>
         </div>
@@ -1021,29 +1085,23 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
             <article class="plate emo" data-r style="--d:0.28s">
               <span class="ord">01</span>
               <span class="nm"><svg class="ico"><use href="#i-pulse"/></svg><h4>Ansiedad</h4></span>
-              <span class="cu">Cuando las manos humanas la levantan</span>
-              <p>Se pone tiesa y se encoge. La misma tensión le vuelve cuando le toca salir.</p>
+              <span class="cu">Cuando el humano la alza para acostarla</span>
+              <p>Se encoge antes de que la pongan en la cama. Ya acostada ronronea para calmarse.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.34s">
               <span class="ord">02</span>
-              <span class="nm"><svg class="ico"><use href="#i-shrink"/></svg><h4>Vergüenza</h4></span>
-              <span class="cu">En la cocina, frente a los gatos grandes</span>
-              <p>Se sabe la más chiquita y no discute el sitio que le dieron.</p>
+              <span class="nm"><svg class="ico"><use href="#i-sun"/></svg><h4>Alegría</h4></span>
+              <span class="cu">En el camino, cuando dice que van a verla</span>
+              <p>Va por la noche a su propio ritmo, hacia algo que eligió ella. Sin alboroto.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.40s">
               <span class="ord">03</span>
-              <span class="nm"><svg class="ico"><use href="#i-sun"/></svg><h4>Alegría</h4></span>
-              <span class="cu">En el camino, al anunciar que van a verla</span>
-              <p>Brinca, se adelanta y habla de más. Es la única emocionada del grupo.</p>
-            </article>
-            <article class="plate emo" data-r style="--d:0.46s">
-              <span class="ord">04</span>
               <span class="nm"><svg class="ico"><use href="#i-spark"/></svg><h4>Sorpresa</h4></span>
               <span class="cu">Cuando oye que los gatos fueron gigantes</span>
               <p>Abre los ojos y se queda quieta. El mundo que conocía deja de ser el único.</p>
             </article>
-            <article class="plate emo" data-r style="--d:0.52s">
-              <span class="ord">05</span>
+            <article class="plate emo" data-r style="--d:0.46s">
+              <span class="ord">04</span>
               <span class="nm"><svg class="ico"><use href="#i-tear"/></svg><h4>Tristeza</h4></span>
               <span class="cu">Al oír cómo ahogaron a las crías</span>
               <p>Baja la cabeza. Por primera vez le duele algo que no le pasó a ella.</p>
@@ -1063,39 +1121,33 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
           <div class="crono s6">
             <article class="plate emo" data-r style="--d:0.62s">
               <span class="ord">01</span>
-              <span class="nm"><svg class="ico"><use href="#i-guard"/></svg><h4>Desconfianza</h4></span>
-              <span class="cu">Mientras la acomodan en la casa</span>
-              <p>Se deja cuidar, pero no se entrega. Algo de ese cariño no le cuadra.</p>
+              <span class="nm"><svg class="ico"><use href="#i-home"/></svg><h4>Extrañeza</h4></span>
+              <span class="cu">En la cocina, desde el principio</span>
+              <p>El espacio es enorme y ella diminuta. No se halla en su propia casa.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.68s">
               <span class="ord">02</span>
-              <span class="nm"><svg class="ico"><use href="#i-home"/></svg><h4>Resignación</h4></span>
-              <span class="cu">Al ver el lugar que le tocó en la casa</span>
-              <p>Sabe cuál es su sitio en la casa y ya no lo pelea.</p>
+              <span class="nm"><svg class="ico"><use href="#i-search"/></svg><h4>Curiosidad</h4></span>
+              <span class="cu">Cuando el gato se asoma a la ventana</span>
+              <p>No pregunta cómo es allá afuera. Pregunta qué va a decir la que habla.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.74s">
               <span class="ord">03</span>
               <span class="nm"><svg class="ico"><use href="#i-flag"/></svg><h4>Determinación</h4></span>
-              <span class="cu">Frente al salto que no le queda fácil</span>
-              <p>Salta sin que nadie se lo pida. Prefiere el riesgo a quedarse.</p>
+              <span class="cu">En el salto desde la ventana alta</span>
+              <p>Es una cría y salta de un piso alto a un árbol. Casi no alcanza.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.80s">
               <span class="ord">04</span>
-              <span class="nm"><svg class="ico"><use href="#i-eye"/></svg><h4>Fascinación</h4></span>
-              <span class="cu">Durante el relato de la Profeta</span>
-              <p>No aparta la mirada. La historia se la lleva entera.</p>
+              <span class="nm"><svg class="ico"><use href="#i-seed"/></svg><h4>Esperanza</h4></span>
+              <span class="cu">Oyendo el sermón en el cementerio</span>
+              <p>Si el mundo cambió una vez porque alguien lo soñó, puede volver a cambiar.</p>
             </article>
             <article class="plate emo" data-r style="--d:0.86s">
               <span class="ord">05</span>
-              <span class="nm"><svg class="ico"><use href="#i-seed"/></svg><h4>Fe</h4></span>
-              <span class="cu">En el regreso, con el grande dudando</span>
-              <p>Sigue creyendo aunque el grande no le crea. La duda ajena no le quita la suya.</p>
-            </article>
-            <article class="plate emo" data-r style="--d:0.92s">
-              <span class="ord">06</span>
-              <span class="nm"><svg class="ico"><use href="#i-sunrise"/></svg><h4>Esperanza</h4></span>
-              <span class="cu">Al acostarse otra vez en casa</span>
-              <p>Cierra los ojos con una intención. Soñar deja de ser descansar.</p>
+              <span class="nm"><svg class="ico"><use href="#i-listen"/></svg><h4>Insistencia</h4></span>
+              <span class="cu">De vuelta, ante la burla del adulto</span>
+              <p>Le responden con un chiste y ella insiste. Quiere una respuesta de verdad.</p>
             </article>
           </div>
         </div>
@@ -1132,47 +1184,29 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
         </div>
 
         <div class="lluvia" id="lluvia">
-            <span class="fr m">No se siente en casa</span>
-            <span class="fr s">Su lugar ya está decidido</span>
-            <span class="fr l">Algo le faltaba</span>
-            <span class="fr s">No sabe cómo salir</span>
-            <span class="fr m">Se arriesga igual</span>
-            <span class="fr l">Ella sí quiere creer</span>
-            <span class="fr s">Todavía es la pequeña</span>
-            <span class="fr m">Por fin alguien lo explica</span>
-            <span class="fr l">Cree ella sola</span>
-            <span class="fr s">Todavía obedece</span>
-            <span class="fr m">El cariño tiene condiciones</span>
-            <span class="fr l">Soñar es su manera</span>
+            <span class="fr"><span class="fr-in"><b>Abajo todo cerrado</b><i>Revisó el primer piso y creyó que eso era todo.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Arriba había uno</b><i>La salida existía. Estaba en un sitio que no miró.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Se lo mostró otro</b><i>El gato no abrió nada. Solo le dijo dónde mirar.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>El mundo ya cambió</b><i>Si fue distinto una vez, no era el único posible.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Pequeña, no encerrada</b><i>El tamaño la limita menos de lo que ella creía.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Ronronea por calmarse</b><i>Estar quieta no siempre es estar a gusto.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Hacen falta mil</b><i>La salida no depende de ella sola, y eso pesa.</i></span></span>
+            <span class="fr"><span class="fr-in"><b>Vuelve con pregunta</b><i>Se lleva algo que no tenía: una duda propia.</i></span></span>
           <div class="union" id="union">
             <span class="halo" aria-hidden="true"></span>
             <div>
               <span class="lb">Y todo apunta a lo mismo</span>
-              <b>Nada de lo que le tocó tenía que ser así</b>
+              <b>Lo que creía cerrado solo estaba sin revisar</b>
             </div>
           </div>
         </div>
 
-        <article class="plate ink cierre" id="cierreConf" data-r style="--d:13.6s">
-          <div>
-            <div class="arco">
-              <div><span class="st">Se plantea · en la casa</span>
-                <p>Está bien cuidada y aun así algo no le cuadra. Todavía no sabe ponerle nombre.</p></div>
-              <div><span class="st">Estalla · en el cementerio</span>
-                <p>La Profeta le da el nombre: el mundo pudo ser otro. Su lugar no es natural, se lo pusieron.</p></div>
-              <div><span class="st">Se resuelve · al dormir</span>
-                <p>No puede pelearlo con el cuerpo, es muy pequeña. Así que sueña, que es lo único que sí puede.</p></div>
+        <article class="plate ink cierre" id="cierreConf" data-r style="--d:9.6s">
+            <blockquote><span class="q">&ldquo;</span>Quiere saber si su vida pudo ser distinta. Le dicen que sí, pero solo si mil gatos sueñan lo mismo a la vez. Y ella vuelve sola a la misma cocina.<span class="q">&rdquo;</span></blockquote>
+            <div class="tipo">
+              <span class="et">Conflicto social y existencial</span>
+              <p>Social, porque su lugar lo decidieron otros y la salida no depende de ella: hacen falta mil gatos queriendo lo mismo. Existencial, porque lo que está en juego es si esta vida pequeña y vigilada era la única que podía tocarle.</p>
             </div>
-            <blockquote><span class="q">&ldquo;</span>La gatica vive incómoda en su propia casa sin saber por qué, y cuando entiende que el mundo pudo ser otro descubre que su lugar no le vino dado por naturaleza sino que se lo pusieron: desde ahí tiene que decidir si se acomoda o se atreve a soñarlo distinto.<span class="q">&rdquo;</span></blockquote>
-          </div>
-          <div class="cat-box">
-            <span class="lb">Categoría</span>
-            <div class="cats">
-              <span>Física</span><span>Amorosa</span><span>Familiar</span>
-              <span>Laboral</span><span class="on">Existencial</span><span>Social</span>
-            </div>
-            <p>No pelea con nadie en concreto: pelea con entender qué lugar ocupa en el mundo y si ese lugar puede cambiar. Lo social está ahí, pero por debajo.</p>
-          </div>
         </article>
       </div>
     </div>
@@ -1234,12 +1268,21 @@ input[type=range].slider:focus-visible{outline:1px solid rgba(226,216,202,.5); o
     </div>
     <div class="nav">
       <span class="counter"><b id="cur">01</b> / <span id="tot">06</span></span>
+      <button id="fs" type="button" aria-label="Pantalla completa"><svg class="ico"><use href="#i-full"/></svg></button>
       <button id="prev" type="button" aria-label="Lámina anterior"><svg class="ico"><use href="#i-arrow-l"/></svg></button>
       <button id="next" type="button" aria-label="Lámina siguiente"><svg class="ico"><use href="#i-arrow-r"/></svg></button>
     </div>
   </div>
 </div>
 
+
+<!-- En vertical la lámina 16:9 queda en una franja diminuta: se pide girar -->
+<div class="gira" id="gira">
+  <svg class="ico" aria-hidden="true"><use href="#i-girar"/></svg>
+  <p><b>Gira el dispositivo</b><span>La presentación está hecha para verse en horizontal</span></p>
+  <button type="button" id="giraFs">Pantalla completa</button>
+  <button type="button" class="ln" id="giraNo">Verla así de todos modos</button>
+</div>
 
 <!-- la música arranca al primer gesto del usuario, al 15 % -->
 <audio id="bgm" src="assets/music/Song.mp3" loop preload="auto"></audio>
@@ -1279,12 +1322,17 @@ function fit(){
   root.style.setProperty('--k', String(Math.max(k, 0.1)));
 }
 window.addEventListener('resize', fit, {passive:true});
+window.addEventListener('orientationchange', function(){ setTimeout(fit, 120); });
+document.addEventListener('fullscreenchange', function(){ setTimeout(fit, 120); });
 window.addEventListener('load', fit);
 if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
 fit();
 
-/* ---------- polvo de óleo suspendido en la luz ---------- */
+/* ---------- polvo de óleo suspendido en la luz ----------
+   En pantallas pequeñas el CSS lo oculta, así que ni se crea. */
+var ligero = window.matchMedia('(max-width:900px), (prefers-reduced-motion:reduce)').matches;
 Array.prototype.forEach.call(document.querySelectorAll('.motes'), function(box){
+  if (ligero) return;
   var n = parseInt(box.getAttribute('data-motes'), 10) || 10, html = '', m, s;
   for (m = 0; m < n; m++){
     s = (1.5 + Math.random() * 3.2).toFixed(1);
@@ -1359,10 +1407,11 @@ function animate(slide){
       return;
     }
 
-    tl.fromTo(el,
-      {y:30, opacity:0, filter:'blur(8px)'},
-      {y:0, opacity:1, filter:'blur(0px)', duration:1, ease:'power3.out',
-       clearProps:'filter'}, d);
+    /* Solo opacidad y desplazamiento: los dos los resuelve la GPU. Antes
+       esto animaba filter:blur() sobre cada elemento y era justo lo que
+       hacía que el cambio de lámina se sintiera a tirones. */
+    tl.fromTo(el, {y:26, opacity:0},
+                  {y:0, opacity:1, duration:.85, ease:'power3.out'}, d);
   });
 
   /* la gatica llega a su lámina y se acomoda encima */
@@ -1389,8 +1438,9 @@ function animate(slide){
    sitio, y en la tercera pasada se queda. Cuando ya están todos,
    se atenúan y sale el que los une. Un clic salta al final.
    ============================================================== */
-var SLOTS = [[18,12],[45, 8],[70,14],[82,34],[17,36],[43,31],[66,37],[80,58],
-             [21,60],[45,55],[68,61],[33,82],[57,82],[78,80],[16,83]];
+/* Ocho posiciones en anillo. Ninguna invade el rectángulo central, que
+   queda reservado para la idea que las une. */
+var SLOTS = [[15,14],[48, 9],[81,14],[88,45],[80,77],[47,86],[17,78],[11,46]];
 
 function lluvia(slide){
   var box = slide.querySelector('.lluvia');
@@ -1399,33 +1449,31 @@ function lluvia(slide){
   if (!frs.length) return;
   box.classList.add('on');
 
-  function sitio(el, s, t){
-    tl.set(el, {left:SLOTS[s % 15][0] + '%', top:SLOTS[s % 15][1] + '%'}, t);
-  }
-
-  /* Muy juntas parecían un muro, no una lluvia: cada frase vive 2,4 s y
-     salen espaciadas, así hay cinco o seis en el aire a la vez. */
   frs.forEach(function(el, i){
-    [{t:0.5 + i * 0.42, s:(i * 4 + 2) % 15},
-     {t:5.4 + i * 0.34, s:(i * 7 + 9) % 15}].forEach(function(r){
-      sitio(el, r.s, r.t);
-      tl.fromTo(el, {opacity:0, scale:.92, y:15},
-                    {opacity:1, scale:1, y:0, duration:.45, ease:'power2.out'}, r.t);
-      tl.to(el, {y:-15, duration:1.5, ease:'none'}, r.t + .45);
-      tl.to(el, {opacity:0, duration:.45, ease:'power1.in'}, r.t + 1.95);
-    });
-    /* tercera pasada: se posan y ya no se van */
-    var tf = 11.7 + i * 0.06;
-    sitio(el, i, tf);
-    tl.fromTo(el, {opacity:0, scale:.94, y:12},
-                  {opacity:1, scale:1, y:0, duration:.5, ease:'power2.out'}, tf);
+    var p = SLOTS[i % SLOTS.length];
+    tl.set(el, {left:p[0] + '%', top:p[1] + '%'}, 0);
+    /* aparecen despacio y una por una; ya no se van nunca */
+    tl.fromTo(el, {opacity:0}, {opacity:1, duration:1.25, ease:'power2.out'},
+              0.5 + i * 0.85);
+
+    /* flotan siempre, cada una a su ritmo, para que nunca vayan a la par.
+       El vaivén va en el envoltorio interno: así el fundido de la frase y
+       el movimiento no se pisan. */
+    var dentro = el.querySelector('.fr-in');
+    if (dentro && !dentro.dataset.flota){
+      dentro.dataset.flota = '1';
+      GS.to(dentro, {y:'+=' + (7 + (i % 3) * 3), x:'+=' + (i % 2 ? 5 : -5),
+                     duration:4.2 + i * 0.45, repeat:-1, yoyo:true,
+                     ease:'sine.inOut', delay:i * 0.3});
+    }
   });
 
-  /* se atenúan y sale el hallazgo que las une */
-  tl.to(frs, {opacity:.16, duration:.9, ease:'power2.out'}, 13.0);
+  /* cuando ya están todas, bajan de intensidad y sale la idea del centro */
+  var tUnion = 0.5 + frs.length * 0.85 + 0.9;
+  tl.to(frs, {opacity:.5, duration:1.1, ease:'power2.out'}, tUnion);
   var un = slide.querySelector('.union');
-  if (un) tl.fromTo(un, {opacity:0, scale:.94},
-    {opacity:1, scale:1, duration:1, ease:'power3.out'}, 13.2);
+  if (un) tl.fromTo(un, {opacity:0, scale:.95},
+    {opacity:1, scale:1, duration:1.1, ease:'power3.out'}, tUnion + 0.2);
 }
 
 /* ---------- cambio de lámina ---------- */
@@ -1446,7 +1494,7 @@ function go(n){
       GS.set(from, {clearProps:'opacity,transform,scale'});
     };
     GS.killTweensOf([from, to]);
-    GS.to(from, {opacity:0, scale:.99, duration:.4, ease:'power2.in',
+    GS.to(from, {opacity:0, duration:.32, ease:'power2.in',
       onComplete:apagar, onInterrupt:apagar});
     /* Y un seguro por tiempo: si el equipo va tan lento que el tween no
        alcanza a terminar, la lámina saliente se apaga igual. */
@@ -1457,7 +1505,7 @@ function go(n){
 
   to.classList.add('is-active');
   if (GS){
-    GS.fromTo(to, {opacity:0, scale:1.008}, {opacity:1, scale:1, duration:.55, ease:'power2.out'});
+    GS.fromTo(to, {opacity:0}, {opacity:1, duration:.42, ease:'power2.out'});
     animate(to);
   }
 
@@ -1491,11 +1539,7 @@ document.addEventListener('keydown', function(e){
   else if (k === 'ArrowLeft' || k === 'PageUp'){ e.preventDefault(); go(i - 1); }
   else if (k === 'Home'){ e.preventDefault(); go(0); }
   else if (k === 'End'){ e.preventDefault(); go(slides.length - 1); }
-  else if (k === 'f' || k === 'F'){
-    e.preventDefault();
-    if (document.fullscreenElement) document.exitFullscreen();
-    else if (root.requestFullscreen) root.requestFullscreen();
-  }
+  else if (k === 'f' || k === 'F'){ e.preventDefault(); alternarPantalla(); }
   else if (k === 'p' || k === 'P'){ e.preventDefault(); window.print(); }
 });
 
@@ -1517,6 +1561,64 @@ window.addEventListener('touchend', function(e){
   if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy)) go(i + (dx < 0 ? 1 : -1));
   x0 = y0 = null;
 }, {passive:true});
+
+/* ==============================================================
+   PANTALLA COMPLETA
+   En el móvil no hay tecla F, así que hace falta el botón. Y de paso
+   se intenta fijar la orientación horizontal, que es donde la lámina
+   16:9 aprovecha toda la pantalla. Si el navegador no deja (iOS no
+   deja), simplemente no pasa nada y se sigue.
+   ============================================================== */
+var fsB = document.getElementById('fs');
+
+function enPantallaCompleta(){
+  return !!(document.fullscreenElement || document.webkitFullscreenElement);
+}
+
+function alternarPantalla(){
+  if (enPantallaCompleta()){
+    var salir = document.exitFullscreen || document.webkitExitFullscreen;
+    if (salir) { try { salir.call(document); } catch (e) {} }
+    if (screen.orientation && screen.orientation.unlock){
+      try { screen.orientation.unlock(); } catch (e) {}
+    }
+    return;
+  }
+  var el = document.documentElement;
+  var pedir = el.requestFullscreen || el.webkitRequestFullscreen;
+  if (!pedir) return;
+  var p;
+  try { p = pedir.call(el); } catch (e) { return; }
+  var fijar = function(){
+    if (screen.orientation && screen.orientation.lock){
+      try {
+        var q = screen.orientation.lock('landscape');
+        if (q && q.catch) q.catch(function(){});
+      } catch (e) {}
+    }
+  };
+  if (p && p.then) p.then(fijar).catch(function(){}); else fijar();
+}
+
+function pintarBotonPantalla(){
+  if (!fsB) return;
+  var u = fsB.querySelector('use');
+  if (u) u.setAttribute('href', enPantallaCompleta() ? '#i-exit' : '#i-full');
+  fsB.setAttribute('aria-label', enPantallaCompleta() ? 'Salir de pantalla completa' : 'Pantalla completa');
+}
+if (fsB) fsB.addEventListener('click', alternarPantalla);
+document.addEventListener('fullscreenchange', pintarBotonPantalla);
+document.addEventListener('webkitfullscreenchange', pintarBotonPantalla);
+pintarBotonPantalla();
+
+/* ---------- aviso de girar el dispositivo ---------- */
+var giraFs = document.getElementById('giraFs');
+var giraNo = document.getElementById('giraNo');
+if (giraFs) giraFs.addEventListener('click', alternarPantalla);
+if (giraNo) giraNo.addEventListener('click', function(){
+  document.body.classList.add('gira-no');
+  fit();
+});
 
 /* ---------- en pantalla completa el cursor se retira solo ---------- */
 var curT = 0;
