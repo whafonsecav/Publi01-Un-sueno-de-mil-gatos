@@ -483,7 +483,7 @@ body.hide-cursor{cursor:none}
    libre. Ahí aterriza la idea a la que apuntan todas.
    Un clic en la lámina salta al final.
    ============================================================== */
-.cfl6{display:flex; flex-direction:column; flex:1 1 auto; min-height:0; gap:14px}
+.cfl6{display:flex; flex-direction:column; flex:1 1 auto; min-height:0; gap:11px}
 
 .lluvia{position:relative; flex:1 1 auto; min-height:0;
   display:flex; flex-wrap:wrap; align-content:center; justify-content:center; gap:26px}
@@ -514,16 +514,16 @@ body.hide-cursor{cursor:none}
               0 20px 40px rgba(58,47,37,.18)}
 
 /* el conflicto: grande, entre comillas, y su tipo debajo */
-.cierre{display:flex; flex-direction:column; gap:13px; padding:18px 40px; text-align:center}
+.cierre{display:flex; flex-direction:column; gap:8px; padding:12px 34px; text-align:center}
 .cierre blockquote{margin:0; font-family:var(--f-serif); font-style:italic; font-size:23px;
   line-height:1.44; color:var(--vellum)}
 .cierre blockquote .q{font-family:var(--f-disp); font-style:normal; font-size:30px;
   color:var(--amber-hi); line-height:0; vertical-align:-.06em}
-.cierre .tipo{display:flex; flex-direction:column; align-items:center; gap:10px}
+.cierre .tipo{display:flex; flex-direction:column; align-items:center; gap:6px}
 .cierre .tipo .et{font-family:var(--f-ui); font-size:11px; font-weight:600;
   letter-spacing:.2em; text-transform:uppercase; color:var(--amber-hi); white-space:nowrap}
-.cierre .tipo p{margin:0; font-family:var(--f-serif); font-size:14.5px; line-height:1.55;
-  color:rgba(232,223,211,.9); max-width:1120px}
+.cierre .tipo p{margin:0; font-family:var(--f-serif); font-size:13.5px; line-height:1.5;
+  color:rgba(232,223,211,.9); max-width:1240px}
 .cierre .tipo p b{font-weight:600; color:var(--amber-hi)}
 
 /* ==============================================================
@@ -893,8 +893,8 @@ body.gira-no .gira{display:none !important}
               <span class="k">Sexo</span><span class="v">Femenino</span>
               <span class="nt">Es una cría, no una gata adulta.</span></div>
             <div><svg class="ico"><use href="#i-clock"/></svg>
-              <span class="k">Edad</span><span class="v">3 a 4 meses</span>
-              <span class="nt">Recién destetada: apenas empieza a andar sola.</span></div>
+              <span class="k">Edad</span><span class="v">Poco más de 4 meses</span>
+              <span class="nt">Es una cría: apenas empieza a andar sola.</span></div>
             <div><svg class="ico"><use href="#i-home"/></svg>
               <span class="k">Condición</span><span class="v">Gata de casa</span>
               <span class="nt">Vive con dueños que la alimentan y la cuidan.</span></div>
@@ -1218,8 +1218,8 @@ body.gira-no .gira{display:none !important}
 
         <article class="plate ink cierre" id="cierreConf" data-r style="--d:31.8s">
             <div class="tipo">
-              <span class="et">Es un conflicto existencial y social</span>
-              <p><b>Existencial</b>, porque lo que está en juego es cómo se ve a sí misma: desde la cocina se siente diminuta, se encoge cuando la alzan y nunca termina de estar cómoda en su propia casa. &nbsp;<b>Social</b>, porque ese tamaño no depende solo de ella: con los humanos se achica y todo lo deciden ellos, mientras que entre gatos anda suelta y tranquila; y la Profeta se lo confirma al contar que antes los gigantes eran ellos.</p>
+              <span class="et">Es un conflicto existencial</span>
+              <p>Lo que está en juego es cómo se ve a sí misma, y eso le cambia según con quién esté. <b>Con los humanos se hace chiquita:</b> el techo le queda lejísimos, ellos son gigantes, se encoge cuando la alzan y nunca termina de estar cómoda en su propia casa. <b>Con los gatos, en cambio, se siente grande:</b> hasta la postura le cambia, camina suelta y tranquila, y eso pasa en un mundo mucho más ancho que esa cocina que a ella le parecía enorme. No le cambió el tamaño: le cambió el lugar, y con el lugar, cómo se ve. Ahí afuera, entre los suyos, por fin está donde le corresponde.</p>
             </div>
         </article>
       </div>
@@ -1537,16 +1537,9 @@ function avanzar(){
   go(i + 1);
 }
 
+/* Hacia atrás siempre se sale de la lámina. Deshacer la lluvia frase por
+   frase confundía más de lo que ayudaba: la flecha izquierda devuelve. */
 function retroceder(){
-  var p = paradasActuales();
-  if (p && tl && tl.time() > p[0] + 0.08){
-    var t = tl.time(), k;
-    for (k = p.length - 1; k >= 0; k--){
-      if (p[k] < t - 0.08){ tl.time(p[k]); tl.play(); return; }
-    }
-    tl.time(p[0]); tl.play();
-    return;
-  }
   go(i - 1);
 }
 

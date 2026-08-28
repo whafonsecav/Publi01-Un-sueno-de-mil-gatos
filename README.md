@@ -28,8 +28,7 @@ GSAP va incluido en `assets/js/` y lo único que se descarga de fuera son las ti
 | --- | --- |
 | Lámina siguiente | `→` · `Espacio` · `PageDown` · rueda abajo · swipe izquierda |
 | Lámina anterior | `←` · `PageUp` · rueda arriba · swipe derecha |
-| Avanzar dentro de la lluvia (lámina 06) | `→` — cada pulsación saca la frase siguiente |
-| Retroceder dentro de la lluvia | `←` — cada pulsación quita la última |
+| Avanzar dentro de la lluvia (lámina 06) | `→` — cada pulsación saca la frase siguiente sin esperar |
 | Primera / última | `Inicio` / `Fin` |
 | Pantalla completa | `F` o el botón ⛶ de la barra |
 | Imprimir o exportar a PDF | `P` |
@@ -108,7 +107,8 @@ La lámina 06 no narra el capítulo, lo analiza. Cada hallazgo es una **conclusi
 pasó: la frase dice qué significó ese momento y la nota debajo cuenta de dónde sale. Van
 apareciendo de a uno cada ~3 segundos y se quedan flotando alrededor, dejando libre el
 centro; ahí aterriza la idea a la que apuntan todos, y de ella sale el conflicto.
-**Un clic en la lámina salta al final**, por si hay que ir de afán.
+**Un clic en la lámina salta al final**, por si hay que ir de afán. La flecha derecha saca la
+frase siguiente sin esperar los cuatro segundos; la izquierda sale de la lámina.
 
 **El tono es «curiosidad y esperanza», impulsada por una gran determinación.** La curiosidad
 es lo que la saca de la casa, la determinación es lo que la sostiene cuando todos los adultos
@@ -116,9 +116,10 @@ dicen que es imposible, y la esperanza es con lo que vuelve y con lo que se acue
 
 **El conflicto no vive solo en el nudo.** Viene desde la cocina —el lugar le queda enorme, los
 humanos son gigantes, se encoge cuando la alzan— y estalla en el cementerio. Todo apunta a lo
-mismo: **«Ella se siente pequeña en un mundo de gigantes»**. Es existencial porque lo que está
-en juego es cómo se ve a sí misma, y social porque ese tamaño no depende solo de ella: con los
-humanos se achica y todo lo deciden ellos, mientras que entre gatos anda suelta.
+mismo: **«Ella se siente pequeña en un mundo de gigantes»**. Es un conflicto **existencial**:
+lo que está en juego es cómo se ve a sí misma, y eso le cambia según con quién esté. Con los
+humanos se hace chiquita; con los gatos, en un mundo mucho más ancho que su cocina, hasta la
+postura le cambia y se siente grande. No le cambió el tamaño, le cambió el lugar.
 
 **Intereses e intenciones no son lo mismo** y la lámina 03 los separa. El interés es
 atracción o curiosidad y puede quedarse en las ganas: los suyos (estar entre gatos), el porqué
