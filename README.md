@@ -110,17 +110,15 @@ apareciendo de a uno cada ~3 segundos y se quedan flotando alrededor, dejando li
 centro; ahí aterriza la idea a la que apuntan todos, y de ella sale el conflicto.
 **Un clic en la lámina salta al final**, por si hay que ir de afán.
 
-**El tono es «íntimo y callado».** Se descartó «esperanzador» (mira al resultado, y a ella
-le dicen en la cara que nunca va a pasar) y también «convicción tranquila» (suena a decisión
-en voz alta, y ella nunca afirma nada). El relato no levanta la voz en ningún momento: en la
-casa se hace pequeña y calla, con los gatos se suelta pero sigue hablando bajo, y ni siquiera
-al final celebra nada.
+**El tono es «curiosidad y esperanza», impulsada por una gran determinación.** La curiosidad
+es lo que la saca de la casa, la determinación es lo que la sostiene cuando todos los adultos
+dicen que es imposible, y la esperanza es con lo que vuelve y con lo que se acuesta a soñar.
 
-**El conflicto no vive solo en el nudo.** Viene desde la cocina —se ve diminuta, se retrae
-cuando la alzan, ronronea para calmarse— y estalla en el cementerio, cuando oye a la Profeta
-y reconoce ese dolor. Todo apunta a lo mismo: **nunca se ha sentido parte de su propia casa**.
-Es existencial porque lo que le pesa es sentirse chiquita ahí adentro, y social porque con
-sus humanos se encoge mientras que con los gatos camina suelta.
+**El conflicto no vive solo en el nudo.** Viene desde la cocina —el lugar le queda enorme, los
+humanos son gigantes, se encoge cuando la alzan— y estalla en el cementerio. Todo apunta a lo
+mismo: **«Ella se siente pequeña en un mundo de gigantes»**. Es existencial porque lo que está
+en juego es cómo se ve a sí misma, y social porque ese tamaño no depende solo de ella: con los
+humanos se achica y todo lo deciden ellos, mientras que entre gatos anda suelta.
 
 **Intereses e intenciones no son lo mismo** y la lámina 03 los separa. El interés es
 atracción o curiosidad y puede quedarse en las ganas: los suyos (estar entre gatos), el porqué
